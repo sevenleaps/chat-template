@@ -1,0 +1,6 @@
+instrumentation:
+  root: src
+  excludes:
+    - "**/*.spec.js"
+  extensions:
+    - .js
