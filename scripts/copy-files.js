@@ -58,7 +58,7 @@ function createPackageFile() {
     } = packageData;
 
     const minimalPackage = {
-      name: 'conversation',
+      name: 'chat-template',
       author,
       version,
       description,
