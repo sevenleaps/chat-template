@@ -1,15 +1,17 @@
 import React, { PropTypes } from 'react';
-import Messages from '../Messages/Messages';
+import Message from '../Message/Message';
 
-const Conversation = ({messages}) => {
+const Messages = ({messages}) => {
+  let element = messages.map((message, i) => <Message key={i}  message={message} />);
+
   return (
     <div>
-      <Messages messages={messages} />
+      {element}
     </div>
   );
 };
 
-Conversation.propTypes = {
+Messages.propTypes = {
   messages: PropTypes.arrayOf(
     PropTypes.shape({
       message: PropTypes.string.isRequired,
@@ -19,4 +21,4 @@ Conversation.propTypes = {
   ).isRequired
 }
 
-export default Conversation;
+export default Messages;
