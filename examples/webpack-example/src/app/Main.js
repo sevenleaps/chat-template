@@ -8,7 +8,9 @@ const styles = {
 class Main extends React.Component {
   render() {
     return (
-      <Conversation />
+      <div>
+      	<Conversation />
+      </div>
     );
   }
 }
