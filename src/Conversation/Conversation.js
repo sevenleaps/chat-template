@@ -7,22 +7,12 @@ import React from 'react';
 //   return styles;
 // }
 
-class Conversation extends React.Component {
-  // static propTypes = {
-  // };
-  //
-  // static contextTypes = {
-  // };
-
-  render() {
-    // const styles = getStyles(this.props, this.context);
-
-    return (
-      <div>
-        <p>Hello World!</p>
-      </div>
-    );
-  }
-}
+const Conversation = (props) => {
+  return (
+    <div>
+      <p>Hello World and {props.name}!</p>
+    </div>
+  );
+};
 
 export default Conversation;

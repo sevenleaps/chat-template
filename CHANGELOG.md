@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.4] - 2016-04-12
+- No Issue: Added Storybook to test components (Paul.O'Flaherty)
+
 ## [0.0.3] - 2016-04-12
 - No Issue: Updated the webpack example to use the 0.0.2 version of chat-template (conor.fennell)
 
