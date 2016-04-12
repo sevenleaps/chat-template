@@ -4,9 +4,9 @@ import Messages from '../Messages/Messages';
 class Conversation extends React.Component {
 
     constructor(props, context) {
-    super(props, context);
+      super(props, context);
 
-    this.state = {
+      this.state = {
         messages: [],
         messagesToBeDisplayed: props.messages
       };
@@ -42,11 +42,17 @@ class Conversation extends React.Component {
 
     render() {
       return (
-        <div>
+        <div style={styles}>
           <Messages messages={this.state.messages} />
         </div>
       );
     }
+}
+
+const styles = {
+  position: 'relative',
+  overflow: 'hidden',
+  height: '300px'
 }
 
 Conversation.propTypes = {

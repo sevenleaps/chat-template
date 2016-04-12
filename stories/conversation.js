@@ -17,36 +17,42 @@ storiesOf('Conversation', module)
           message:'Paul',
           from: 'left',
           backColor: 'white',
+          height: 10,
           duration: 1000
         },
         {
           message:'Conor',
           from: 'left',
           backColor: 'white',
+          height: 10,
           duration: 2000
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'left',
           backColor: 'white',
+          height: 10,
           duration: 3000
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'right',
           backColor: '#dcf8c6',
+          height: 10,
           duration: 1000
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'right',
           backColor: '#dcf8c6',
+          height: 10,
           duration: 500
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'right',
           backColor: '#dcf8c6',
+          height: 10,
           duration: 500
         }
       ]}/>
