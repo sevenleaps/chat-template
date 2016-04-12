@@ -32,7 +32,7 @@ const mocha = new Mocha({
   grep: argv.grep ? argv.grep : undefined,
 });
 
-Glob(`src/**/${argv.component ? argv.component : '*'}.spec.js`, {}, (err, files) => {
+Glob(`src/**/${argv.component ? argv.component : '*'}.inte.js`, {}, (err, files) => {
   files.forEach((file) => mocha.addFile(file));
 
   mocha.run((failures) => {
