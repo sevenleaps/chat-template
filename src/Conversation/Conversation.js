@@ -13,7 +13,7 @@ class Conversation extends React.Component {
     }
 
     componentDidMount() {
-      this.timer = setInterval(this.showMessage, 1000);
+      setTimeout(this.showMessage, 1000);
     }
 
     componentWillUnMount() {
@@ -29,18 +29,15 @@ class Conversation extends React.Component {
       if (this.state.messagesToBeDisplayed.length === 0) {
         clearInterval(this.timer);
       } else {
-        messages.push(this.state.messagesToBeDisplayed.pop());
+        const message = this.state.messagesToBeDisplayed.pop();
+        messages.push(message);
         this.setState({
           messages,
           messagesToBeDisplayed
         });
-
+        setTimeout(this.showMessage, message.duration || 1000);
       }
 
-    }
-
-    componentDidUpdate() {
-      console.log('DID UPDATE')
     }
 
     render() {
@@ -57,7 +54,8 @@ Conversation.propTypes = {
     PropTypes.shape({
       message: PropTypes.string.isRequired,
       from: PropTypes.string.isRequired,
-      backColor: PropTypes.string.isRequired
+      backColor: PropTypes.string.isRequired,
+      duration: PropTypes.number
     })
   ).isRequired
 }
