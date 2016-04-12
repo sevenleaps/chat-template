@@ -28,7 +28,7 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
-    "chat-template": "^0.0.2",
+    "chat-template": "^0.0.3",
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
   }
