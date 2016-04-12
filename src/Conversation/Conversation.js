@@ -26,12 +26,16 @@ class Conversation extends React.Component {
       var messages = this.state.messages;
       var messagesToBeDisplayed = this.state.messagesToBeDisplayed;
 
-      messages.push(this.state.messagesToBeDisplayed.pop());
+      if (this.state.messagesToBeDisplayed.length === 0) {
+        clearInterval(this.timer);
+      } else {
+        messages.push(this.state.messagesToBeDisplayed.pop());
+        this.setState({
+          messages,
+          messagesToBeDisplayed
+        });
 
-      this.setState({
-        messages,
-        messagesToBeDisplayed
-      });
+      }
 
     }
 
