@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.0.4]
+## [0.0.4] - 2016-04-13
 - No Issue: Added Storybook to test components (Paul.O'Flaherty)
 - No Issue: Removed Karma and phantom JS as the testing suite (conor.fennell)
 - No Issue: Added enzyme as the new testing suite (conor.fennell)
