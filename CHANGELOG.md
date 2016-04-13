@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.0.5]
+## [0.0.5] - 2016-04-13
 - No Issue: Cleared the timeout on the Conversation component when it is unmounted (conor.fennell)
 
 ## [0.0.4] - 2016-04-13
