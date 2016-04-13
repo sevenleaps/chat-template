@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.6] - 2016-04-13
+- No Issue: Added missing dependency react-addons-css-transition-group (conor.fennell)
+
 ## [0.0.5] - 2016-04-13
 - No Issue: Cleared the timeout on the Conversation component when it is unmounted (conor.fennell)
 
