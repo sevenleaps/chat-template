@@ -12,7 +12,11 @@ class Conversation extends React.Component {
     }
 
     componentDidMount() {
-      setTimeout(this.showMessage, 1000);
+       this.timeoutId = setTimeout(this.showMessage, 1000);
+    }
+
+    componentWillUnmount() {
+      clearTimeout(this.timeoutId);
     }
 
     showMessage = () => {
@@ -28,7 +32,7 @@ class Conversation extends React.Component {
           messages,
           messagesToBeDisplayed
         });
-        setTimeout(this.showMessage, message.duration || 800);
+        this.timeoutId = setTimeout(this.showMessage, message.duration || 800);
       }
 
     }
