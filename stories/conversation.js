@@ -9,6 +9,63 @@ storiesOf('Conversation', module)
       <Conversation messages={[]}/>
     </div>
   );
+})
+.add('should show the typing before messages appear from a user', () => {
+  return (
+    <div>
+      <Conversation messages={[
+        {
+          type: 'typing',
+          duration: 500,
+          inbound: true
+        },
+        {
+          message:'Hey how are you keeping?',
+          from: 'left',
+          backColor: 'white',
+          duration: 1500
+        },
+        {
+          type: 'typing',
+          duration: 500,
+          inbound: true
+        },
+        {
+          message:'I have not seen you in ages!!!!',
+          from: 'left',
+          backColor: 'white',
+          duration: 1700
+        },
+        {
+          type: 'typing',
+          duration: 1000,
+          inbound: false
+        },
+        {
+          message:'How do I uninstall this messaging app?',
+          from: 'right',
+          backColor: 'rgb(218, 211, 232)',
+          duration: 2500
+        },
+        {
+          type: 'typing',
+          duration: 1500,
+          inbound: false
+        },
+        {
+          type: 'typing',
+          duration: 1000,
+          inbound: true
+        },
+        {
+          message:'Screw you man.',
+          from: 'left',
+          backColor: 'white',
+          duration: 1500
+        }
+      ]}/>
+    </div>
+  )
 }).add('should display all messages with slow times specified', () => {
   return (
     <div>

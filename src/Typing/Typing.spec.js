@@ -1,11 +1,10 @@
 import React from 'react';
-import {sinon} from 'sinon';
 import Typing from './Typing';
-import { shallow, mount } from 'enzyme';
-import { expect } from 'chai';
+import {shallow} from 'enzyme';
+import {expect} from 'chai';
 
-describe('<Typing />', () => {
-  it('renders Typing to have 4 divs', () => {
+describe('<Typing />', () => { // eslint-disable-line no-undef
+  it('renders Typing to have 4 divs', () => { // eslint-disable-line no-undef
     const wrapper = shallow(<Typing />);
     expect(wrapper.find('div')).to.have.length(4);
   });

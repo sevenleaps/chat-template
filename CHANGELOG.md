@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.0.8]
 - No Issue: Removed unused linter plugin (conor.fennell)
+- No Issue: Added typing component (conor.fennell)
 
 ## [0.0.7] - 2016-04-13
 - No Issue: Reverse order of messages showing (conor.fennell)
