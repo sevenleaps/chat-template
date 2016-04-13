@@ -1,4 +1,6 @@
 box: nodesource/trusty:4.4.2
+  env:
+    NODE_ENV: test
 
 build:
   steps:
