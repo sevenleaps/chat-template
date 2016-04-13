@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.0.7]
 - No Issue: Reverse order of messages showing (conor.fennell)
+- Fixed #2: Raise events when a new message is shown (conor.fennell)
 
 ## [0.0.6] - 2016-04-13
 - No Issue: Added missing dependency react-addons-css-transition-group (conor.fennell)

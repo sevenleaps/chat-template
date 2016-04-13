@@ -28,10 +28,14 @@ class Conversation extends React.Component {
       if (this.state.messagesToBeDisplayed.length > 0) {
         const message = this.state.messagesToBeDisplayed.shift();
         messages.push(message);
+        let onDisplay = undefined;
+        if (message.onDisplay) {
+          onDisplay = message.onDisplay.bind(null, message.id);
+        }
         this.setState({
           messages,
           messagesToBeDisplayed
-        });
+        }, onDisplay);
         this.timeoutId = setTimeout(this.showMessage, message.duration || 800);
       }
 

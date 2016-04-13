@@ -141,4 +141,35 @@ storiesOf('Conversation', module)
       ]}/>
     </div>
   )
+}).add('should run the onDisplay functions after messages are displayed', () => {
+  return (
+    <div>
+      <Conversation messages={[
+        {
+          id: 1,
+          message:'Paul',
+          from: 'left',
+          backColor: 'white',
+          duration: 1500,
+          onDisplay: (id) => {console.log(id)}
+        },
+        {
+          id: 2,
+          message:'Conor',
+          from: 'left',
+          backColor: 'white',
+          duration: 1700,
+          onDisplay: (id) => {console.log(id)}
+        },
+        {
+          id: 3,
+          message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
+          from: 'left',
+          backColor: 'white',
+          duration: 2500,
+          onDisplay: (id) => {console.log(id)}
+        }
+      ]}/>
+    </div>
+  )
 });
