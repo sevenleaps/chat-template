@@ -13,15 +13,15 @@ const Messages = ({messages}) => {
 
   return (
     <div style={styles}>
-      <style>{"\
-        .example-enter {\
-          max-height: 0px;\
-          transition: all 2.0s ease-in-out;\
-        }\
-        .example-enter.example-enter-active {\
-          max-height: 500px;\
-        }\
-        "}
+      <style>{`
+        .example-enter {
+          max-height: 0px;
+          transition: all 2.0s ease-in-out;
+        }
+        .example-enter.example-enter-active {
+          max-height: 500px;
+        }
+        `}
       </style>
       <ReactCSSTransitionGroup transitionName="example" component="div">
         {messages.map((message, i)  => <Message key={i} message={message} />)}
