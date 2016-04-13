@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import Messages from '../Messages/Messages';
 
 class Conversation extends React.Component {
-
     constructor(props, context) {
       super(props, context);
 
@@ -16,26 +15,20 @@ class Conversation extends React.Component {
       setTimeout(this.showMessage, 1000);
     }
 
-    componentWillUnMount() {
-      clearInterval(this.timer);
-    }
-
     showMessage = () => {
       // has duration passed
        // dispatch show message
       var messages = this.state.messages;
       var messagesToBeDisplayed = this.state.messagesToBeDisplayed;
 
-      if (this.state.messagesToBeDisplayed.length === 0) {
-        clearInterval(this.timer);
-      } else {
+      if (this.state.messagesToBeDisplayed.length > 0) {
         const message = this.state.messagesToBeDisplayed.pop();
         messages.push(message);
         this.setState({
           messages,
           messagesToBeDisplayed
         });
-        setTimeout(this.showMessage, message.duration || 1000);
+        setTimeout(this.showMessage, message.duration || 800);
       }
 
     }

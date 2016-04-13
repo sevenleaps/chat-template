@@ -26,15 +26,11 @@ const Message = ({message}) => {
     paddingRight: '2%'
   };
 
-  const spanStyle = {
-
-  };
-
   return (
     <div style={divContainerStyle}>
       <div style={divChildStyle}>
         <div style={divStyle}>
-          <span style={spanStyle}>{message.message}</span>
+          <span>{message.message}</span>
         </div>
       </div>
     </div>

@@ -21,6 +21,6 @@ describe('<Conversation />', () => {
       }
     ]} />);
     expect(wrapper.find('Messages')).to.have.length(1);
-    expect(wrapper.find('Message')).to.have.length(1);
+    expect(wrapper.find('Message')).to.have.length(0);
   });
 });

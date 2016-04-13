@@ -6,24 +6,23 @@ const Messages = ({messages}) => {
   const styles = {
       position: 'absolute',
       bottom: '4%',
-      maxWidth: '100%',
+      width: '100%',
       overflow: 'hidden'
-      // transition: 'all 1500ms cubic-bezier(0.17, 0.84, 0.44, 1) 200ms'
   }
 
   return (
     <div style={styles}>
       <style>{`
-        .example-enter {
+        .__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT-enter {
           max-height: 0px;
-          transition: all 2.0s ease-in-out;
+          transition: all 0.8s ease-in-out;
         }
-        .example-enter.example-enter-active {
+        .__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT-enter.__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT-enter-active {
           max-height: 500px;
         }
         `}
       </style>
-      <ReactCSSTransitionGroup transitionName="example" component="div">
+      <ReactCSSTransitionGroup transitionName="__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT" component="div" transitionEnterTimeout={10000} transitionLeaveTimeout={10000} >
         {messages.map((message, i)  => <Message key={i} message={message} />)}
       </ReactCSSTransitionGroup>
     </div>
