@@ -1,8 +1,8 @@
 import React from 'react';
-import Message from '../src/Message/Message';
+import MessageContent from '../src/MessageContent/MessageContent';
 import { storiesOf, action } from '@kadira/storybook';
 
-storiesOf('Message', module)
+storiesOf('MessageContent', module)
 .add('should display no message', () => {
   var messageUsed = {
     message: '',
@@ -11,7 +11,7 @@ storiesOf('Message', module)
   };
   return (
     <div>
-      <Message message={messageUsed}/>
+      <MessageContent height={300} message={messageUsed}/>
     </div>
   );
 }).add('should display on the left', () => {
@@ -22,7 +22,7 @@ storiesOf('Message', module)
   };
   return (
     <div>
-      <Message height={300} message={messageUsed}/>
+      <MessageContent height={300} message={messageUsed}/>
     </div>
   );
 }).add('should display on the right', () => {
@@ -33,7 +33,7 @@ storiesOf('Message', module)
   };
   return (
     <div>
-      <Message height={300} message={messageUsed}/>
+      <MessageContent height={300} message={messageUsed}/>
     </div>
   )
 }).add('should display on the left with an image', () => {
@@ -45,7 +45,7 @@ storiesOf('Message', module)
   };
   return (
     <div>
-      <Message height={300} message={messageUsed}/>
+      <MessageContent height={300} message={messageUsed}/>
     </div>
   );
 }).add('should display on the right with an image', () => {
@@ -57,10 +57,10 @@ storiesOf('Message', module)
   };
   return (
     <div>
-      <Message height={300} message={messageUsed}/>
+      <MessageContent height={300} message={messageUsed}/>
     </div>
   )
-}).add('should display on the left with an image and an avatar', () => {
+}).add('should display on the left with an image and a long message', () => {
   var messageUsed = {
     message: `This is a really really really really really really really really
     really really really really really really really really really
@@ -73,15 +73,14 @@ storiesOf('Message', module)
     long message!`,
     from: 'left',
     backColor: 'white',
-    avatar: 'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif',
     src: 'https://media.giphy.com/media/BCtjVLKRoFVza/giphy.gif'
   };
   return (
     <div>
-      <Message height={300} message={messageUsed}/>
+      <MessageContent height={300} message={messageUsed}/>
     </div>
   );
-}).add('should display on the right with an image and an avatar', () => {
+}).add('should display on the right with an image and a long message', () => {
   var messageUsed = {
     message: `This is a really really really really really really really really
     really really really really really really really really really
@@ -94,12 +93,11 @@ storiesOf('Message', module)
     long message!`,
     from: 'right',
     backColor: 'lightgreen',
-    avatar: 'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif',
     src: 'https://media.giphy.com/media/BCtjVLKRoFVza/giphy.gif'
   };
   return (
     <div>
-      <Message height={300} message={messageUsed}/>
+      <MessageContent height={300} message={messageUsed}/>
     </div>
   )
 });

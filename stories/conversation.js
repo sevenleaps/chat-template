@@ -337,7 +337,7 @@ storiesOf('Conversation', module)
       ]}/>
     </div>
   )
-}).add('should display all messages, with an image as many elements', () => {
+}).add('should display all messages, with an image many elements', () => {
   return (
     <div>
       <Conversation height={300} messages={[
@@ -381,6 +381,61 @@ storiesOf('Conversation', module)
           src: 'http://memecrunch.com/meme/AKXO9/boss-makes-a-dollar-i-make-a-dime/image.gif',
           from: 'right',
           backColor: '#dcf8c6',
+          duration: 1200
+        }
+      ]}/>
+    </div>
+  )
+}).add('should display all messages, with an image as many elements and with avatars', () => {
+  return (
+    <div>
+      <Conversation height={300} messages={[
+        {
+          message: 'Blah blah',
+          src: 'https://media.giphy.com/media/XGP7mf38Vggik/giphy.gif',
+          from: 'right',
+          avatar: 'http://www.resellerratings.com/image/avatar/5700149',
+          backColor: '#dcf8c6',
+          duration: 1200
+        },
+        {
+          message: 'Blah blah 2',
+          src: 'https://media.giphy.com/media/BCtjVLKRoFVza/giphy.gif',
+          from: 'right',
+          avatar: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-plaid-shirt-guy.png',
+          backColor: '#dcf8c6',
+          duration: 1200
+        },
+        {
+          message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
+          src: 'https://media.giphy.com/media/aIU0hcl50BuNO/giphy.gif',
+          from: 'right',
+          avatar: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-plaid-shirt-guy.png',
+          backColor: '#dcf8c6',
+          duration: 1500
+        },
+        {
+          message: 'Blah blah 4',
+          src: 'https://media.giphy.com/media/DVwbMHImn8Yla/giphy.gif',
+          from: 'left',
+          avatar: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-plaid-shirt-guy.png',
+          backColor: 'white',
+          duration: 1200
+        },
+        {
+          message: 'Blah blah 5',
+          src: 'https://images.sobadsogood.com/14-ridiculously-funny-gifs-from-the-world-of-wrestling/5.jpg',
+          from: 'right',
+          avatar: 'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif',
+          backColor: '#dcf8c6',
+          duration: 1200
+        },
+        {
+          message: 'Blah blah 6',
+          src: 'http://memecrunch.com/meme/AKXO9/boss-makes-a-dollar-i-make-a-dime/image.gif',
+          from: 'left',
+          avatar: 'https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg',
+          backColor: 'white',
           duration: 1200
         }
       ]}/>

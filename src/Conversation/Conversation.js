@@ -130,6 +130,7 @@ Conversation.propTypes = {
       src: PropTypes.string,
       from: PropTypes.string,
       backColor: PropTypes.string,
+      avatar: PropTypes.string,
       duration: PropTypes.number,
     }),
   ).isRequired,

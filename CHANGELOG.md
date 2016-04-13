@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ## [0.0.8] - 2016-04-13
+- No Issue: Splitting up the Message component. (Paul.O'Flaherty)
 - No Issue: Making GIFs and images load into chat (Paul.O'Flaherty)
 - No Issue: Removed unused linter plugin (conor.fennell)
 - No Issue: Added typing component (conor.fennell)
