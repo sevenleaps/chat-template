@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 import Messages from '../Messages/Messages';
 import Typing from '../Typing/Typing';
 
@@ -7,32 +7,32 @@ const getStyles = ({typingColor, height}) => {
     conversation: {
       position: 'relative',
       overflow: 'hidden',
-      height: height + 'px'
+      height: `${height}px`,
     },
     noTyping: {
-      height: '92%'
+      height: '92%',
     },
     inbound: {
       position: 'absolute',
       left: '4%',
       width: '10%',
-      height: '8%'
+      height: '8%',
     },
     outbound: {
       position: 'absolute',
       right: '4%',
       width: '10%',
-      height: '8%'
+      height: '8%',
     },
     messages: {
       height: '92%',
-      position: 'relative'
+      position: 'relative',
     },
     typing: {
-      color: typingColor || '#3b5998'
-    }
-  }
-}
+      color: typingColor || '#3b5998',
+    },
+  };
+};
 
 class Conversation extends React.Component {
   constructor(props, context) {
@@ -43,12 +43,12 @@ class Conversation extends React.Component {
       height: props.height,
       messagesToBeDisplayed: props.messages,
       isTyping: false,
-      inbound: true
+      inbound: true,
     };
   }
 
   componentDidMount() {
-     this.timeoutId = setTimeout(this.showMessage, 1000);
+    this.timeoutId = setTimeout(this.showMessage, 1000);
   }
 
   componentWillUnmount() {
@@ -56,8 +56,8 @@ class Conversation extends React.Component {
   }
 
   showMessage = () => {
-    let messages = this.state.messages;
-    let messagesToBeDisplayed = this.state.messagesToBeDisplayed;
+    const messages = this.state.messages;
+    const messagesToBeDisplayed = this.state.messagesToBeDisplayed;
     const height = this.state.height;
 
     if (this.state.messagesToBeDisplayed.length > 0) {
@@ -86,9 +86,11 @@ class Conversation extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const styles = getStyles(this.props);
-    const { isTyping, inbound } = this.state;
+    const {isTyping, inbound} = this.state;
+    const isInbound = isTyping && inbound;
+    const isOutbound = isTyping && !inbound ;
     return (
       <div style={styles.conversation}>
         <div style={imageDivStyle}>
@@ -97,7 +99,7 @@ class Conversation extends React.Component {
         <div style={styles.messages}>
           <Messages height={this.state.height} messages={this.state.messages} />
         </div>
-        <div style={(isTyping && inbound && styles.inbound) || (isTyping && !inbound && styles.outbound) || styles.noTyping}>
+        <div style={(isInbound && styles.inbound) || (isOutbound && styles.outbound) || styles.noTyping}>
           {isTyping && <Typing color={styles.typing.color} />}
         </div>
       </div>
@@ -106,19 +108,19 @@ class Conversation extends React.Component {
 }
 
 const imageDivStyle = {
-  display: 'none'
-}
+  display: 'none',
+};
 
 const imageElement = (messages) => {
-  return messages.map((message, i)  => {
+  return messages.map((message) => {
     let image = '';
-    if(typeof message.src === 'string') {
+    if (typeof message.src === 'string') {
       image =
         <img src={message.src} width={'1px'} height={'1px'} />;
     }
     return image;
   });
-}
+};
 
 Conversation.propTypes = {
   height: PropTypes.number,
@@ -128,9 +130,9 @@ Conversation.propTypes = {
       src: PropTypes.string,
       from: PropTypes.string,
       backColor: PropTypes.string,
-      duration: PropTypes.number
-    })
-  ).isRequired
-}
+      duration: PropTypes.number,
+    }),
+  ).isRequired,
+};
 
 export default Conversation;

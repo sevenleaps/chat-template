@@ -30,7 +30,7 @@ rules:
   jsx-quotes: [2, prefer-double]
   keyword-spacing: 2
   key-spacing: 2
-  max-len: [2, 120, 4]
+  max-len: [2, 180, 4]
   new-cap: [0, {capIsNew: true, newIsCap: true}] # Wishlist, one day
   no-unused-expressions: 2
   no-unused-vars: 2
@@ -81,7 +81,7 @@ rules:
   react/jsx-equals-spacing: 2
   react/jsx-handler-names: 2
   react/jsx-indent-props: [2, 2]
-  react/jsx-max-props-per-line: [2, {maximum: 3}]
+  react/jsx-max-props-per-line: [2, {maximum: 10}]
   react/jsx-no-duplicate-props: 2
   react/jsx-no-undef: 2
   react/jsx-pascal-case: 2

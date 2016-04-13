@@ -14,7 +14,7 @@
     "lint": "eslint src docs/src test/browser test/unit && echo \"eslint: no lint errors\"",
     "prebuild": "npm run clean:build",
     "storybook": "start-storybook -p 9001",
-    "test": "npm run test:unit && npm run test:inte && npm run test:unit:coverage && npm run test:inte:coverage && npm run outdated",
+    "test": "npm run test:unit && npm run test:inte && npm run test:unit:coverage && npm run test:inte:coverage && npm run lint && npm run outdated",
     "test:unit": "babel-node test/unit.js",
     "test:unit:watch": "babel-node test/unit.watch.js",
     "test:unit:coverage": "babel-node node_modules/.bin/isparta cover --report lcovonly --include-all-sources --dir test/coverage/unit test/unit.js",

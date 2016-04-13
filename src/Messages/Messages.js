@@ -1,15 +1,15 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 import Message from '../Message/Message';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Messages = ({height, messages}) => {
   const styles = {
-      position: 'absolute',
-      bottom: '4%',
-      width: '100%',
-      overflow: 'hidden',
-      transisitionDelay: '2s'
-  }
+    position: 'absolute',
+    bottom: '4%',
+    width: '100%',
+    overflow: 'hidden',
+    transisitionDelay: '2s',
+  };
 
   return (
     <div style={styles}>
@@ -24,8 +24,8 @@ const Messages = ({height, messages}) => {
         }
         `}
       </style>
-      <ReactCSSTransitionGroup transitionName="__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT" component="div" transitionEnterTimeout={2000} transitionLeaveTimeout={2000} >
-        {messages.map((message, i)  => <Message key={i} height={height} message={message} />)}
+      <ReactCSSTransitionGroup transitionName="__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT" component="div" transitionEnterTimeout={2000} transitionLeaveTimeout={2000}>
+        {messages.map((message, i) => <Message key={i} height={height} message={message} />)}
       </ReactCSSTransitionGroup>
     </div>
   );
@@ -38,9 +38,9 @@ Messages.propTypes = {
       message: PropTypes.string,
       src: PropTypes.string,
       from: PropTypes.string.isRequired,
-      backColor: PropTypes.string.isRequired
+      backColor: PropTypes.string.isRequired,
     })
-  ).isRequired
-}
+  ).isRequired,
+};
 
 export default Messages;

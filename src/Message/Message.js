@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 
 const Message = ({height, message}) => {
   const divContainerStyle = {
     width: '100%',
-    clear: 'both'
+    clear: 'both',
   };
 
   let divStyle = {
@@ -15,7 +15,7 @@ const Message = ({height, message}) => {
     borderRadius: '10px',
     padding: '2%',
     borderColor: 'grey',
-    boxShadow: '1px 5px 10px rgba(0,0,0,.13)'
+    boxShadow: '1px 5px 10px rgba(0,0,0,.13)',
   };
 
   const divChildStyle = {
@@ -23,11 +23,11 @@ const Message = ({height, message}) => {
     overflow: 'hidden',
     paddingBottom: '2%',
     paddingLeft: '2%',
-    paddingRight: '2%'
+    paddingRight: '2%',
   };
 
   const imageStyles = {
-    width: '100%'
+    width: '100%',
   };
 
   const imageDivStyle = {
@@ -35,16 +35,16 @@ const Message = ({height, message}) => {
     height: '100px',
     width: '100%',
     margin: '0px',
-  }
+  };
 
   const imageElement = (src, height) => {
     let image = '';
     let heightNeeded = 0;
-    if(height > 0){
+    if (height > 0) {
       heightNeeded = height / 3;
     }
-    if(typeof src === 'string'){
-      image = <div style={imageDivStyle}><img src={src} height={heightNeeded+'px'} style={imageStyles} /></div>
+    if (typeof src === 'string') {
+      image = <div style={imageDivStyle}><img src={src} height={`${heightNeeded}px`} style={imageStyles} /></div>;
     }
     return image;
   };
@@ -67,8 +67,8 @@ Message.propTypes = {
     message: PropTypes.string,
     src: PropTypes.string,
     from: PropTypes.string.isRequired,
-    backColor: PropTypes.string.isRequired
-  })
-}
+    backColor: PropTypes.string.isRequired,
+  }),
+};
 
 export default Message;
