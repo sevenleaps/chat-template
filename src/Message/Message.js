@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 import Avatar from '../Avatar/Avatar';
 import MessageContent from '../MessageContent/MessageContent';
 

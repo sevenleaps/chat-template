@@ -6,18 +6,20 @@ import {expect} from 'chai';
 describe('<Message />', () => { // eslint-disable-line no-undef
   it('renders a Message element with no message', () => { // eslint-disable-line no-undef
     const wrapper = shallow(<Message message={{}} />);
-    expect(wrapper.find('div')).to.have.length(3);
+    expect(wrapper.find('Avatar')).to.have.length(1);
+    expect(wrapper.find('MessageContent')).to.have.length(1);
   });
 
   it('renders a Message element with one message', () => { // eslint-disable-line no-undef
-    const message = {
-      message: 'Paul',
-      from: 'left',
-      backColor: 'white',
-      duration: 200,
+    const messageUsed = {
+      message: 'Test',
+      from: 'right',
+      backColor: 'lightgreen',
+      src: 'https://media.giphy.com/media/BCtjVLKRoFVza/giphy.gif',
     };
 
-    const wrapper = shallow(<Message message={message} />);
-    expect(wrapper.find('div')).to.have.length(3);
+    const wrapper = shallow(<Message height={300} message={messageUsed} />);
+    expect(wrapper.find('Avatar')).to.have.length(1);
+    expect(wrapper.find('MessageContent')).to.have.length(1);
   });
 });

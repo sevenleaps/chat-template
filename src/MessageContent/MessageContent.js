@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 
 const MessageContent = ({height, message}) => {
   let divStyle = {
@@ -23,16 +23,16 @@ const MessageContent = ({height, message}) => {
     height: '100px',
     width: '100%',
     margin: '0px',
-  }
+  };
 
   const imageElement = (src, height) => {
     let image = '';
     let heightNeeded = 0;
-    if(height > 0){
+    if (height > 0) {
       heightNeeded = height / 3;
     }
-    if(typeof src === 'string'){
-      image = <div style={imageDivStyle}><img src={src} height={heightNeeded+'px'} style={imageStyles} /></div>
+    if (typeof src === 'string') {
+      image = <div style={imageDivStyle}><img src={src} height={`${heightNeeded}px`} style={imageStyles} /></div>;
     }
     return image;
   };
@@ -54,6 +54,6 @@ MessageContent.propTypes = {
     avatar: PropTypes.string,
     backColor: PropTypes.string.isRequired,
   }),
-}
+};
 
 export default MessageContent;
