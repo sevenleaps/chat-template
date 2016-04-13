@@ -1,24 +1,25 @@
 import React from 'react';
-import {sinon} from 'sinon';
 import Messages from './Messages';
-import { shallow, mount } from 'enzyme';
-import { expect } from 'chai';
+import {shallow} from 'enzyme';
+import {expect} from 'chai';
 
-describe('<Messages />', () => {
-  it('renders a Messages element with no messages', () => {
+describe('<Messages />', () => { // eslint-disable-line no-undef
+  it('renders a Messages element with no messages', () => { // eslint-disable-line no-undef
     const wrapper = shallow(<Messages messages={[]} />);
     expect(wrapper.find('Message')).to.have.length(0);
   });
 
-  it('renders one Messages element with one message', () => {
-    const wrapper = shallow(<Messages messages={[
+  it('renders one Messages element with one message', () => { // eslint-disable-line no-undef
+    const messages = [
       {
-        message:'Paul',
+        message: 'Paul',
         from: 'left',
         backColor: 'white',
-        duration: 200
-      }
-    ]} />);
+        duration: 200,
+      },
+    ];
+
+    const wrapper = shallow(<Messages messages={messages} />);
     expect(wrapper.find('Message')).to.have.length(1);
   });
 });

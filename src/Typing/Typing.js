@@ -1,18 +1,22 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
-var styleDot = {
-    mozBorderRadius: '40px/40px',
-    webkitBorderRadius: '40px 40px',
-    borderRadius: '40px/40px',
-    border: 'solid 10px #435AD9',
-    width: '0px',
-    height: '0px',
-    float: 'left'
-}
-
-
-const Typing = () =>
-  <div>
+const getStyles = ({color, dotDiameter}) => {
+  return {
+    dot: {
+      MozBorderRadius: '40px/40px',
+      WebkitBorderRadius: '40px 40px',
+      borderRadius: '40px/40px',
+      border: 'solid',
+      borderWidth: dotDiameter || '3px',
+      borderColor: color || '#435AD9',
+      float: 'left',
+      marginRight: '2%',
+    },
+  };
+};
+const Typing = (props) => {
+  const styles = getStyles(props);
+  return (<div>
     <style>{`
       ._chat_template_dot:nth-child(2) {
         animation: _chat_template_updown1 linear 1.5s infinite;
@@ -28,62 +32,67 @@ const Typing = () =>
 
       @keyframes _chat_template_updown1 {
         0% {
-          transform: translateY(10px);
+          transform: translateY(5px);
         }
         25% {
-          transform: translateY(20px);
+          transform: translateY(10px);
         }
         50% {
-          transform: translateY(30px);
+          transform: translateY(15px);
         }
         75% {
-          transform: translateY(20px);
+          transform: translateY(10px);
         }
         100% {
-          transform: translateY(10px);
+          transform: translateY(5px);
         }
       }
 
       @keyframes _chat_template_updown2 {
         from {
-          transform: translateY(20px);
-        }
-        25% {
-          transform: translateY(30px);
-        }
-        50% {
-          transform: translateY(20px);
-        }
-        75% {
           transform: translateY(10px);
         }
+        25% {
+          transform: translateY(15px);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+        75% {
+          transform: translateY(5px);
+        }
         to {
-          transform: translateY(20px);
+          transform: translateY(10px);
         }
       }
 
       @keyframes _chat_template_updown3 {
         from {
-          transform: translateY(30px);
+          transform: translateY(15px);
         }
         25% {
-          transform: translateY(20px);
-        }
-        50% {
           transform: translateY(10px);
         }
+        50% {
+          transform: translateY(5px);
+        }
         75% {
-          transform: translateY(20px);
+          transform: translateY(10px);
         }
         to {
-          transform: translateY(30px);
+          transform: translateY(15px);
         }
       }
-      `}
-    </style>
-    <div className={'_chat_template_dot'} style={styleDot} ></div>
-    <div className={'_chat_template_dot'} style={styleDot} ></div>
-    <div className={'_chat_template_dot'} style={styleDot} ></div>
-  </div>
+      `}</style>
+    <div className={'_chat_template_dot'} style={styles.dot} ></div>
+    <div className={'_chat_template_dot'} style={styles.dot} ></div>
+    <div className={'_chat_template_dot'} style={styles.dot} ></div>
+  </div>);
+};
+
+Typing.propTypes = {
+  color: PropTypes.string,
+  dotDiameter: PropTypes.string,
+};
 
 export default Typing;

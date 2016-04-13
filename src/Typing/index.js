@@ -1,1 +1,1 @@
-export default from './Typing'
+export default from './Typing';
