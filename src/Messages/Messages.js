@@ -6,7 +6,8 @@ const Messages = ({messages}) => {
   const styles = {
       position: 'absolute',
       bottom: '4%',
-      maxWidth: '100%'
+      maxWidth: '100%',
+      overflow: 'hidden'
       // transition: 'all 1500ms cubic-bezier(0.17, 0.84, 0.44, 1) 200ms'
   }
 
@@ -14,11 +15,11 @@ const Messages = ({messages}) => {
     <div style={styles}>
       <style>{"\
         .example-enter {\
-          opacity: 0.01;\
-          transition: opacity .5s ease-in;\
+          max-height: 0px;\
+          transition: all 2.0s ease-in-out;\
         }\
         .example-enter.example-enter-active {\
-          opacity: 1;\
+          max-height: 500px;\
         }\
         "}
       </style>

@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 const Message = ({message}) => {
   const divContainerStyle = {
     width: '100%',
-    padding: '2%',
     clear: 'both'
   };
 
@@ -20,7 +19,11 @@ const Message = ({message}) => {
   };
 
   const divChildStyle = {
-    marginRight: '2%'
+    marginRight: '2%',
+    overflow: 'hidden',
+    paddingBottom: '2%',
+    paddingLeft: '2%',
+    paddingRight: '2%'
   };
 
   const spanStyle = {

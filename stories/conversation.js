@@ -18,7 +18,7 @@ storiesOf('Conversation', module)
           from: 'left',
           backColor: 'white',
           height: 10,
-          duration: 1000
+          duration: 1500
         },
         {
           message:'Conor',
@@ -46,14 +46,14 @@ storiesOf('Conversation', module)
           from: 'right',
           backColor: '#dcf8c6',
           height: 10,
-          duration: 500
+          duration: 1500
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'right',
           backColor: '#dcf8c6',
           height: 10,
-          duration: 500
+          duration: 1500
         }
       ]}/>
     </div>
