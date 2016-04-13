@@ -6,13 +6,13 @@ import { expect } from 'chai';
 
 describe('<Conversation />', () => {
   it('renders a Messages element with no messages', () => {
-    const wrapper = shallow(<Conversation messages={[]} />);
+    const wrapper = mount(<Conversation messages={[]} />);
     expect(wrapper.find('Messages')).to.have.length(1);
     expect(wrapper.find('Message')).to.have.length(0);
   });
 
   it('renders one Messages element with one message', () => {
-    const wrapper = shallow(<Conversation messages={[
+    const wrapper = mount(<Conversation messages={[
       {
         message:'Paul',
         from: 'left',

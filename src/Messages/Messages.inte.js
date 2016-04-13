@@ -1,18 +1,18 @@
 import React from 'react';
 import {sinon} from 'sinon';
-import Conversation from './Conversation';
+import Messages from './Messages';
 import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
 
-describe('<Conversation />', () => {
+describe('<Messages />', () => {
   it('renders a Messages element with no messages', () => {
-    const wrapper = shallow(<Conversation messages={[]} />);
+    const wrapper = mount(<Messages messages={[]} />);
     expect(wrapper.find('Messages')).to.have.length(1);
     expect(wrapper.find('Message')).to.have.length(0);
   });
 
   it('renders one Messages element with one message', () => {
-    const wrapper = shallow(<Conversation messages={[
+    const wrapper = mount(<Messages messages={[
       {
         message:'Paul',
         from: 'left',
@@ -21,6 +21,6 @@ describe('<Conversation />', () => {
       }
     ]} />);
     expect(wrapper.find('Messages')).to.have.length(1);
-    expect(wrapper.find('Message')).to.have.length(0);
+    expect(wrapper.find('Message')).to.have.length(1);
   });
 });
