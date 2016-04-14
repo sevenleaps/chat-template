@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.0.9]
+## [0.0.9] - 2016-04-14
 - No Issue: updated wercker.yml to set NODE_ENV to test rather then the default production (conor.fennell)
 - No Issue: Added Avatar Component (Paul.O'Flaherty)
 
