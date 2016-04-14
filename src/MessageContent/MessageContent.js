@@ -11,6 +11,7 @@ const MessageContent = ({height, message}) => {
     borderColor: 'grey',
     boxShadow: '1px 5px 10px rgba(0,0,0,.13)',
     marginBottom: '2%',
+    order: '2',
   };
 
   if (message.from === 'right') {

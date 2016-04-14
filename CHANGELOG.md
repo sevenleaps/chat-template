@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [0.0.13] - 2016-04-14
+- Fixing the avatar image not displaying on the left (Paul.O'Flaherty)
+
 ## [0.0.12] - 2016-04-14
 - Marking package.json as private (Paul.O'Flaherty)
 
