@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import AvatarUI from 'material-ui/lib/Avatar';
+import AvatarUI from 'material-ui/lib/avatar';
 
 const Avatar = ({from, src}) => {
   const avatarElement = (src) => {
