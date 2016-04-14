@@ -1,7 +1,7 @@
 {
   "name": "chat-template",
   "author": "Seven Leaps",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Simulating chats using React",
   "main": "./src/index.js",
   "private": true,
