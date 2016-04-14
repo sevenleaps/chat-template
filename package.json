@@ -1,9 +1,10 @@
 {
   "name": "chat-template",
   "author": "Seven Leaps",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Simulating chats using React",
   "main": "./src/index.js",
+  "private": true,
   "scripts": {
     "build": "npm run build:babel && npm run build:copy-files",
     "build:babel": "babel ./src --ignore *.spec.js --out-dir ./build",
