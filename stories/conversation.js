@@ -165,10 +165,10 @@ storiesOf('Conversation', module)
       ]}/>
     </div>
   )
-}).add('should display all messages', () => {
+}).add('should display all messages with a 4 seconds initial delay', () => {
   return (
     <div>
-      <Conversation height={300} messages={[
+      <Conversation delay={4000} height={300} messages={[
         {
           message:'Paul',
           from: 'left',
@@ -208,10 +208,10 @@ storiesOf('Conversation', module)
       ]}/>
     </div>
   )
-}).add('should display all messages, with quick times specified', () => {
+}).add('should display all messages, with quick times specified with a 200ms initial delay', () => {
   return (
     <div>
-      <Conversation height={300} messages={[
+      <Conversation delay={200} height={300} messages={[
         {
           message:'Paul',
           from: 'left',

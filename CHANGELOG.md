@@ -3,14 +3,17 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [0.0.14] - 2016-04-15
+- No Issue: Adding in the ability to specify an initial delay (Paul.O'Flaherty)
+
 ## [0.0.13] - 2016-04-14
-- Fixing the avatar image not displaying on the left (Paul.O'Flaherty)
+- No Issue: Fixing the avatar image not displaying on the left (Paul.O'Flaherty)
 
 ## [0.0.12] - 2016-04-14
-- Marking package.json as private (Paul.O'Flaherty)
+- No Issue: Marking package.json as private (Paul.O'Flaherty)
 
 ## [0.0.11] - 2016-04-14
-- Fixing minor issues (Paul.O'Flaherty)
+- No Issue: Minor fixes (Paul.O'Flaherty)
 
 ## [0.0.10] - 2016-04-14
 - Fixed #5: Adding ability to loop and fixing transition bug with floats (Paul.O'Flaherty)
