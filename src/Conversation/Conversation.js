@@ -39,6 +39,7 @@ class Conversation extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
+      startingDelay: props.delay || 1000,
       messages: [],
       height: props.height,
       messagesToBeDisplayed: props.messages.slice(),
@@ -50,7 +51,7 @@ class Conversation extends React.Component {
   }
 
   componentDidMount() {
-    this.timeoutId = setTimeout(this.showMessage, 1000);
+    this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
   }
 
   componentWillUnmount() {
@@ -79,6 +80,7 @@ class Conversation extends React.Component {
         onDisplay = message.onDisplay.bind(null, message.id);
       }
       this.setState({
+        ...this.state,
         messages,
         messagesToBeDisplayed,
         originalMessages,
@@ -97,7 +99,7 @@ class Conversation extends React.Component {
         inbound: true,
         reset: !reset,
       });
-      this.timeoutId = setTimeout(this.showMessage, 1000);
+      this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
     }
   }
 
@@ -121,6 +123,7 @@ class Conversation extends React.Component {
 }
 
 Conversation.propTypes = {
+  delay: PropTypes.number,
   height: PropTypes.number,
   messages: PropTypes.arrayOf(
     PropTypes.shape({
