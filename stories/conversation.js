@@ -173,37 +173,37 @@ storiesOf('Conversation', module)
           message:'Paul',
           from: 'left',
           backColor: 'white',
-          duration: 500
+          duration: 1000
         },
         {
           message:'Conor',
           from: 'left',
           backColor: 'white',
-          duration: 700
+          duration: 1400
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'left',
           backColor: 'white',
-          duration: 500
+          duration: 1200
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'right',
           backColor: '#dcf8c6',
-          duration: 500
+          duration: 1000
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'right',
           backColor: '#dcf8c6',
-          duration: 500
+          duration: 1500
         },
         {
           message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
           from: 'right',
           backColor: '#dcf8c6',
-          duration: 500
+          duration: 1000
         }
       ]}/>
     </div>
@@ -216,38 +216,23 @@ storiesOf('Conversation', module)
           message:'Paul',
           from: 'left',
           backColor: 'white',
+          avatar: 'https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg',
           duration: 500
         },
         {
           message:'Conor',
+          from: 'right',
+          backColor: '#dcf8c6',
+          avatar: 'https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg',
+          duration: 500
+        },
+        {
+          message:'Brian',
           from: 'left',
           backColor: 'white',
+          avatar: 'https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg',
           duration: 1000
         },
-        {
-          message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
-          from: 'left',
-          backColor: 'white',
-          duration: 100
-        },
-        {
-          message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
-          from: 'right',
-          backColor: '#dcf8c6',
-          duration: 500
-        },
-        {
-          message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
-          from: 'right',
-          backColor: '#dcf8c6',
-          duration: 500
-        },
-        {
-          message:'JimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJimJim',
-          from: 'right',
-          backColor: '#dcf8c6',
-          duration: 200
-        }
       ]}/>
     </div>
   )

@@ -6,11 +6,20 @@ const Message = ({height, message}) => {
   const divContainerStyle = {
     width: '100%',
     clear: 'both',
+    display: 'flex',
+  };
+
+  const orderOfAvatar = (from) => {
+    let order = '1';
+    if (from === 'right') {
+      order = '3';
+    }
+    return order;
   };
 
   return (
     <div style={divContainerStyle}>
-      <Avatar src={message.avatar} from={message.from} />
+      <Avatar order={orderOfAvatar(message.from)} src={message.avatar} />
       <MessageContent height={height} message={message} />
     </div>
   );

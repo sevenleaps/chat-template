@@ -8,23 +8,23 @@ const Messages = ({height, messages}) => {
     bottom: '4%',
     width: '100%',
     overflow: 'hidden',
-    transisitionDelay: '2s',
   };
 
   return (
     <div style={styles}>
       <style>{`
         .__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT-enter {
+          transform: translateY(30px);
           max-height: 1px;
-          min-height: 1px;
           transition: all 0.8s ease-in-out;
         }
         .__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT-enter.__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT-enter-active {
-          max-height: 500px;
+          transform: translateY(0px);
+          max-height: 300px;
         }
         `}
       </style>
-      <ReactCSSTransitionGroup transitionName="__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT" component="div" transitionEnterTimeout={2000} transitionLeaveTimeout={2000}>
+      <ReactCSSTransitionGroup transitionName="__CHAT_TEMPLATE_MESSAGES_TRANSITION_ELEMENT" transitionEnterTimeout={55000} transitionLeave={false}>
         {messages.map((message, i) => <Message key={i} height={height} message={message} />)}
       </ReactCSSTransitionGroup>
     </div>

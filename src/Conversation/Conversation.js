@@ -11,7 +11,7 @@ const getStyles = ({typingColor, height}) => {
       height: `${height}px`,
     },
     noTyping: {
-      height: '92%',
+      height: '8%',
     },
     inbound: {
       position: 'absolute',
@@ -38,13 +38,14 @@ const getStyles = ({typingColor, height}) => {
 class Conversation extends React.Component {
   constructor(props, context) {
     super(props, context);
-
     this.state = {
       messages: [],
       height: props.height,
-      messagesToBeDisplayed: props.messages,
+      messagesToBeDisplayed: props.messages.slice(),
+      originalMessages: props.messages.slice(),
       isTyping: false,
       inbound: true,
+      reset: false,
     };
   }
 
@@ -60,7 +61,8 @@ class Conversation extends React.Component {
     const messages = this.state.messages;
     const messagesToBeDisplayed = this.state.messagesToBeDisplayed;
     const height = this.state.height;
-
+    const originalMessages = this.state.originalMessages;
+    const reset = this.state.reset;
     if (this.state.messagesToBeDisplayed.length > 0) {
       const message = this.state.messagesToBeDisplayed.shift();
       let isTyping = this.state.isTyping;
@@ -79,11 +81,23 @@ class Conversation extends React.Component {
       this.setState({
         messages,
         messagesToBeDisplayed,
+        originalMessages,
         height,
         isTyping,
         inbound,
+        reset,
       }, onDisplay);
       this.timeoutId = setTimeout(this.showMessage, message.duration || 800);
+    } else {
+      this.setState({
+        ...this.state,
+        messages: [],
+        messagesToBeDisplayed: originalMessages.slice(),
+        isTyping: false,
+        inbound: true,
+        reset: !reset,
+      });
+      this.timeoutId = setTimeout(this.showMessage, 1000);
     }
   }
 
@@ -94,9 +108,9 @@ class Conversation extends React.Component {
     const isOutbound = isTyping && !inbound ;
     return (
       <div style={styles.conversation}>
-        <ImageLoader messages={this.state.messagesToBeDisplayed} />
+        <ImageLoader messages={this.state.originalMessages} />
         <div style={styles.messages}>
-          <Messages height={this.state.height} messages={this.state.messages} />
+          <Messages key={this.state.reset} height={this.state.height} messages={this.state.messages} />
         </div>
         <div style={(isInbound && styles.inbound) || (isOutbound && styles.outbound) || styles.noTyping}>
           {isTyping && <Typing color={styles.typing.color} />}

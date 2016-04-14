@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import AvatarUI from 'material-ui/lib/avatar';
 
-const Avatar = ({from, src}) => {
+const Avatar = ({order, src}) => {
   const avatarElement = (src) => {
     let element = '';
     if (typeof src === 'string' && src.length > 0) {
@@ -11,11 +11,9 @@ const Avatar = ({from, src}) => {
   };
 
   const avatarStyle = {
-    display: 'inline',
-    float: from || 'left',
     marginLeft: '1%',
     marginRight: '1%',
-    marginTop: '2%',
+    order: order,
   };
 
   return (
@@ -26,7 +24,7 @@ const Avatar = ({from, src}) => {
 };
 
 Avatar.propTypes = {
-  from: PropTypes.string,
+  order: PropTypes.string,
   src: PropTypes.string,
 };
 
