@@ -13,14 +13,14 @@ storiesOf('Avatar', module)
   return (
     <div>
       <Avatar src={'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif'}
-        from={'left'}/>
+        order={'1'}/>
     </div>
   );
 }).add('should display Avatar on the right', () => {
   return (
     <div>
       <Avatar src={'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif'}
-        from={'right'}/>
+        order={'3'}/>
     </div>
   );
 });

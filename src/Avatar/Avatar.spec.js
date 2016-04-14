@@ -10,7 +10,7 @@ describe('<Avatar />', () => { // eslint-disable-line no-undef
   });
 
   it('renders an Avatar element with one message', () => { // eslint-disable-line no-undef
-    const wrapper = shallow(<Avatar src={'test'} from={'left'} />);
+    const wrapper = shallow(<Avatar src={'test'} order={'1'} />);
     expect(wrapper.find('Avatar')).to.have.length(1);
   });
 });

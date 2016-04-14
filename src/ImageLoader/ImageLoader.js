@@ -19,11 +19,11 @@ const imageDivStyle = {
 };
 
 const imageElement = (messages) => {
-  return messages.map((message) => {
+  return messages.map((message, i) => {
     let image = '';
     if (typeof message.src === 'string') {
       image =
-        <img src={message.src} width={'1px'} height={'1px'} />;
+        <img key={i} src={message.src} width={'1px'} height={'1px'} />;
     }
     return image;
   });

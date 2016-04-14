@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [0.0.10] - 2016-04-14
+- Fixed #5: Adding ability to loop and fixing transition bug with floats (Paul.O'Flaherty)
 
 ## [0.0.9] - 2016-04-14
 - No Issue: updated wercker.yml to set NODE_ENV to test rather then the default production (conor.fennell)

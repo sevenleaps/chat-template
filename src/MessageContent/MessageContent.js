@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react';
 
 const MessageContent = ({height, message}) => {
   let divStyle = {
-    float: message.from,
     backgroundColor: message.backColor,
     maxWidth: '60%',
     wordWrap: 'break-word',
@@ -13,6 +12,10 @@ const MessageContent = ({height, message}) => {
     boxShadow: '1px 5px 10px rgba(0,0,0,.13)',
     marginBottom: '2%',
   };
+
+  if (message.from === 'right') {
+    divStyle.marginLeft = 'auto';
+  }
 
   const imageStyles = {
     width: '100%',
