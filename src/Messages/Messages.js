@@ -39,6 +39,7 @@ Messages.propTypes = {
       src: PropTypes.string,
       from: PropTypes.string.isRequired,
       backColor: PropTypes.string.isRequired,
+      avatar: PropTypes.string,
     })
   ).isRequired,
 };

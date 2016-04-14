@@ -1,7 +1,16 @@
-box: nodesource/trusty:4.4.2
+box:
+  id: nodesource/trusty:4.4.2
+  env:
+    NODE_ENV: test
 
 build:
   steps:
+    - script:
+        name: Updating NPM
+        code: |
+          npm -v
+          npm install npm -g
+          npm -v
     - npm-install
     - npm-test
     - script:

@@ -73,7 +73,45 @@ storiesOf('Messages', module)
   var messages = [message, message2, message3];
   return (
     <div>
-      <Messages messages={messages}/>
+      <Messages height={300} messages={messages}/>
+    </div>
+  )
+}).add('should display long conversation on both sides with images and avatars', () => {
+  var message = {
+    message: `This is a really really really really really really really really
+    really really really really really really really really really
+    really really really really really really really really really
+    really really really really really really really really really
+    really really really really really really really really really
+    really really really really really really really really really
+    really really really really really really really really really
+    really really really really really really really really really
+    long message!`,
+    from: 'left',
+    backColor: 'white',
+    avatar: 'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif',
+    src: 'https://media.giphy.com/media/BCtjVLKRoFVza/giphy.gif'
+  };
+  var message2 = {
+    message: `Why would you write such a really really really really really
+    really really really really really really really really really really
+    really really really really really long message?!`,
+    from: 'right',
+    backColor: 'lightgreen',
+    avatar: 'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif',
+    src: 'https://media.giphy.com/media/BCtjVLKRoFVza/giphy.gif'
+  };
+  var message3 = {
+    message: 'I have no idea',
+    from: 'left',
+    backColor: 'white',
+    avatar: 'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif',
+    src: 'https://media.giphy.com/media/BCtjVLKRoFVza/giphy.gif'
+  };
+  var messages = [message, message2, message3];
+  return (
+    <div>
+      <Messages height={300} messages={messages}/>
     </div>
   )
 });
