@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import Messages from '../Messages/Messages';
 import Typing from '../Typing/Typing';
+import ImageLoader from '../ImageLoader/ImageLoader';
 
 const getStyles = ({typingColor, height}) => {
   return {
@@ -93,9 +94,7 @@ class Conversation extends React.Component {
     const isOutbound = isTyping && !inbound ;
     return (
       <div style={styles.conversation}>
-        <div style={imageDivStyle}>
-          {imageElement(this.state.messagesToBeDisplayed)}
-        </div>
+        <ImageLoader messages={this.state.messagesToBeDisplayed} />
         <div style={styles.messages}>
           <Messages height={this.state.height} messages={this.state.messages} />
         </div>
@@ -106,21 +105,6 @@ class Conversation extends React.Component {
     );
   }
 }
-
-const imageDivStyle = {
-  display: 'none',
-};
-
-const imageElement = (messages) => {
-  return messages.map((message) => {
-    let image = '';
-    if (typeof message.src === 'string') {
-      image =
-        <img src={message.src} width={'1px'} height={'1px'} />;
-    }
-    return image;
-  });
-};
 
 Conversation.propTypes = {
   height: PropTypes.number,
