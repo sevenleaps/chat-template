@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.0.15]
 
 - No Issue: Added ability to change the text color in a message (conor.fennell)
+- Fixed #4: Added a README on how to use it and contribute (conor.fennell)
 
 ## [0.0.14] - 2016-04-15
 - No Issue: Adding in the ability to specify an initial delay (Paul.O'Flaherty)
