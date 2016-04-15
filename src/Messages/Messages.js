@@ -38,8 +38,9 @@ Messages.propTypes = {
       message: PropTypes.string,
       src: PropTypes.string,
       from: PropTypes.string.isRequired,
-      backColor: PropTypes.string.isRequired,
       avatar: PropTypes.string,
+      backColor: PropTypes.string.isRequired,
+      textColor: PropTypes.string,
     })
   ).isRequired,
 };

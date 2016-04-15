@@ -33,6 +33,7 @@ Message.propTypes = {
     from: PropTypes.string.isRequired,
     avatar: PropTypes.string,
     backColor: PropTypes.string.isRequired,
+    textColor: PropTypes.string,
   }),
 };
 

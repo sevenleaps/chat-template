@@ -100,4 +100,16 @@ storiesOf('MessageContent', module)
       <MessageContent height={300} message={messageUsed}/>
     </div>
   )
+}).add('should display with white text', () => {
+  var messageUsed = {
+    message: `I should be white`,
+    from: 'right',
+    backColor: 'lightgreen',
+    textColor: 'white',
+  };
+  return (
+    <div>
+      <MessageContent height={300} message={messageUsed}/>
+    </div>
+  )
 });

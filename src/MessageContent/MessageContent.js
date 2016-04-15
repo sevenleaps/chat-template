@@ -14,6 +14,10 @@ const MessageContent = ({height, message}) => {
     order: '2',
   };
 
+  const messageStyles = {
+    color: message.textColor,
+  };
+
   if (message.from === 'right') {
     divStyle.marginLeft = 'auto';
   }
@@ -43,7 +47,7 @@ const MessageContent = ({height, message}) => {
 
   return (
     <div style={divStyle}>
-      <span>{message.message}</span>
+      <span style={messageStyles} >{message.message}</span>
       {imageElement(message.src, height)}
     </div>
   );
@@ -57,6 +61,7 @@ MessageContent.propTypes = {
     from: PropTypes.string.isRequired,
     avatar: PropTypes.string,
     backColor: PropTypes.string.isRequired,
+    textColor: PropTypes.string,
   }),
 };
 
