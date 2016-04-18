@@ -54,6 +54,7 @@
     "aphrodite": "^0.2.0",
     "babel-preset-stage-1": "^6.5.0",
     "babel-runtime": "^6.5.0",
+    "object-assign-deep": "0.0.4",
     "react-addons-css-transition-group": "^15.0.1"
   },
   "main": "dist/index.js",
