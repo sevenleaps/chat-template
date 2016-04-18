@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.16] - 2016-04-18
+
+- No Issue: Refactored to a more manageable structure (conor.fennell)
+
 ## [0.0.15] - 2016-04-15
 
 - No Issue: Added ability to change the text color in a message (conor.fennell)

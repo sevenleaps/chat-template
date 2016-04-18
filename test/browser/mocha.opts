@@ -1,4 +1,0 @@
---require chai
---require setup.js
---reporter html
---ui bdd

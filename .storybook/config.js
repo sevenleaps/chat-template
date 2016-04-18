@@ -1,12 +1,12 @@
+// IMPORTANT
+// ---------
+// This is an auto generated file with React CDK.
+// Do not modify this file.
+
 import { configure } from '@kadira/storybook';
 
 function loadStories() {
-  require('../stories/avatar');
-  require('../stories/conversation');
-  require('../stories/messages');
-  require('../stories/message');
-  require('../stories/messageContent');
-  // require as many stories as you need.
+  require('../src/stories');
 }
 
 configure(loadStories, module);
