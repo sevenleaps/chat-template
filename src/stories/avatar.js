@@ -3,14 +3,14 @@ import Avatar from '../Avatar';
 import { storiesOf } from '@kadira/storybook';
 
 storiesOf('Avatar', module)
-.add('should display Avatar ', () => {
+.add('Avatar displayed', () => {
   return (
     <div>
       <Avatar src={'https://media.giphy.com/media/m7BTtLWhjkEJa/giphy.gif'} />
     </div>
   );
 })
-.add('should display Avatar in order ', () => {
+.add('Avatar configured with an order in a Flexbox', () => {
   const styles = {
     container: {
       order: 1,

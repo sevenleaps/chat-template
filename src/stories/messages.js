@@ -3,14 +3,7 @@ import Messages from '../Messages';
 import { storiesOf } from '@kadira/storybook';
 
 storiesOf('Messages', module)
-.add('should display no messages', () => {
-  const messages = [];
-  return (
-    <div>
-      <Messages messages={messages} />
-    </div>
-  );
-}).add('should display on the left', () => {
+.add('Messages display on the left', () => {
   const message = {
     message: 'Test',
     inbound: true,
@@ -27,7 +20,7 @@ storiesOf('Messages', module)
       <Messages messages={messages} />
     </div>
   );
-}).add('should display conversation on both sides', () => {
+}).add('Messages display messages on both sides', () => {
   const message = {
     message: 'Test',
     inbound: true,
@@ -44,7 +37,7 @@ storiesOf('Messages', module)
       <Messages messages={messages} />
     </div>
   );
-}).add('should display long conversation on both sides', () => {
+}).add('Messages display long messages on both sides', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really
@@ -76,7 +69,7 @@ storiesOf('Messages', module)
       <Messages height={300} messages={messages} />
     </div>
   );
-}).add('should display long conversation on both sides with images and avatars', () => {
+}).add('Messages display long messages on both sides with images and avatars', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really

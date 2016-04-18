@@ -3,18 +3,7 @@ import Message from '../Message';
 import { storiesOf } from '@kadira/storybook';
 
 storiesOf('Message', module)
-.add('should display no message', () => {
-  const message = {
-    message: '',
-    inbound: true,
-    backColor: 'white',
-  };
-  return (
-    <div>
-      <Message message={message} />
-    </div>
-  );
-}).add('should display on the left', () => {
+.add('Message displays on the left', () => {
   const message = {
     message: 'Test',
     inbound: true,
@@ -25,7 +14,7 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('should display on the right', () => {
+}).add('Message displays on the right', () => {
   const message = {
     message: 'Test',
     inbound: false,
@@ -36,7 +25,7 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('should display on the left with an image', () => {
+}).add('Message displays on the left with image', () => {
   const message = {
     message: 'Test',
     inbound: true,
@@ -48,7 +37,7 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('should display on the right with an image', () => {
+}).add('Message displays on the left with an image', () => {
   const message = {
     message: 'Test',
     inbound: false,
@@ -61,7 +50,7 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('should display on the left with an image and an avatar', () => {
+}).add('Message displays on the left with an image and an avatar', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really
@@ -82,7 +71,7 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('should display on the right with an image and an avatar', () => {
+}).add('Message displays on the right with an image and an avatar', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really

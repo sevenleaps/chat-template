@@ -1,7 +1,7 @@
 {
-  "name": "react-components-sevenleaps",
-  "version": "0.0.0",
-  "description": "Reuseable React Components by Sevenleaps",
+  "name": "chat-template",
+  "version": "0.0.15",
+  "description": "Chat-Template is a React component that enables quick prototyping of bot conversations.",
   "repository": {
     "type": "git",
     "url": "https://github.com/you/repo.git"
@@ -32,7 +32,7 @@
     "babel-eslint": "^6.0.2",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-babel": "^3.2.0",
-    "eslint-plugin-react": "^4.3.0",
+    "eslint-plugin-react": "^5.0.1",
     "material-ui": "0.15.0-alpha.2",
     "mocha": "^2.4.5",
     "chai": "^3.5.0",

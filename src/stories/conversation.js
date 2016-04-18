@@ -3,14 +3,7 @@ import Conversation from '../Conversation';
 import { storiesOf } from '@kadira/storybook';
 
 storiesOf('Conversation', module)
-.add('should display no messages', () => {
-  return (
-    <div>
-      <Conversation height={300} messages={[]} />
-    </div>
-  );
-})
-.add('should show the typing before messages appear from a user', () => {
+.add('Conversation with typing configured before messages being displayed', () => {
   const messages = [
     {
       type: 'typing',
@@ -68,65 +61,7 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('should show the typing before messages appear from a user with SMALL HEIGHT', () => {
-  const messages = [
-    {
-      type: 'typing',
-      duration: 500,
-      inbound: true,
-    },
-    {
-      message: 'Hey how are you keeping?',
-      inbound: true,
-      backColor: 'white',
-      duration: 1500,
-    },
-    {
-      type: 'typing',
-      duration: 500,
-      inbound: true,
-    },
-    {
-      message: 'I have not seen you in ages!!!!',
-      inbound: true,
-      backColor: 'white',
-      duration: 1700,
-    },
-    {
-      type: 'typing',
-      duration: 1000,
-      inbound: false,
-    },
-    {
-      message: 'How do I uninstall this messaging app?',
-      inbound: false,
-      backColor: 'rgb(218, 211, 232)',
-      duration: 2500,
-    },
-    {
-      type: 'typing',
-      duration: 1500,
-      inbound: false,
-    },
-    {
-      type: 'typing',
-      duration: 1000,
-      inbound: true,
-    },
-    {
-      message: 'Screw you man.',
-      inbound: true,
-      backColor: 'white',
-      duration: 1500,
-    },
-  ];
-
-  return (
-    <div>
-      <Conversation height={150} messages={messages} />
-    </div>
-  );
-}).add('should display all messages with slow times specified', () => {
+}).add('Conversation configured for slow display of messages', () => {
   const messages = [
     {
       message: 'Paul',
@@ -171,7 +106,7 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('should display all messages with a 4 seconds initial delay', () => {
+}).add('Conversation configured with an initial delay of 4 seconds', () => {
   const messages = [
     {
       message: 'Paul',
@@ -216,7 +151,7 @@ storiesOf('Conversation', module)
       <Conversation delay={4000} height={300} messages={messages} />
     </div>
   );
-}).add('should display all messages, with quick times specified with a 200ms initial delay', () => {
+}).add('Conversation configured with a tiny initall delay and fast messages', () => {
   const messages = [
     {
       message: 'Paul',
@@ -246,7 +181,7 @@ storiesOf('Conversation', module)
       <Conversation delay={200} height={300} messages={messages} />
     </div>
   );
-}).add('should run the onDisplay functions after messages are displayed', () => {
+}).add('Conversation configured to run onDisplay functions after the messages are displayed', () => {
   const messages = [
     {
       id: 1,
@@ -279,7 +214,7 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('should display all messages, with an image first specified', () => {
+}).add('Conversation displays messages with images', () => {
   const messages = [
     {
       message: 'Blah blah 1',
@@ -308,7 +243,7 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('should display all messages, with SLOW AND HEAVY images as the first two elements', () => {
+}).add('Conversation displays messages with large sized images', () => {
   const messages = [
     {
       message: 'Blah blah',
@@ -338,7 +273,7 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('should display all messages, with an image many elements', () => {
+}).add('Conversation displays a lot of messages with images', () => {
   const messages = [
     {
       message: 'Blah blah',
@@ -389,7 +324,7 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('should display all messages, with an image as many elements and with avatars', () => {
+}).add('Conversation displays both message images and avatars', () => {
   const messages = [
     {
       message: 'Blah blah',
@@ -446,7 +381,7 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('should display one messages, with an image specified', () => {
+}).add('Conversation display one message with one image', () => {
   const messages = [
     {
       message: 'Blah blah',
@@ -459,10 +394,10 @@ storiesOf('Conversation', module)
 
   return (
     <div>
-      <Conversation height={300} messages={messages} />
+      <Conversation delay={2000} height={300} messages={messages} />
     </div>
   );
-}).add('should display one messages, with an image specified but it does not exist', () => {
+}).add('Conversation display message with an image that does not exisit', () => {
   const messages = [
     {
       message: 'Blah blah',

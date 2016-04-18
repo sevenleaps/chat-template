@@ -4,7 +4,7 @@ Chat-Template is a React component that enables quick prototyping of bot convers
 
 [![npm version](https://badge.fury.io/js/chat-template.svg)](https://badge.fury.io/js/chat-template)
 
-[![Build Status](https://travis-ci.org/sevenleaps/react-components-sevenleaps.svg?branch=master)](https://travis-ci.org/sevenleaps/chat-template)
+[![Build Status](https://travis-ci.org/sevenleaps/chat-template.svg?branch=master)](https://travis-ci.org/sevenleaps/chat-template)
 #[chat-template](http://github.com/sevenleaps/chat-template)
 
 ## Installation
@@ -42,7 +42,7 @@ const MyAwesomeConversation = () =>
 
 ## Storybook examples
 
-Live stories are displayed [here](http://sevenleaps.github.io/react-components-sevenleaps/).
+Live stories are displayed [here](http://sevenleaps.github.io/chat-template/).
 We are using [react-storybook](https://github.com/kadirahq/react-storybook) to develop chat-template and all the stories code can be found in the [stories folder](https://github.com/sevenleaps/chat-template/tree/master/src/stories).
 
 This is the best place to see all the capabilities of chat-template.
