@@ -1,8 +1,14 @@
 language: node_js
+
 node_js:
+  - "4.4.2"
+  - "4"
+  - "5"
   - "stable"
+
 sudo: false
+
 script:
   - npm run lint
-  - npm test
-  - ./node_modules/.bin/codecov
+  - npm run test
+  - npm run prepublish

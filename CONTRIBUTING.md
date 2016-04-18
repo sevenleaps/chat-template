@@ -4,7 +4,7 @@ Thank you for thinking about contributing. This is your first step in being a pa
 
 ### Opening an Issue
 
-If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported or fixed](https://bitbucket.org/seven-leaps/chat-template/issues). You can search through existing issues and Pull Requests to see if someone has reported one similar to yours.
+If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported or fixed](https://github.com/sevenleaps/chat-template/issues). You can search through existing issues and Pull Requests to see if someone has reported one similar to yours.
 
 Next, create a new issue that briefly explains the problem, and provides a bit of background as to the circumstances that triggered it, and steps to reproduce it.
 
