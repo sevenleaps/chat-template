@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.17]
+
+- No Issue: Changed build status badge to point to the develop branch (conor.fennell)
+
 ## [0.0.16] - 2016-04-18
 
 - No Issue: Refactored to a more manageable structure (conor.fennell)

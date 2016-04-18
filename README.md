@@ -4,7 +4,7 @@ Chat-Template is a React component that enables quick prototyping of bot convers
 
 [![npm version](https://badge.fury.io/js/chat-template.svg)](https://badge.fury.io/js/chat-template)
 
-[![Build Status](https://travis-ci.org/sevenleaps/chat-template.svg?branch=master)](https://travis-ci.org/sevenleaps/chat-template)
+[![Build Status](https://travis-ci.org/sevenleaps/chat-template.svg?branch=develop)](https://travis-ci.org/sevenleaps/chat-template)
 #[chat-template](http://github.com/sevenleaps/chat-template)
 
 ## Installation
