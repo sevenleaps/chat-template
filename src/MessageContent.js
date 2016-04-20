@@ -43,7 +43,7 @@ const MessageContent = ({ height, message, styles }) => {
   };
 
   return (
-    <div className={css(style.contentBase, message.inbound ? style.contentBase : style.contentRight)} >
+    <div className={css(style.contentBase, message.inbound && style.contentRight)} >
       <span >{message.message}</span>
       {imageContainer(message.src, height)}
     </div>
