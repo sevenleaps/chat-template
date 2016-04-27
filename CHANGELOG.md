@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.18] - 2016-04-27
+
+- No Issue: Fixed chats not looping back around (Paul.O'Flaherty)
+
 ## [0.0.17] - 2016-04-18
 
 - No Issue: Changed build status badge to point to the develop branch (conor.fennell)

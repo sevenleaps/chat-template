@@ -91,6 +91,7 @@ class Conversation extends React.Component {
     } else {
       this.setState({
         ...this.state,
+        messagesToBeDisplayed: this.state.originalMessages.slice(),
         messages: [],
         isTyping: false,
         inbound: true,

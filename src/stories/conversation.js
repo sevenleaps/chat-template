@@ -189,7 +189,7 @@ storiesOf('Conversation', module)
       inbound: true,
       backColor: 'white',
       duration: 1500,
-      onDisplay: (id) => {console.log(id);}, // eslint-disable-line no-console
+      onDisplay: (id) => { console.log(id); }, // eslint-disable-line no-console
     },
     {
       id: 2,
@@ -197,7 +197,7 @@ storiesOf('Conversation', module)
       inbound: true,
       backColor: 'white',
       duration: 222700,
-      onDisplay: (id) => {console.log(id);}, // eslint-disable-line no-console
+      onDisplay: (id) => { console.log(id); }, // eslint-disable-line no-console
     },
     {
       id: 3,
@@ -205,7 +205,7 @@ storiesOf('Conversation', module)
       inbound: true,
       backColor: 'white',
       duration: 2500,
-      onDisplay: (id) => {console.log(id);}, // eslint-disable-line no-console
+      onDisplay: (id) => { console.log(id); }, // eslint-disable-line no-console
     },
   ];
 
