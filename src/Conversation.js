@@ -91,6 +91,7 @@ class Conversation extends React.Component {
     } else {
       this.setState({
         ...this.state,
+        messagesToBeDisplayed: this.state.originalMessages.slice(),
         messages: [],
         isTyping: false,
         inbound: true,
@@ -110,14 +111,13 @@ class Conversation extends React.Component {
         height: this.props.height || defaultStyle.conversation.height,
       },
     }, this.props.styles || {}));
-
     return (
       <div className={css(style.conversation)}>
         <ImageLoader messages={this.props.messages} />
         <div className={css(style.messages)}>
           <Messages key={this.state.reset} height={this.props.height} messages={this.state.messages} />
         </div>
-        <div className={(isInbound && css(style.inbound)) || (isOutbound && css(style.outbound)) || css(style.noTyping)}>
+        <div className={css(isInbound && style.inbound, isOutbound && style.outbound, !isTyping && style.noTyping)}>
           {isTyping && <Typing styles={typingStyles} />}
         </div>
       </div>
