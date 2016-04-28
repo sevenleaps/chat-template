@@ -1,6 +1,6 @@
 {
   "name": "chat-template",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Chat-Template is a React component that enables quick prototyping of bot conversations.",
   "repository": {
     "type": "git",
