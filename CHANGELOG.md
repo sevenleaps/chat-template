@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.20] - 2016-04-28
+
+- No Issue: Adding bundeled js files to the repository (witnessmenow)
+
 ## [0.0.19] - 2016-04-28
 
 - No Issue: Adding a bundle-js build step to create browser compatible chat-template.js (witnessmenow)
