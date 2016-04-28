@@ -15,7 +15,10 @@
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "storybook": "start-storybook -p 9010",
-    "publish-storybook": "bash .scripts/publish_storybook.sh"
+    "publish-storybook": "bash .scripts/publish_storybook.sh",
+    "bundle-js-dev": "webpack --config ./webpack.dev.config.js",
+    "bundle-js-prod": "webpack -p --config ./webpack.prod.config.js",
+    "bundle-js": "npm run test && npm run bundle-js-dev && npm run bundle-js-prod"
   },
   "devDependencies": {
     "@kadira/storybook": "^1.19.0",
