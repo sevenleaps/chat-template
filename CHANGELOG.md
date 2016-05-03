@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.21] - 2016-04-28
+
+- No Issue: Moved material-ui from a dev-dependancy to a regular dependancy (witnessmenow)
+
 ## [0.0.20] - 2016-04-28
 
 - No Issue: Adding bundeled js files to the repository (witnessmenow)
