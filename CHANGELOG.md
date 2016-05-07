@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.0.22]
+## [0.0.22] - 2016-05-07
 
 - No Issue: updated dependencies to latest (conor.fennell)
 
