@@ -20,7 +20,8 @@ storiesOf('Messages', module)
       <Messages messages={messages} />
     </div>
   );
-}).add('Messages display messages on both sides', () => {
+})
+.add('Messages display messages on both sides', () => {
   const message = {
     message: 'Test',
     inbound: true,
@@ -37,7 +38,8 @@ storiesOf('Messages', module)
       <Messages messages={messages} />
     </div>
   );
-}).add('Messages display long messages on both sides', () => {
+})
+.add('Messages display long messages on both sides', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really
@@ -69,7 +71,8 @@ storiesOf('Messages', module)
       <Messages height={300} messages={messages} />
     </div>
   );
-}).add('Messages display long messages on both sides with images and avatars', () => {
+})
+.add('Messages display long messages on both sides with images and avatars', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really

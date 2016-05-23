@@ -14,7 +14,8 @@ storiesOf('MessageContent', module)
       <MessageContent height={300} message={message} />
     </div>
   );
-}).add('MessageContent displays on the right', () => {
+})
+.add('MessageContent displays on the right', () => {
   const message = {
     message: 'Test',
     inbound: false,
@@ -25,7 +26,8 @@ storiesOf('MessageContent', module)
       <MessageContent height={300} message={message} />
     </div>
   );
-}).add('MessageContent displays on the left with an image', () => {
+})
+.add('MessageContent displays on the left with an image', () => {
   const message = {
     message: 'Test',
     inbound: true,
@@ -37,7 +39,8 @@ storiesOf('MessageContent', module)
       <MessageContent height={300} message={message} />
     </div>
   );
-}).add('MessageContent displays on the right with an image', () => {
+})
+.add('MessageContent displays on the right with an image', () => {
   const message = {
     message: 'Test',
     inbound: false,
@@ -49,7 +52,8 @@ storiesOf('MessageContent', module)
       <MessageContent height={300} message={message} />
     </div>
   );
-}).add('MessageContent displays on the left with an image and a long message', () => {
+})
+.add('MessageContent displays on the left with an image and a long message', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really
@@ -69,7 +73,8 @@ storiesOf('MessageContent', module)
       <MessageContent height={300} message={message} />
     </div>
   );
-}).add('MessageContent displays on the right with an image and a long message', () => {
+})
+.add('MessageContent displays on the right with an image and a long message', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really
@@ -89,7 +94,8 @@ storiesOf('MessageContent', module)
       <MessageContent height={300} message={message} />
     </div>
   );
-}).add('MessageContent displays with white text', () => {
+})
+.add('MessageContent displays with white text', () => {
   const message = {
     message: 'I should be white',
     inbound: false,

@@ -61,7 +61,8 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('Conversation configured for slow display of messages', () => {
+})
+.add('Conversation configured for slow display of messages', () => {
   const messages = [
     {
       message: 'Paul',
@@ -106,7 +107,8 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('Conversation configured with an initial delay of 4 seconds', () => {
+})
+.add('Conversation configured with an initial delay of 4 seconds', () => {
   const messages = [
     {
       message: 'Paul',
@@ -151,7 +153,8 @@ storiesOf('Conversation', module)
       <Conversation delay={4000} height={300} messages={messages} />
     </div>
   );
-}).add('Conversation configured with a tiny initall delay and fast messages', () => {
+})
+.add('Conversation configured with a tiny initall delay and fast messages', () => {
   const messages = [
     {
       message: 'Paul',
@@ -181,7 +184,8 @@ storiesOf('Conversation', module)
       <Conversation delay={200} height={300} messages={messages} />
     </div>
   );
-}).add('Conversation configured to run onDisplay functions after the messages are displayed', () => {
+})
+.add('Conversation configured to run onDisplay functions after the messages are displayed', () => {
   const messages = [
     {
       id: 1,
@@ -214,7 +218,8 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('Conversation displays messages with images', () => {
+})
+.add('Conversation displays messages with images', () => {
   const messages = [
     {
       message: 'Blah blah 1',
@@ -243,7 +248,8 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('Conversation displays messages with large sized images', () => {
+})
+.add('Conversation displays messages with large sized images', () => {
   const messages = [
     {
       message: 'Blah blah',
@@ -273,7 +279,8 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('Conversation displays a lot of messages with images', () => {
+})
+.add('Conversation displays a lot of messages with images', () => {
   const messages = [
     {
       message: 'Blah blah',
@@ -324,7 +331,8 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('Conversation displays both message images and avatars', () => {
+})
+.add('Conversation displays both message images and avatars', () => {
   const messages = [
     {
       message: 'Blah blah',
@@ -381,7 +389,8 @@ storiesOf('Conversation', module)
       <Conversation height={300} messages={messages} />
     </div>
   );
-}).add('Conversation display one message with one image', () => {
+})
+.add('Conversation display one message with one image', () => {
   const messages = [
     {
       message: 'Blah blah',
@@ -397,7 +406,8 @@ storiesOf('Conversation', module)
       <Conversation delay={2000} height={300} messages={messages} />
     </div>
   );
-}).add('Conversation display message with an image that does not exisit', () => {
+})
+.add('Conversation display message with an image that does not exisit', () => {
   const messages = [
     {
       message: 'Blah blah',
