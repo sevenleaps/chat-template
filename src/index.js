@@ -5,7 +5,6 @@ import Message from './Message';
 import MessageContent from './MessageContent';
 import Typing from './Typing';
 
-
 export {
   Avatar,
   Conversation,

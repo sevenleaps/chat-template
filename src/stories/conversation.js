@@ -108,6 +108,28 @@ storiesOf('Conversation', module)
     </div>
   );
 })
+.add('Conversation configured to end at the last message', () => {
+  const messages = [
+    {
+      message: 'Paul',
+      inbound: true,
+      backColor: 'white',
+      duration: 1000,
+    },
+    {
+      message: 'testing',
+      inbound: false,
+      backColor: '#dcf8c6',
+      duration: 800,
+    },
+  ];
+
+  return (
+    <div>
+      <Conversation height={300} messages={messages} turnOffLoop />
+    </div>
+  );
+})
 .add('Conversation configured with an initial delay of 4 seconds', () => {
   const messages = [
     {
