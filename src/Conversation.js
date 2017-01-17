@@ -49,6 +49,7 @@ class Conversation extends React.Component {
       isTyping: false,
       inbound: true,
       reset: false,
+      turnOffLoop: props.turnOffLoop,
     };
   }
 
@@ -88,7 +89,7 @@ class Conversation extends React.Component {
         reset,
       }, onDisplay);
       this.timeoutId = setTimeout(this.showMessage, message.duration || 800);
-    } else {
+    } else if (!this.state.turnOffLoop) {
       this.setState({
         ...this.state,
         messagesToBeDisplayed: this.state.originalMessages.slice(),
@@ -128,6 +129,7 @@ class Conversation extends React.Component {
 Conversation.propTypes = {
   delay: PropTypes.number,
   height: PropTypes.number,
+  turnOffLoop: PropTypes.bool,
   messages: PropTypes.arrayOf(
     PropTypes.shape({
       message: PropTypes.string,
