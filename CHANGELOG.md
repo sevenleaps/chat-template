@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.23] - 2017-01-19
+
+- Fixed #3: Adding a feature to persist messages (Paul.O'Flaherty)
+
 ## [0.0.22] - 2016-05-07
 
 - No Issue: updated dependencies to latest (conor.fennell)
