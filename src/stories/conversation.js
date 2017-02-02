@@ -130,6 +130,76 @@ storiesOf('Conversation', module)
     </div>
   );
 })
+.add('Conversation configured to start with a history of messages', () => {
+  const messagesForConversation = [
+    {
+      message: 'Fire',
+      inbound: true,
+      backColor: 'white',
+      duration: 1000,
+    },
+    {
+      message: 'Water',
+      inbound: false,
+      backColor: '#dcf8c6',
+      duration: 800,
+    },
+  ];
+  const historicMessages = [
+    {
+      message: 'Earth',
+      inbound: true,
+      backColor: 'white',
+      duration: 1000,
+    },
+    {
+      message: 'Wind',
+      inbound: false,
+      backColor: '#dcf8c6',
+      duration: 800,
+    },
+  ];
+  return (
+    <div>
+      <Conversation historicMessages={historicMessages} messages={messagesForConversation} />
+    </div>
+  );
+})
+.add('Conversation configured to start with a history of messages, turning the loop off', () => {
+  const messagesForConversation = [
+    {
+      message: 'Fire',
+      inbound: true,
+      backColor: 'white',
+      duration: 1000,
+    },
+    {
+      message: 'Water',
+      inbound: false,
+      backColor: '#dcf8c6',
+      duration: 800,
+    },
+  ];
+  const historicMessages = [
+    {
+      message: 'Earth',
+      inbound: true,
+      backColor: 'white',
+      duration: 1000,
+    },
+    {
+      message: 'Wind',
+      inbound: false,
+      backColor: '#dcf8c6',
+      duration: 800,
+    },
+  ];
+  return (
+    <div>
+      <Conversation historicMessages={historicMessages} messages={messagesForConversation} turnOffLoop />
+    </div>
+  );
+})
 .add('Conversation configured with an initial delay of 4 seconds', () => {
   const messages = [
     {

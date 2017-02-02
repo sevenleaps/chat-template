@@ -1,3 +1,4 @@
+import Chat from './chat.js';// eslint-disable-line no-unused-vars
 import Conversation from './conversation.js';// eslint-disable-line no-unused-vars
 import Avatar from './avatar.js';// eslint-disable-line no-unused-vars
 import Message from './message.js';// eslint-disable-line no-unused-vars
