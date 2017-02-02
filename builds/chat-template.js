@@ -49,7 +49,7 @@ var showChatTemplate =
 
 	var _index = __webpack_require__(1);
 
-	var _reactDom = __webpack_require__(297);
+	var _reactDom = __webpack_require__(298);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -77,35 +77,40 @@ var showChatTemplate =
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Typing = exports.MessageContent = exports.Message = exports.ImageLoader = exports.Conversation = exports.Avatar = undefined;
+	exports.Typing = exports.MessageContent = exports.Message = exports.ImageLoader = exports.Conversation = exports.Chat = exports.Avatar = undefined;
 
 	var _Avatar = __webpack_require__(2);
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
-	var _Conversation = __webpack_require__(155);
+	var _Chat = __webpack_require__(155);
+
+	var _Chat2 = _interopRequireDefault(_Chat);
+
+	var _Conversation = __webpack_require__(156);
 
 	var _Conversation2 = _interopRequireDefault(_Conversation);
 
-	var _ImageLoader = __webpack_require__(296);
+	var _ImageLoader = __webpack_require__(297);
 
 	var _ImageLoader2 = _interopRequireDefault(_ImageLoader);
 
-	var _Message = __webpack_require__(157);
+	var _Message = __webpack_require__(158);
 
 	var _Message2 = _interopRequireDefault(_Message);
 
-	var _MessageContent = __webpack_require__(158);
+	var _MessageContent = __webpack_require__(159);
 
 	var _MessageContent2 = _interopRequireDefault(_MessageContent);
 
-	var _Typing = __webpack_require__(295);
+	var _Typing = __webpack_require__(296);
 
 	var _Typing2 = _interopRequireDefault(_Typing);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.Avatar = _Avatar2.default;
+	exports.Chat = _Chat2.default;
 	exports.Conversation = _Conversation2.default;
 	exports.ImageLoader = _ImageLoader2.default;
 	exports.Message = _Message2.default;
@@ -14697,6 +14702,142 @@ var showChatTemplate =
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Conversation = __webpack_require__(156);
+
+	var _Conversation2 = _interopRequireDefault(_Conversation);
+
+	var _aphrodite = __webpack_require__(40);
+
+	var _objectAssignDeep = __webpack_require__(61);
+
+	var _objectAssignDeep2 = _interopRequireDefault(_objectAssignDeep);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var defaultStyle = {
+	  chat: {
+	    position: 'relative',
+	    overflow: 'hidden',
+	    height: '340px'
+	  },
+	  inputDiv: {
+	    height: '40px',
+	    width: '100%',
+	    backgroundColor: '#efefef',
+	    borderRadius: '5px'
+	  },
+	  input: {
+	    margin: '8px',
+	    width: 'calc(100% - 20px)',
+	    height: 'calc(100% - 20px)',
+	    borderRadius: '5px'
+	  }
+	};
+
+	var Chat = function (_React$Component) {
+	  _inherits(Chat, _React$Component);
+
+	  function Chat(props) {
+	    _classCallCheck(this, Chat);
+
+	    var _this = _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
+
+	    _this.state = {
+	      messages: props.messages ? props.messages.slice() : [],
+	      historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
+	      turnOffLoop: props.turnOffLoop
+	    };
+	    _this.keyPress = _this.keyPress.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(Chat, [{
+	    key: 'addMessage',
+	    value: function addMessage(value) {
+	      var message = {
+	        message: value,
+	        inbound: false,
+	        backColor: '#dcf8c6',
+	        duration: 800
+	      };
+	      this.state.messages.push(message);
+	      this.setState({ messages: this.state.messages });
+	    }
+	  }, {
+	    key: 'keyPress',
+	    value: function keyPress(e) {
+	      if (e.key === 'Enter' && e.target.value) {
+	        this.addMessage(e.target.value);
+	        e.target.value = ''; // eslint-disable-line no-param-reassign
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var style = _aphrodite.StyleSheet.create((0, _objectAssignDeep2.default)({}, defaultStyle, this.props.styles || {}));
+	      return _react2.default.createElement(
+	        'div',
+	        { className: (0, _aphrodite.css)(style.chat) },
+	        _react2.default.createElement(_Conversation2.default, { height: 300, historicMessages: this.state.historicMessages, messages: this.state.messages, turnOffLoop: true }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: (0, _aphrodite.css)(style.inputDiv) },
+	          _react2.default.createElement('input', { type: 'text', onKeyPress: this.keyPress, className: (0, _aphrodite.css)(style.input), placeholder: 'Type your message here...' })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Chat;
+	}(_react2.default.Component);
+
+	Chat.propTypes = {
+	  turnOffLoop: _react.PropTypes.bool,
+	  messages: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+	    message: _react.PropTypes.string,
+	    src: _react.PropTypes.string,
+	    inbound: _react.PropTypes.bool.isRequired,
+	    avatar: _react.PropTypes.string,
+	    duration: _react.PropTypes.number,
+	    backColor: _react.PropTypes.string,
+	    textColor: _react.PropTypes.string
+	  })),
+	  historicMessages: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+	    message: _react.PropTypes.string,
+	    src: _react.PropTypes.string,
+	    inbound: _react.PropTypes.bool.isRequired,
+	    avatar: _react.PropTypes.string,
+	    duration: _react.PropTypes.number,
+	    backColor: _react.PropTypes.string,
+	    textColor: _react.PropTypes.string
+	  })),
+	  styles: _react.PropTypes.object
+	};
+
+	exports.default = Chat;
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -14705,15 +14846,15 @@ var showChatTemplate =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Messages = __webpack_require__(156);
+	var _Messages = __webpack_require__(157);
 
 	var _Messages2 = _interopRequireDefault(_Messages);
 
-	var _Typing = __webpack_require__(295);
+	var _Typing = __webpack_require__(296);
 
 	var _Typing2 = _interopRequireDefault(_Typing);
 
-	var _ImageLoader = __webpack_require__(296);
+	var _ImageLoader = __webpack_require__(297);
 
 	var _ImageLoader2 = _interopRequireDefault(_ImageLoader);
 
@@ -14801,8 +14942,8 @@ var showChatTemplate =
 	        _this.timeoutId = setTimeout(_this.showMessage, message.duration || 800);
 	      } else if (!_this.state.turnOffLoop) {
 	        _this.setState(_extends({}, _this.state, {
-	          messagesToBeDisplayed: _this.state.originalMessages.slice(),
-	          messages: [],
+	          messagesToBeDisplayed: _this.state.originalMessagesToBeDisplayed.slice(),
+	          messages: _this.state.historicMessages.slice(),
 	          isTyping: false,
 	          inbound: true,
 	          reset: !reset
@@ -14813,9 +14954,10 @@ var showChatTemplate =
 
 	    _this.state = {
 	      startingDelay: props.delay || 1000,
-	      messages: [],
+	      messages: props.historicMessages ? props.historicMessages.slice() : [],
+	      historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
 	      messagesToBeDisplayed: props.messages.slice(),
-	      originalMessages: props.messages.slice(),
+	      originalMessagesToBeDisplayed: props.messages.slice(),
 	      isTyping: false,
 	      inbound: true,
 	      reset: false,
@@ -14828,6 +14970,20 @@ var showChatTemplate =
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var previousMessagesLength = this.state.messagesToBeDisplayed.length + this.state.messages.length - this.state.historicMessages.length;
+
+	      if (nextProps.messages.length > previousMessagesLength) {
+	        clearTimeout(this.timeoutId);
+	        this.setState({
+	          messagesToBeDisplayed: this.state.messagesToBeDisplayed.concat(nextProps.messages.slice(previousMessagesLength))
+	        });
+
+	        this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
+	      }
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
@@ -14883,13 +15039,22 @@ var showChatTemplate =
 	    backColor: _react.PropTypes.string,
 	    textColor: _react.PropTypes.string
 	  })).isRequired,
+	  historicMessages: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+	    message: _react.PropTypes.string,
+	    src: _react.PropTypes.string,
+	    inbound: _react.PropTypes.bool.isRequired,
+	    avatar: _react.PropTypes.string,
+	    duration: _react.PropTypes.number,
+	    backColor: _react.PropTypes.string,
+	    textColor: _react.PropTypes.string
+	  })),
 	  styles: _react.PropTypes.object
 	};
 
 	exports.default = Conversation;
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14902,11 +15067,11 @@ var showChatTemplate =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Message = __webpack_require__(157);
+	var _Message = __webpack_require__(158);
 
 	var _Message2 = _interopRequireDefault(_Message);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(159);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(160);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
@@ -14968,7 +15133,7 @@ var showChatTemplate =
 	exports.default = Messages;
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14985,7 +15150,7 @@ var showChatTemplate =
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
-	var _MessageContent = __webpack_require__(158);
+	var _MessageContent = __webpack_require__(159);
 
 	var _MessageContent2 = _interopRequireDefault(_MessageContent);
 
@@ -15043,7 +15208,7 @@ var showChatTemplate =
 	exports.default = Message;
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15140,13 +15305,13 @@ var showChatTemplate =
 	exports.default = MessageContent;
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(160);
+	module.exports = __webpack_require__(161);
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15166,8 +15331,8 @@ var showChatTemplate =
 
 	var React = __webpack_require__(4);
 
-	var ReactTransitionGroup = __webpack_require__(161);
-	var ReactCSSTransitionGroupChild = __webpack_require__(164);
+	var ReactTransitionGroup = __webpack_require__(162);
+	var ReactCSSTransitionGroupChild = __webpack_require__(165);
 
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -15238,7 +15403,7 @@ var showChatTemplate =
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15257,7 +15422,7 @@ var showChatTemplate =
 	var _assign = __webpack_require__(6);
 
 	var React = __webpack_require__(4);
-	var ReactTransitionChildMapping = __webpack_require__(162);
+	var ReactTransitionChildMapping = __webpack_require__(163);
 
 	var emptyFunction = __webpack_require__(13);
 
@@ -15454,7 +15619,7 @@ var showChatTemplate =
 	module.exports = ReactTransitionGroup;
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15470,7 +15635,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var flattenChildren = __webpack_require__(163);
+	var flattenChildren = __webpack_require__(164);
 
 	var ReactTransitionChildMapping = {
 	  /**
@@ -15556,7 +15721,7 @@ var showChatTemplate =
 	module.exports = ReactTransitionChildMapping;
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -15611,7 +15776,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15628,10 +15793,10 @@ var showChatTemplate =
 	'use strict';
 
 	var React = __webpack_require__(4);
-	var ReactDOM = __webpack_require__(165);
+	var ReactDOM = __webpack_require__(166);
 
-	var CSSCore = __webpack_require__(293);
-	var ReactTransitionEvents = __webpack_require__(294);
+	var CSSCore = __webpack_require__(294);
+	var ReactTransitionEvents = __webpack_require__(295);
 
 	var onlyChild = __webpack_require__(39);
 
@@ -15776,7 +15941,7 @@ var showChatTemplate =
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -15794,16 +15959,16 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactDefaultInjection = __webpack_require__(169);
-	var ReactMount = __webpack_require__(285);
-	var ReactReconciler = __webpack_require__(188);
-	var ReactUpdates = __webpack_require__(185);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactDefaultInjection = __webpack_require__(170);
+	var ReactMount = __webpack_require__(286);
+	var ReactReconciler = __webpack_require__(189);
+	var ReactUpdates = __webpack_require__(186);
 	var ReactVersion = __webpack_require__(38);
 
-	var findDOMNode = __webpack_require__(290);
-	var getNativeComponentFromComposite = __webpack_require__(291);
-	var renderSubtreeIntoContainer = __webpack_require__(292);
+	var findDOMNode = __webpack_require__(291);
+	var getNativeComponentFromComposite = __webpack_require__(292);
+	var renderSubtreeIntoContainer = __webpack_require__(293);
 	var warning = __webpack_require__(12);
 
 	ReactDefaultInjection.inject();
@@ -15883,7 +16048,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -15899,8 +16064,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(167);
-	var ReactDOMComponentFlags = __webpack_require__(168);
+	var DOMProperty = __webpack_require__(168);
+	var ReactDOMComponentFlags = __webpack_require__(169);
 
 	var invariant = __webpack_require__(9);
 
@@ -16075,7 +16240,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -16294,7 +16459,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports) {
 
 	/**
@@ -16317,7 +16482,7 @@ var showChatTemplate =
 	module.exports = ReactDOMComponentFlags;
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16333,24 +16498,24 @@ var showChatTemplate =
 
 	'use strict';
 
-	var BeforeInputEventPlugin = __webpack_require__(170);
-	var ChangeEventPlugin = __webpack_require__(184);
-	var DefaultEventPluginOrder = __webpack_require__(195);
-	var EnterLeaveEventPlugin = __webpack_require__(196);
-	var HTMLDOMPropertyConfig = __webpack_require__(201);
-	var ReactComponentBrowserEnvironment = __webpack_require__(202);
-	var ReactDOMComponent = __webpack_require__(216);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactDOMEmptyComponent = __webpack_require__(256);
-	var ReactDOMTreeTraversal = __webpack_require__(257);
-	var ReactDOMTextComponent = __webpack_require__(258);
-	var ReactDefaultBatchingStrategy = __webpack_require__(259);
-	var ReactEventListener = __webpack_require__(260);
-	var ReactInjection = __webpack_require__(263);
-	var ReactReconcileTransaction = __webpack_require__(264);
-	var SVGDOMPropertyConfig = __webpack_require__(272);
-	var SelectEventPlugin = __webpack_require__(273);
-	var SimpleEventPlugin = __webpack_require__(274);
+	var BeforeInputEventPlugin = __webpack_require__(171);
+	var ChangeEventPlugin = __webpack_require__(185);
+	var DefaultEventPluginOrder = __webpack_require__(196);
+	var EnterLeaveEventPlugin = __webpack_require__(197);
+	var HTMLDOMPropertyConfig = __webpack_require__(202);
+	var ReactComponentBrowserEnvironment = __webpack_require__(203);
+	var ReactDOMComponent = __webpack_require__(217);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactDOMEmptyComponent = __webpack_require__(257);
+	var ReactDOMTreeTraversal = __webpack_require__(258);
+	var ReactDOMTextComponent = __webpack_require__(259);
+	var ReactDefaultBatchingStrategy = __webpack_require__(260);
+	var ReactEventListener = __webpack_require__(261);
+	var ReactInjection = __webpack_require__(264);
+	var ReactReconcileTransaction = __webpack_require__(265);
+	var SVGDOMPropertyConfig = __webpack_require__(273);
+	var SelectEventPlugin = __webpack_require__(274);
+	var SimpleEventPlugin = __webpack_require__(275);
 
 	var alreadyInjected = false;
 
@@ -16406,7 +16571,7 @@ var showChatTemplate =
 	};
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16422,12 +16587,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(171);
-	var EventPropagators = __webpack_require__(172);
+	var EventConstants = __webpack_require__(172);
+	var EventPropagators = __webpack_require__(173);
 	var ExecutionEnvironment = __webpack_require__(22);
-	var FallbackCompositionState = __webpack_require__(179);
-	var SyntheticCompositionEvent = __webpack_require__(181);
-	var SyntheticInputEvent = __webpack_require__(183);
+	var FallbackCompositionState = __webpack_require__(180);
+	var SyntheticCompositionEvent = __webpack_require__(182);
+	var SyntheticInputEvent = __webpack_require__(184);
 
 	var keyOf = __webpack_require__(33);
 
@@ -16799,7 +16964,7 @@ var showChatTemplate =
 	module.exports = BeforeInputEventPlugin;
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16901,7 +17066,7 @@ var showChatTemplate =
 	module.exports = EventConstants;
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -16917,12 +17082,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(171);
-	var EventPluginHub = __webpack_require__(173);
-	var EventPluginUtils = __webpack_require__(175);
+	var EventConstants = __webpack_require__(172);
+	var EventPluginHub = __webpack_require__(174);
+	var EventPluginUtils = __webpack_require__(176);
 
-	var accumulateInto = __webpack_require__(177);
-	var forEachAccumulated = __webpack_require__(178);
+	var accumulateInto = __webpack_require__(178);
+	var forEachAccumulated = __webpack_require__(179);
 	var warning = __webpack_require__(12);
 
 	var PropagationPhases = EventConstants.PropagationPhases;
@@ -17044,7 +17209,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -17060,12 +17225,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventPluginRegistry = __webpack_require__(174);
-	var EventPluginUtils = __webpack_require__(175);
-	var ReactErrorUtils = __webpack_require__(176);
+	var EventPluginRegistry = __webpack_require__(175);
+	var EventPluginUtils = __webpack_require__(176);
+	var ReactErrorUtils = __webpack_require__(177);
 
-	var accumulateInto = __webpack_require__(177);
-	var forEachAccumulated = __webpack_require__(178);
+	var accumulateInto = __webpack_require__(178);
+	var forEachAccumulated = __webpack_require__(179);
 	var invariant = __webpack_require__(9);
 
 	/**
@@ -17285,7 +17450,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -17532,7 +17697,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -17548,8 +17713,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(171);
-	var ReactErrorUtils = __webpack_require__(176);
+	var EventConstants = __webpack_require__(172);
+	var ReactErrorUtils = __webpack_require__(177);
 
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
@@ -17765,7 +17930,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -17847,7 +18012,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -17912,7 +18077,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports) {
 
 	/**
@@ -17947,7 +18112,7 @@ var showChatTemplate =
 	module.exports = forEachAccumulated;
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -17967,7 +18132,7 @@ var showChatTemplate =
 
 	var PooledClass = __webpack_require__(8);
 
-	var getTextContentAccessor = __webpack_require__(180);
+	var getTextContentAccessor = __webpack_require__(181);
 
 	/**
 	 * This helper class stores information about text content of a target node,
@@ -18047,7 +18212,7 @@ var showChatTemplate =
 	module.exports = FallbackCompositionState;
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18085,7 +18250,7 @@ var showChatTemplate =
 	module.exports = getTextContentAccessor;
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18101,7 +18266,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(182);
+	var SyntheticEvent = __webpack_require__(183);
 
 	/**
 	 * @interface Event
@@ -18126,7 +18291,7 @@ var showChatTemplate =
 	module.exports = SyntheticCompositionEvent;
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -18393,7 +18558,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18409,7 +18574,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(182);
+	var SyntheticEvent = __webpack_require__(183);
 
 	/**
 	 * @interface Event
@@ -18435,7 +18600,7 @@ var showChatTemplate =
 	module.exports = SyntheticInputEvent;
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18451,17 +18616,17 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(171);
-	var EventPluginHub = __webpack_require__(173);
-	var EventPropagators = __webpack_require__(172);
+	var EventConstants = __webpack_require__(172);
+	var EventPluginHub = __webpack_require__(174);
+	var EventPropagators = __webpack_require__(173);
 	var ExecutionEnvironment = __webpack_require__(22);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactUpdates = __webpack_require__(185);
-	var SyntheticEvent = __webpack_require__(182);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactUpdates = __webpack_require__(186);
+	var SyntheticEvent = __webpack_require__(183);
 
-	var getEventTarget = __webpack_require__(192);
-	var isEventSupported = __webpack_require__(193);
-	var isTextInputElement = __webpack_require__(194);
+	var getEventTarget = __webpack_require__(193);
+	var isEventSupported = __webpack_require__(194);
+	var isTextInputElement = __webpack_require__(195);
 	var keyOf = __webpack_require__(33);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -18765,7 +18930,7 @@ var showChatTemplate =
 	module.exports = ChangeEventPlugin;
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -18783,12 +18948,12 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var CallbackQueue = __webpack_require__(186);
+	var CallbackQueue = __webpack_require__(187);
 	var PooledClass = __webpack_require__(8);
-	var ReactFeatureFlags = __webpack_require__(187);
+	var ReactFeatureFlags = __webpack_require__(188);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactReconciler = __webpack_require__(188);
-	var Transaction = __webpack_require__(191);
+	var ReactReconciler = __webpack_require__(189);
+	var Transaction = __webpack_require__(192);
 
 	var invariant = __webpack_require__(9);
 
@@ -19030,7 +19195,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -19141,7 +19306,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports) {
 
 	/**
@@ -19167,7 +19332,7 @@ var showChatTemplate =
 	module.exports = ReactFeatureFlags;
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -19183,7 +19348,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactRef = __webpack_require__(189);
+	var ReactRef = __webpack_require__(190);
 	var ReactInstrumentation = __webpack_require__(20);
 
 	var invariant = __webpack_require__(9);
@@ -19344,7 +19509,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19360,7 +19525,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactOwner = __webpack_require__(190);
+	var ReactOwner = __webpack_require__(191);
 
 	var ReactRef = {};
 
@@ -19427,7 +19592,7 @@ var showChatTemplate =
 	module.exports = ReactRef;
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -19525,7 +19690,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 191 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -19762,7 +19927,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 192 */
+/* 193 */
 /***/ function(module, exports) {
 
 	/**
@@ -19802,7 +19967,7 @@ var showChatTemplate =
 	module.exports = getEventTarget;
 
 /***/ },
-/* 193 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19867,7 +20032,7 @@ var showChatTemplate =
 	module.exports = isEventSupported;
 
 /***/ },
-/* 194 */
+/* 195 */
 /***/ function(module, exports) {
 
 	/**
@@ -19913,7 +20078,7 @@ var showChatTemplate =
 	module.exports = isTextInputElement;
 
 /***/ },
-/* 195 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19945,7 +20110,7 @@ var showChatTemplate =
 	module.exports = DefaultEventPluginOrder;
 
 /***/ },
-/* 196 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19961,10 +20126,10 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(171);
-	var EventPropagators = __webpack_require__(172);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var SyntheticMouseEvent = __webpack_require__(197);
+	var EventConstants = __webpack_require__(172);
+	var EventPropagators = __webpack_require__(173);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var SyntheticMouseEvent = __webpack_require__(198);
 
 	var keyOf = __webpack_require__(33);
 
@@ -20055,7 +20220,7 @@ var showChatTemplate =
 	module.exports = EnterLeaveEventPlugin;
 
 /***/ },
-/* 197 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20071,10 +20236,10 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(198);
-	var ViewportMetrics = __webpack_require__(199);
+	var SyntheticUIEvent = __webpack_require__(199);
+	var ViewportMetrics = __webpack_require__(200);
 
-	var getEventModifierState = __webpack_require__(200);
+	var getEventModifierState = __webpack_require__(201);
 
 	/**
 	 * @interface MouseEvent
@@ -20132,7 +20297,7 @@ var showChatTemplate =
 	module.exports = SyntheticMouseEvent;
 
 /***/ },
-/* 198 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20148,9 +20313,9 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(182);
+	var SyntheticEvent = __webpack_require__(183);
 
-	var getEventTarget = __webpack_require__(192);
+	var getEventTarget = __webpack_require__(193);
 
 	/**
 	 * @interface UIEvent
@@ -20196,7 +20361,7 @@ var showChatTemplate =
 	module.exports = SyntheticUIEvent;
 
 /***/ },
-/* 199 */
+/* 200 */
 /***/ function(module, exports) {
 
 	/**
@@ -20228,7 +20393,7 @@ var showChatTemplate =
 	module.exports = ViewportMetrics;
 
 /***/ },
-/* 200 */
+/* 201 */
 /***/ function(module, exports) {
 
 	/**
@@ -20276,7 +20441,7 @@ var showChatTemplate =
 	module.exports = getEventModifierState;
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20292,7 +20457,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(167);
+	var DOMProperty = __webpack_require__(168);
 
 	var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
 	var HAS_BOOLEAN_VALUE = DOMProperty.injection.HAS_BOOLEAN_VALUE;
@@ -20490,7 +20655,7 @@ var showChatTemplate =
 	module.exports = HTMLDOMPropertyConfig;
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20506,8 +20671,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMChildrenOperations = __webpack_require__(203);
-	var ReactDOMIDOperations = __webpack_require__(215);
+	var DOMChildrenOperations = __webpack_require__(204);
+	var ReactDOMIDOperations = __webpack_require__(216);
 
 	/**
 	 * Abstracts away all functionality of the reconciler that requires knowledge of
@@ -20534,7 +20699,7 @@ var showChatTemplate =
 	module.exports = ReactComponentBrowserEnvironment;
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -20550,15 +20715,15 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMLazyTree = __webpack_require__(204);
-	var Danger = __webpack_require__(210);
-	var ReactMultiChildUpdateTypes = __webpack_require__(214);
-	var ReactDOMComponentTree = __webpack_require__(166);
+	var DOMLazyTree = __webpack_require__(205);
+	var Danger = __webpack_require__(211);
+	var ReactMultiChildUpdateTypes = __webpack_require__(215);
+	var ReactDOMComponentTree = __webpack_require__(167);
 	var ReactInstrumentation = __webpack_require__(20);
 
-	var createMicrosoftUnsafeLocalFunction = __webpack_require__(206);
-	var setInnerHTML = __webpack_require__(209);
-	var setTextContent = __webpack_require__(207);
+	var createMicrosoftUnsafeLocalFunction = __webpack_require__(207);
+	var setInnerHTML = __webpack_require__(210);
+	var setTextContent = __webpack_require__(208);
 
 	function getNodeAfter(parentNode, node) {
 	  // Special case for text components, which return [open, close] comments
@@ -20734,7 +20899,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20750,10 +20915,10 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMNamespaces = __webpack_require__(205);
+	var DOMNamespaces = __webpack_require__(206);
 
-	var createMicrosoftUnsafeLocalFunction = __webpack_require__(206);
-	var setTextContent = __webpack_require__(207);
+	var createMicrosoftUnsafeLocalFunction = __webpack_require__(207);
+	var setTextContent = __webpack_require__(208);
 
 	var ELEMENT_NODE_TYPE = 1;
 	var DOCUMENT_FRAGMENT_NODE_TYPE = 11;
@@ -20856,7 +21021,7 @@ var showChatTemplate =
 	module.exports = DOMLazyTree;
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports) {
 
 	/**
@@ -20881,7 +21046,7 @@ var showChatTemplate =
 	module.exports = DOMNamespaces;
 
 /***/ },
-/* 206 */
+/* 207 */
 /***/ function(module, exports) {
 
 	/**
@@ -20918,7 +21083,7 @@ var showChatTemplate =
 	module.exports = createMicrosoftUnsafeLocalFunction;
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20935,8 +21100,8 @@ var showChatTemplate =
 	'use strict';
 
 	var ExecutionEnvironment = __webpack_require__(22);
-	var escapeTextContentForBrowser = __webpack_require__(208);
-	var setInnerHTML = __webpack_require__(209);
+	var escapeTextContentForBrowser = __webpack_require__(209);
+	var setInnerHTML = __webpack_require__(210);
 
 	/**
 	 * Set the textContent property of a node, ensuring that whitespace is preserved
@@ -20963,7 +21128,7 @@ var showChatTemplate =
 	module.exports = setTextContent;
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports) {
 
 	/**
@@ -21006,7 +21171,7 @@ var showChatTemplate =
 	module.exports = escapeTextContentForBrowser;
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21027,7 +21192,7 @@ var showChatTemplate =
 	var WHITESPACE_TEST = /^[ \r\n\t\f]/;
 	var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
 
-	var createMicrosoftUnsafeLocalFunction = __webpack_require__(206);
+	var createMicrosoftUnsafeLocalFunction = __webpack_require__(207);
 
 	/**
 	 * Set the innerHTML property of a node, ensuring that whitespace is preserved
@@ -21093,7 +21258,7 @@ var showChatTemplate =
 	module.exports = setInnerHTML;
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -21109,12 +21274,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMLazyTree = __webpack_require__(204);
+	var DOMLazyTree = __webpack_require__(205);
 	var ExecutionEnvironment = __webpack_require__(22);
 
-	var createNodesFromMarkup = __webpack_require__(211);
+	var createNodesFromMarkup = __webpack_require__(212);
 	var emptyFunction = __webpack_require__(13);
-	var getMarkupWrap = __webpack_require__(213);
+	var getMarkupWrap = __webpack_require__(214);
 	var invariant = __webpack_require__(9);
 
 	var OPEN_TAG_NAME_EXP = /^(<[^ \/>]+)/;
@@ -21243,7 +21408,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -21263,8 +21428,8 @@ var showChatTemplate =
 
 	var ExecutionEnvironment = __webpack_require__(22);
 
-	var createArrayFromMixed = __webpack_require__(212);
-	var getMarkupWrap = __webpack_require__(213);
+	var createArrayFromMixed = __webpack_require__(213);
+	var getMarkupWrap = __webpack_require__(214);
 	var invariant = __webpack_require__(9);
 
 	/**
@@ -21332,7 +21497,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -21464,7 +21629,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -21564,7 +21729,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21601,7 +21766,7 @@ var showChatTemplate =
 	module.exports = ReactMultiChildUpdateTypes;
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21617,8 +21782,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMChildrenOperations = __webpack_require__(203);
-	var ReactDOMComponentTree = __webpack_require__(166);
+	var DOMChildrenOperations = __webpack_require__(204);
+	var ReactDOMComponentTree = __webpack_require__(167);
 
 	/**
 	 * Operations used to process updates to DOM nodes.
@@ -21640,7 +21805,7 @@ var showChatTemplate =
 	module.exports = ReactDOMIDOperations;
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -21660,35 +21825,35 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var AutoFocusUtils = __webpack_require__(217);
-	var CSSPropertyOperations = __webpack_require__(219);
-	var DOMLazyTree = __webpack_require__(204);
-	var DOMNamespaces = __webpack_require__(205);
-	var DOMProperty = __webpack_require__(167);
-	var DOMPropertyOperations = __webpack_require__(227);
-	var EventConstants = __webpack_require__(171);
-	var EventPluginHub = __webpack_require__(173);
-	var EventPluginRegistry = __webpack_require__(174);
-	var ReactBrowserEventEmitter = __webpack_require__(232);
-	var ReactComponentBrowserEnvironment = __webpack_require__(202);
-	var ReactDOMButton = __webpack_require__(235);
-	var ReactDOMComponentFlags = __webpack_require__(168);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactDOMInput = __webpack_require__(237);
-	var ReactDOMOption = __webpack_require__(239);
-	var ReactDOMSelect = __webpack_require__(240);
-	var ReactDOMTextarea = __webpack_require__(241);
+	var AutoFocusUtils = __webpack_require__(218);
+	var CSSPropertyOperations = __webpack_require__(220);
+	var DOMLazyTree = __webpack_require__(205);
+	var DOMNamespaces = __webpack_require__(206);
+	var DOMProperty = __webpack_require__(168);
+	var DOMPropertyOperations = __webpack_require__(228);
+	var EventConstants = __webpack_require__(172);
+	var EventPluginHub = __webpack_require__(174);
+	var EventPluginRegistry = __webpack_require__(175);
+	var ReactBrowserEventEmitter = __webpack_require__(233);
+	var ReactComponentBrowserEnvironment = __webpack_require__(203);
+	var ReactDOMButton = __webpack_require__(236);
+	var ReactDOMComponentFlags = __webpack_require__(169);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactDOMInput = __webpack_require__(238);
+	var ReactDOMOption = __webpack_require__(240);
+	var ReactDOMSelect = __webpack_require__(241);
+	var ReactDOMTextarea = __webpack_require__(242);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactMultiChild = __webpack_require__(242);
-	var ReactServerRenderingTransaction = __webpack_require__(253);
+	var ReactMultiChild = __webpack_require__(243);
+	var ReactServerRenderingTransaction = __webpack_require__(254);
 
 	var emptyFunction = __webpack_require__(13);
-	var escapeTextContentForBrowser = __webpack_require__(208);
+	var escapeTextContentForBrowser = __webpack_require__(209);
 	var invariant = __webpack_require__(9);
-	var isEventSupported = __webpack_require__(193);
+	var isEventSupported = __webpack_require__(194);
 	var keyOf = __webpack_require__(33);
-	var shallowEqual = __webpack_require__(254);
-	var validateDOMNesting = __webpack_require__(255);
+	var shallowEqual = __webpack_require__(255);
+	var validateDOMNesting = __webpack_require__(256);
 	var warning = __webpack_require__(12);
 
 	var Flags = ReactDOMComponentFlags;
@@ -22595,7 +22760,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22611,9 +22776,9 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMComponentTree = __webpack_require__(166);
+	var ReactDOMComponentTree = __webpack_require__(167);
 
-	var focusNode = __webpack_require__(218);
+	var focusNode = __webpack_require__(219);
 
 	var AutoFocusUtils = {
 	  focusDOMComponent: function () {
@@ -22624,7 +22789,7 @@ var showChatTemplate =
 	module.exports = AutoFocusUtils;
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports) {
 
 	/**
@@ -22655,7 +22820,7 @@ var showChatTemplate =
 	module.exports = focusNode;
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -22671,14 +22836,14 @@ var showChatTemplate =
 
 	'use strict';
 
-	var CSSProperty = __webpack_require__(220);
+	var CSSProperty = __webpack_require__(221);
 	var ExecutionEnvironment = __webpack_require__(22);
 	var ReactInstrumentation = __webpack_require__(20);
 
-	var camelizeStyleName = __webpack_require__(221);
-	var dangerousStyleValue = __webpack_require__(223);
-	var hyphenateStyleName = __webpack_require__(224);
-	var memoizeStringOnly = __webpack_require__(226);
+	var camelizeStyleName = __webpack_require__(222);
+	var dangerousStyleValue = __webpack_require__(224);
+	var hyphenateStyleName = __webpack_require__(225);
+	var memoizeStringOnly = __webpack_require__(227);
 	var warning = __webpack_require__(12);
 
 	var processStyleName = memoizeStringOnly(function (styleName) {
@@ -22866,7 +23031,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports) {
 
 	/**
@@ -23019,7 +23184,7 @@ var showChatTemplate =
 	module.exports = CSSProperty;
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23035,7 +23200,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var camelize = __webpack_require__(222);
+	var camelize = __webpack_require__(223);
 
 	var msPattern = /^-ms-/;
 
@@ -23063,7 +23228,7 @@ var showChatTemplate =
 	module.exports = camelizeStyleName;
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23099,7 +23264,7 @@ var showChatTemplate =
 	module.exports = camelize;
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -23115,7 +23280,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var CSSProperty = __webpack_require__(220);
+	var CSSProperty = __webpack_require__(221);
 	var warning = __webpack_require__(12);
 
 	var isUnitlessNumber = CSSProperty.isUnitlessNumber;
@@ -23182,7 +23347,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23198,7 +23363,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var hyphenate = __webpack_require__(225);
+	var hyphenate = __webpack_require__(226);
 
 	var msPattern = /^ms-/;
 
@@ -23225,7 +23390,7 @@ var showChatTemplate =
 	module.exports = hyphenateStyleName;
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23262,7 +23427,7 @@ var showChatTemplate =
 	module.exports = hyphenate;
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports) {
 
 	/**
@@ -23296,7 +23461,7 @@ var showChatTemplate =
 	module.exports = memoizeStringOnly;
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -23312,12 +23477,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(167);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactDOMInstrumentation = __webpack_require__(228);
+	var DOMProperty = __webpack_require__(168);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactDOMInstrumentation = __webpack_require__(229);
 	var ReactInstrumentation = __webpack_require__(20);
 
-	var quoteAttributeValueForBrowser = __webpack_require__(231);
+	var quoteAttributeValueForBrowser = __webpack_require__(232);
 	var warning = __webpack_require__(12);
 
 	var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -23524,7 +23689,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23540,12 +23705,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMDebugTool = __webpack_require__(229);
+	var ReactDOMDebugTool = __webpack_require__(230);
 
 	module.exports = { debugTool: ReactDOMDebugTool };
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -23561,7 +23726,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMUnknownPropertyDevtool = __webpack_require__(230);
+	var ReactDOMUnknownPropertyDevtool = __webpack_require__(231);
 
 	var warning = __webpack_require__(12);
 
@@ -23612,7 +23777,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -23628,8 +23793,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(167);
-	var EventPluginRegistry = __webpack_require__(174);
+	var DOMProperty = __webpack_require__(168);
+	var EventPluginRegistry = __webpack_require__(175);
 
 	var warning = __webpack_require__(12);
 
@@ -23682,7 +23847,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23698,7 +23863,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var escapeTextContentForBrowser = __webpack_require__(208);
+	var escapeTextContentForBrowser = __webpack_require__(209);
 
 	/**
 	 * Escapes attribute value to prevent scripting attacks.
@@ -23713,7 +23878,7 @@ var showChatTemplate =
 	module.exports = quoteAttributeValueForBrowser;
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23731,13 +23896,13 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var EventConstants = __webpack_require__(171);
-	var EventPluginRegistry = __webpack_require__(174);
-	var ReactEventEmitterMixin = __webpack_require__(233);
-	var ViewportMetrics = __webpack_require__(199);
+	var EventConstants = __webpack_require__(172);
+	var EventPluginRegistry = __webpack_require__(175);
+	var ReactEventEmitterMixin = __webpack_require__(234);
+	var ViewportMetrics = __webpack_require__(200);
 
-	var getVendorPrefixedEventName = __webpack_require__(234);
-	var isEventSupported = __webpack_require__(193);
+	var getVendorPrefixedEventName = __webpack_require__(235);
+	var isEventSupported = __webpack_require__(194);
 
 	/**
 	 * Summary of `ReactBrowserEventEmitter` event handling:
@@ -24035,7 +24200,7 @@ var showChatTemplate =
 	module.exports = ReactBrowserEventEmitter;
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24051,7 +24216,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventPluginHub = __webpack_require__(173);
+	var EventPluginHub = __webpack_require__(174);
 
 	function runEventQueueInBatch(events) {
 	  EventPluginHub.enqueueEvents(events);
@@ -24073,7 +24238,7 @@ var showChatTemplate =
 	module.exports = ReactEventEmitterMixin;
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24179,7 +24344,7 @@ var showChatTemplate =
 	module.exports = getVendorPrefixedEventName;
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24195,7 +24360,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DisabledInputUtils = __webpack_require__(236);
+	var DisabledInputUtils = __webpack_require__(237);
 
 	/**
 	 * Implements a <button> native component that does not receive mouse events
@@ -24208,7 +24373,7 @@ var showChatTemplate =
 	module.exports = ReactDOMButton;
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports) {
 
 	/**
@@ -24263,7 +24428,7 @@ var showChatTemplate =
 	module.exports = DisabledInputUtils;
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -24281,11 +24446,11 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DisabledInputUtils = __webpack_require__(236);
-	var DOMPropertyOperations = __webpack_require__(227);
-	var LinkedValueUtils = __webpack_require__(238);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactUpdates = __webpack_require__(185);
+	var DisabledInputUtils = __webpack_require__(237);
+	var DOMPropertyOperations = __webpack_require__(228);
+	var LinkedValueUtils = __webpack_require__(239);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactUpdates = __webpack_require__(186);
 
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
@@ -24475,7 +24640,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -24614,7 +24779,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -24633,8 +24798,8 @@ var showChatTemplate =
 	var _assign = __webpack_require__(6);
 
 	var ReactChildren = __webpack_require__(7);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactDOMSelect = __webpack_require__(240);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactDOMSelect = __webpack_require__(241);
 
 	var warning = __webpack_require__(12);
 
@@ -24729,7 +24894,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -24747,10 +24912,10 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DisabledInputUtils = __webpack_require__(236);
-	var LinkedValueUtils = __webpack_require__(238);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactUpdates = __webpack_require__(185);
+	var DisabledInputUtils = __webpack_require__(237);
+	var LinkedValueUtils = __webpack_require__(239);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactUpdates = __webpack_require__(186);
 
 	var warning = __webpack_require__(12);
 
@@ -24948,7 +25113,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -24966,11 +25131,11 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DisabledInputUtils = __webpack_require__(236);
-	var DOMPropertyOperations = __webpack_require__(227);
-	var LinkedValueUtils = __webpack_require__(238);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactUpdates = __webpack_require__(185);
+	var DisabledInputUtils = __webpack_require__(237);
+	var DOMPropertyOperations = __webpack_require__(228);
+	var LinkedValueUtils = __webpack_require__(239);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactUpdates = __webpack_require__(186);
 
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
@@ -25096,7 +25261,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -25112,16 +25277,16 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactComponentEnvironment = __webpack_require__(243);
+	var ReactComponentEnvironment = __webpack_require__(244);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactMultiChildUpdateTypes = __webpack_require__(214);
+	var ReactMultiChildUpdateTypes = __webpack_require__(215);
 
 	var ReactCurrentOwner = __webpack_require__(11);
-	var ReactReconciler = __webpack_require__(188);
-	var ReactChildReconciler = __webpack_require__(244);
+	var ReactReconciler = __webpack_require__(189);
+	var ReactChildReconciler = __webpack_require__(245);
 
 	var emptyFunction = __webpack_require__(13);
-	var flattenChildren = __webpack_require__(163);
+	var flattenChildren = __webpack_require__(164);
 	var invariant = __webpack_require__(9);
 
 	/**
@@ -25525,7 +25690,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -25582,7 +25747,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -25598,11 +25763,11 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactReconciler = __webpack_require__(188);
+	var ReactReconciler = __webpack_require__(189);
 
-	var instantiateReactComponent = __webpack_require__(245);
+	var instantiateReactComponent = __webpack_require__(246);
 	var KeyEscapeUtils = __webpack_require__(17);
-	var shouldUpdateReactComponent = __webpack_require__(250);
+	var shouldUpdateReactComponent = __webpack_require__(251);
 	var traverseAllChildren = __webpack_require__(15);
 	var warning = __webpack_require__(12);
 
@@ -25713,7 +25878,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -25731,9 +25896,9 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var ReactCompositeComponent = __webpack_require__(246);
-	var ReactEmptyComponent = __webpack_require__(251);
-	var ReactNativeComponent = __webpack_require__(252);
+	var ReactCompositeComponent = __webpack_require__(247);
+	var ReactEmptyComponent = __webpack_require__(252);
+	var ReactNativeComponent = __webpack_require__(253);
 	var ReactInstrumentation = __webpack_require__(20);
 
 	var invariant = __webpack_require__(9);
@@ -25863,7 +26028,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -25881,21 +26046,21 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var ReactComponentEnvironment = __webpack_require__(243);
+	var ReactComponentEnvironment = __webpack_require__(244);
 	var ReactCurrentOwner = __webpack_require__(11);
 	var ReactElement = __webpack_require__(10);
-	var ReactErrorUtils = __webpack_require__(176);
-	var ReactInstanceMap = __webpack_require__(247);
+	var ReactErrorUtils = __webpack_require__(177);
+	var ReactInstanceMap = __webpack_require__(248);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactNodeTypes = __webpack_require__(248);
+	var ReactNodeTypes = __webpack_require__(249);
 	var ReactPropTypeLocations = __webpack_require__(30);
 	var ReactPropTypeLocationNames = __webpack_require__(32);
-	var ReactReconciler = __webpack_require__(188);
-	var ReactUpdateQueue = __webpack_require__(249);
+	var ReactReconciler = __webpack_require__(189);
+	var ReactUpdateQueue = __webpack_require__(250);
 
 	var emptyObject = __webpack_require__(28);
 	var invariant = __webpack_require__(9);
-	var shouldUpdateReactComponent = __webpack_require__(250);
+	var shouldUpdateReactComponent = __webpack_require__(251);
 	var warning = __webpack_require__(12);
 
 	function getDeclarationErrorAddendum(component) {
@@ -26792,7 +26957,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports) {
 
 	/**
@@ -26845,7 +27010,7 @@ var showChatTemplate =
 	module.exports = ReactInstanceMap;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -26888,7 +27053,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -26905,8 +27070,8 @@ var showChatTemplate =
 	'use strict';
 
 	var ReactCurrentOwner = __webpack_require__(11);
-	var ReactInstanceMap = __webpack_require__(247);
-	var ReactUpdates = __webpack_require__(185);
+	var ReactInstanceMap = __webpack_require__(248);
+	var ReactUpdates = __webpack_require__(186);
 
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
@@ -27109,7 +27274,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports) {
 
 	/**
@@ -27156,7 +27321,7 @@ var showChatTemplate =
 	module.exports = shouldUpdateReactComponent;
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports) {
 
 	/**
@@ -27191,7 +27356,7 @@ var showChatTemplate =
 	module.exports = ReactEmptyComponent;
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27292,7 +27457,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27311,7 +27476,7 @@ var showChatTemplate =
 	var _assign = __webpack_require__(6);
 
 	var PooledClass = __webpack_require__(8);
-	var Transaction = __webpack_require__(191);
+	var Transaction = __webpack_require__(192);
 
 	/**
 	 * Executed within the scope of the `Transaction` instance. Consider these as
@@ -27370,7 +27535,7 @@ var showChatTemplate =
 	module.exports = ReactServerRenderingTransaction;
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports) {
 
 	/**
@@ -27442,7 +27607,7 @@ var showChatTemplate =
 	module.exports = shallowEqual;
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27817,7 +27982,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27835,8 +28000,8 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DOMLazyTree = __webpack_require__(204);
-	var ReactDOMComponentTree = __webpack_require__(166);
+	var DOMLazyTree = __webpack_require__(205);
+	var ReactDOMComponentTree = __webpack_require__(167);
 
 	var ReactDOMEmptyComponent = function (instantiate) {
 	  // ReactCompositeComponent uses this:
@@ -27882,7 +28047,7 @@ var showChatTemplate =
 	module.exports = ReactDOMEmptyComponent;
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28022,7 +28187,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28040,14 +28205,14 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DOMChildrenOperations = __webpack_require__(203);
-	var DOMLazyTree = __webpack_require__(204);
-	var ReactDOMComponentTree = __webpack_require__(166);
+	var DOMChildrenOperations = __webpack_require__(204);
+	var DOMLazyTree = __webpack_require__(205);
+	var ReactDOMComponentTree = __webpack_require__(167);
 	var ReactInstrumentation = __webpack_require__(20);
 
-	var escapeTextContentForBrowser = __webpack_require__(208);
+	var escapeTextContentForBrowser = __webpack_require__(209);
 	var invariant = __webpack_require__(9);
-	var validateDOMNesting = __webpack_require__(255);
+	var validateDOMNesting = __webpack_require__(256);
 
 	/**
 	 * Text nodes violate a couple assumptions that React makes about components:
@@ -28198,7 +28363,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28216,8 +28381,8 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var ReactUpdates = __webpack_require__(185);
-	var Transaction = __webpack_require__(191);
+	var ReactUpdates = __webpack_require__(186);
+	var Transaction = __webpack_require__(192);
 
 	var emptyFunction = __webpack_require__(13);
 
@@ -28271,7 +28436,7 @@ var showChatTemplate =
 	module.exports = ReactDefaultBatchingStrategy;
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28289,14 +28454,14 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var EventListener = __webpack_require__(261);
+	var EventListener = __webpack_require__(262);
 	var ExecutionEnvironment = __webpack_require__(22);
 	var PooledClass = __webpack_require__(8);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactUpdates = __webpack_require__(185);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactUpdates = __webpack_require__(186);
 
-	var getEventTarget = __webpack_require__(192);
-	var getUnboundedScrollPosition = __webpack_require__(262);
+	var getEventTarget = __webpack_require__(193);
+	var getUnboundedScrollPosition = __webpack_require__(263);
 
 	/**
 	 * Find the deepest React component completely containing the root of the
@@ -28433,7 +28598,7 @@ var showChatTemplate =
 	module.exports = ReactEventListener;
 
 /***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -28522,7 +28687,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 262 */
+/* 263 */
 /***/ function(module, exports) {
 
 	/**
@@ -28565,7 +28730,7 @@ var showChatTemplate =
 	module.exports = getUnboundedScrollPosition;
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28581,15 +28746,15 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(167);
-	var EventPluginHub = __webpack_require__(173);
-	var EventPluginUtils = __webpack_require__(175);
-	var ReactComponentEnvironment = __webpack_require__(243);
+	var DOMProperty = __webpack_require__(168);
+	var EventPluginHub = __webpack_require__(174);
+	var EventPluginUtils = __webpack_require__(176);
+	var ReactComponentEnvironment = __webpack_require__(244);
 	var ReactClass = __webpack_require__(29);
-	var ReactEmptyComponent = __webpack_require__(251);
-	var ReactBrowserEventEmitter = __webpack_require__(232);
-	var ReactNativeComponent = __webpack_require__(252);
-	var ReactUpdates = __webpack_require__(185);
+	var ReactEmptyComponent = __webpack_require__(252);
+	var ReactBrowserEventEmitter = __webpack_require__(233);
+	var ReactNativeComponent = __webpack_require__(253);
+	var ReactUpdates = __webpack_require__(186);
 
 	var ReactInjection = {
 	  Component: ReactComponentEnvironment.injection,
@@ -28606,7 +28771,7 @@ var showChatTemplate =
 	module.exports = ReactInjection;
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28624,11 +28789,11 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var CallbackQueue = __webpack_require__(186);
+	var CallbackQueue = __webpack_require__(187);
 	var PooledClass = __webpack_require__(8);
-	var ReactBrowserEventEmitter = __webpack_require__(232);
-	var ReactInputSelection = __webpack_require__(265);
-	var Transaction = __webpack_require__(191);
+	var ReactBrowserEventEmitter = __webpack_require__(233);
+	var ReactInputSelection = __webpack_require__(266);
+	var Transaction = __webpack_require__(192);
 
 	/**
 	 * Ensures that, when possible, the selection range (currently selected text
@@ -28773,7 +28938,7 @@ var showChatTemplate =
 	module.exports = ReactReconcileTransaction;
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28789,11 +28954,11 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMSelection = __webpack_require__(266);
+	var ReactDOMSelection = __webpack_require__(267);
 
-	var containsNode = __webpack_require__(268);
-	var focusNode = __webpack_require__(218);
-	var getActiveElement = __webpack_require__(271);
+	var containsNode = __webpack_require__(269);
+	var focusNode = __webpack_require__(219);
+	var getActiveElement = __webpack_require__(272);
 
 	function isInDocument(node) {
 	  return containsNode(document.documentElement, node);
@@ -28902,7 +29067,7 @@ var showChatTemplate =
 	module.exports = ReactInputSelection;
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28920,8 +29085,8 @@ var showChatTemplate =
 
 	var ExecutionEnvironment = __webpack_require__(22);
 
-	var getNodeForCharacterOffset = __webpack_require__(267);
-	var getTextContentAccessor = __webpack_require__(180);
+	var getNodeForCharacterOffset = __webpack_require__(268);
+	var getTextContentAccessor = __webpack_require__(181);
 
 	/**
 	 * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -29119,7 +29284,7 @@ var showChatTemplate =
 	module.exports = ReactDOMSelection;
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports) {
 
 	/**
@@ -29198,7 +29363,7 @@ var showChatTemplate =
 	module.exports = getNodeForCharacterOffset;
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29214,7 +29379,7 @@ var showChatTemplate =
 	 * 
 	 */
 
-	var isTextNode = __webpack_require__(269);
+	var isTextNode = __webpack_require__(270);
 
 	/*eslint-disable no-bitwise */
 
@@ -29242,7 +29407,7 @@ var showChatTemplate =
 	module.exports = containsNode;
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29258,7 +29423,7 @@ var showChatTemplate =
 	 * @typechecks
 	 */
 
-	var isNode = __webpack_require__(270);
+	var isNode = __webpack_require__(271);
 
 	/**
 	 * @param {*} object The object to check.
@@ -29271,7 +29436,7 @@ var showChatTemplate =
 	module.exports = isTextNode;
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29298,7 +29463,7 @@ var showChatTemplate =
 	module.exports = isNode;
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29337,7 +29502,7 @@ var showChatTemplate =
 	module.exports = getActiveElement;
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports) {
 
 	/**
@@ -29642,7 +29807,7 @@ var showChatTemplate =
 	module.exports = SVGDOMPropertyConfig;
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29658,17 +29823,17 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(171);
-	var EventPropagators = __webpack_require__(172);
+	var EventConstants = __webpack_require__(172);
+	var EventPropagators = __webpack_require__(173);
 	var ExecutionEnvironment = __webpack_require__(22);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactInputSelection = __webpack_require__(265);
-	var SyntheticEvent = __webpack_require__(182);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactInputSelection = __webpack_require__(266);
+	var SyntheticEvent = __webpack_require__(183);
 
-	var getActiveElement = __webpack_require__(271);
-	var isTextInputElement = __webpack_require__(194);
+	var getActiveElement = __webpack_require__(272);
+	var isTextInputElement = __webpack_require__(195);
 	var keyOf = __webpack_require__(33);
-	var shallowEqual = __webpack_require__(254);
+	var shallowEqual = __webpack_require__(255);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -29843,7 +30008,7 @@ var showChatTemplate =
 	module.exports = SelectEventPlugin;
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -29859,24 +30024,24 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(171);
-	var EventListener = __webpack_require__(261);
-	var EventPropagators = __webpack_require__(172);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var SyntheticAnimationEvent = __webpack_require__(275);
-	var SyntheticClipboardEvent = __webpack_require__(276);
-	var SyntheticEvent = __webpack_require__(182);
-	var SyntheticFocusEvent = __webpack_require__(277);
-	var SyntheticKeyboardEvent = __webpack_require__(278);
-	var SyntheticMouseEvent = __webpack_require__(197);
-	var SyntheticDragEvent = __webpack_require__(281);
-	var SyntheticTouchEvent = __webpack_require__(282);
-	var SyntheticTransitionEvent = __webpack_require__(283);
-	var SyntheticUIEvent = __webpack_require__(198);
-	var SyntheticWheelEvent = __webpack_require__(284);
+	var EventConstants = __webpack_require__(172);
+	var EventListener = __webpack_require__(262);
+	var EventPropagators = __webpack_require__(173);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var SyntheticAnimationEvent = __webpack_require__(276);
+	var SyntheticClipboardEvent = __webpack_require__(277);
+	var SyntheticEvent = __webpack_require__(183);
+	var SyntheticFocusEvent = __webpack_require__(278);
+	var SyntheticKeyboardEvent = __webpack_require__(279);
+	var SyntheticMouseEvent = __webpack_require__(198);
+	var SyntheticDragEvent = __webpack_require__(282);
+	var SyntheticTouchEvent = __webpack_require__(283);
+	var SyntheticTransitionEvent = __webpack_require__(284);
+	var SyntheticUIEvent = __webpack_require__(199);
+	var SyntheticWheelEvent = __webpack_require__(285);
 
 	var emptyFunction = __webpack_require__(13);
-	var getEventCharCode = __webpack_require__(279);
+	var getEventCharCode = __webpack_require__(280);
 	var invariant = __webpack_require__(9);
 	var keyOf = __webpack_require__(33);
 
@@ -30476,7 +30641,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30492,7 +30657,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(182);
+	var SyntheticEvent = __webpack_require__(183);
 
 	/**
 	 * @interface Event
@@ -30520,7 +30685,7 @@ var showChatTemplate =
 	module.exports = SyntheticAnimationEvent;
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30536,7 +30701,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(182);
+	var SyntheticEvent = __webpack_require__(183);
 
 	/**
 	 * @interface Event
@@ -30563,7 +30728,7 @@ var showChatTemplate =
 	module.exports = SyntheticClipboardEvent;
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30579,7 +30744,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(198);
+	var SyntheticUIEvent = __webpack_require__(199);
 
 	/**
 	 * @interface FocusEvent
@@ -30604,7 +30769,7 @@ var showChatTemplate =
 	module.exports = SyntheticFocusEvent;
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30620,11 +30785,11 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(198);
+	var SyntheticUIEvent = __webpack_require__(199);
 
-	var getEventCharCode = __webpack_require__(279);
-	var getEventKey = __webpack_require__(280);
-	var getEventModifierState = __webpack_require__(200);
+	var getEventCharCode = __webpack_require__(280);
+	var getEventKey = __webpack_require__(281);
+	var getEventModifierState = __webpack_require__(201);
 
 	/**
 	 * @interface KeyboardEvent
@@ -30693,7 +30858,7 @@ var showChatTemplate =
 	module.exports = SyntheticKeyboardEvent;
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports) {
 
 	/**
@@ -30748,7 +30913,7 @@ var showChatTemplate =
 	module.exports = getEventCharCode;
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30764,7 +30929,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var getEventCharCode = __webpack_require__(279);
+	var getEventCharCode = __webpack_require__(280);
 
 	/**
 	 * Normalization of deprecated HTML5 `key` values
@@ -30855,7 +31020,7 @@ var showChatTemplate =
 	module.exports = getEventKey;
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30871,7 +31036,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticMouseEvent = __webpack_require__(197);
+	var SyntheticMouseEvent = __webpack_require__(198);
 
 	/**
 	 * @interface DragEvent
@@ -30896,7 +31061,7 @@ var showChatTemplate =
 	module.exports = SyntheticDragEvent;
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30912,9 +31077,9 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(198);
+	var SyntheticUIEvent = __webpack_require__(199);
 
-	var getEventModifierState = __webpack_require__(200);
+	var getEventModifierState = __webpack_require__(201);
 
 	/**
 	 * @interface TouchEvent
@@ -30946,7 +31111,7 @@ var showChatTemplate =
 	module.exports = SyntheticTouchEvent;
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30962,7 +31127,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(182);
+	var SyntheticEvent = __webpack_require__(183);
 
 	/**
 	 * @interface Event
@@ -30990,7 +31155,7 @@ var showChatTemplate =
 	module.exports = SyntheticTransitionEvent;
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31006,7 +31171,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticMouseEvent = __webpack_require__(197);
+	var SyntheticMouseEvent = __webpack_require__(198);
 
 	/**
 	 * @interface WheelEvent
@@ -31049,7 +31214,7 @@ var showChatTemplate =
 	module.exports = SyntheticWheelEvent;
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -31065,26 +31230,26 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMLazyTree = __webpack_require__(204);
-	var DOMProperty = __webpack_require__(167);
-	var ReactBrowserEventEmitter = __webpack_require__(232);
+	var DOMLazyTree = __webpack_require__(205);
+	var DOMProperty = __webpack_require__(168);
+	var ReactBrowserEventEmitter = __webpack_require__(233);
 	var ReactCurrentOwner = __webpack_require__(11);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactDOMContainerInfo = __webpack_require__(286);
-	var ReactDOMFeatureFlags = __webpack_require__(287);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactDOMContainerInfo = __webpack_require__(287);
+	var ReactDOMFeatureFlags = __webpack_require__(288);
 	var ReactElement = __webpack_require__(10);
-	var ReactFeatureFlags = __webpack_require__(187);
+	var ReactFeatureFlags = __webpack_require__(188);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactMarkupChecksum = __webpack_require__(288);
-	var ReactReconciler = __webpack_require__(188);
-	var ReactUpdateQueue = __webpack_require__(249);
-	var ReactUpdates = __webpack_require__(185);
+	var ReactMarkupChecksum = __webpack_require__(289);
+	var ReactReconciler = __webpack_require__(189);
+	var ReactUpdateQueue = __webpack_require__(250);
+	var ReactUpdates = __webpack_require__(186);
 
 	var emptyObject = __webpack_require__(28);
-	var instantiateReactComponent = __webpack_require__(245);
+	var instantiateReactComponent = __webpack_require__(246);
 	var invariant = __webpack_require__(9);
-	var setInnerHTML = __webpack_require__(209);
-	var shouldUpdateReactComponent = __webpack_require__(250);
+	var setInnerHTML = __webpack_require__(210);
+	var shouldUpdateReactComponent = __webpack_require__(251);
 	var warning = __webpack_require__(12);
 
 	var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
@@ -31548,7 +31713,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -31564,7 +31729,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var validateDOMNesting = __webpack_require__(255);
+	var validateDOMNesting = __webpack_require__(256);
 
 	var DOC_NODE_TYPE = 9;
 
@@ -31587,7 +31752,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports) {
 
 	/**
@@ -31610,7 +31775,7 @@ var showChatTemplate =
 	module.exports = ReactDOMFeatureFlags;
 
 /***/ },
-/* 288 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31626,7 +31791,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var adler32 = __webpack_require__(289);
+	var adler32 = __webpack_require__(290);
 
 	var TAG_END = /\/?>/;
 	var COMMENT_START = /^<\!\-\-/;
@@ -31665,7 +31830,7 @@ var showChatTemplate =
 	module.exports = ReactMarkupChecksum;
 
 /***/ },
-/* 289 */
+/* 290 */
 /***/ function(module, exports) {
 
 	/**
@@ -31713,7 +31878,7 @@ var showChatTemplate =
 	module.exports = adler32;
 
 /***/ },
-/* 290 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -31730,10 +31895,10 @@ var showChatTemplate =
 	'use strict';
 
 	var ReactCurrentOwner = __webpack_require__(11);
-	var ReactDOMComponentTree = __webpack_require__(166);
-	var ReactInstanceMap = __webpack_require__(247);
+	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactInstanceMap = __webpack_require__(248);
 
-	var getNativeComponentFromComposite = __webpack_require__(291);
+	var getNativeComponentFromComposite = __webpack_require__(292);
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
 
@@ -31777,7 +31942,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31793,7 +31958,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactNodeTypes = __webpack_require__(248);
+	var ReactNodeTypes = __webpack_require__(249);
 
 	function getNativeComponentFromComposite(inst) {
 	  var type;
@@ -31812,7 +31977,7 @@ var showChatTemplate =
 	module.exports = getNativeComponentFromComposite;
 
 /***/ },
-/* 292 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31828,12 +31993,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactMount = __webpack_require__(285);
+	var ReactMount = __webpack_require__(286);
 
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 293 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -31960,7 +32125,7 @@ var showChatTemplate =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 294 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31978,7 +32143,7 @@ var showChatTemplate =
 
 	var ExecutionEnvironment = __webpack_require__(22);
 
-	var getVendorPrefixedEventName = __webpack_require__(234);
+	var getVendorPrefixedEventName = __webpack_require__(235);
 
 	var endEvents = [];
 
@@ -32038,7 +32203,7 @@ var showChatTemplate =
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 295 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32097,7 +32262,7 @@ var showChatTemplate =
 	exports.default = Typing;
 
 /***/ },
-/* 296 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32153,12 +32318,12 @@ var showChatTemplate =
 	exports.default = ImageLoader;
 
 /***/ },
-/* 297 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(165);
+	module.exports = __webpack_require__(166);
 
 
 /***/ }
