@@ -40,6 +40,16 @@ const MyAwesomeConversation = () =>
   <Conversation height={300} messages={messages}/>
 ```
 
+### Turning off the loop of messages
+Messages loop by default.
+
+To turn this off, add a turnOffLoop attribute to Coversation.
+
+This parameter is optional.
+```
+   <Conversation height={300} messages={messages} turnOffLoop />
+```
+
 ## Storybook examples
 
 Live stories are displayed [here](http://sevenleaps.github.io/chat-template/).

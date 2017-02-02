@@ -14,7 +14,8 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('Message displays on the right', () => {
+})
+.add('Message displays on the right', () => {
   const message = {
     message: 'Test',
     inbound: false,
@@ -25,7 +26,8 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('Message displays on the left with image', () => {
+})
+.add('Message displays on the left with image', () => {
   const message = {
     message: 'Test',
     inbound: true,
@@ -37,7 +39,8 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('Message displays on the left with an image', () => {
+})
+.add('Message displays on the left with an image', () => {
   const message = {
     message: 'Test',
     inbound: false,
@@ -50,7 +53,8 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('Message displays on the left with an image and an avatar', () => {
+})
+.add('Message displays on the left with an image and an avatar', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really
@@ -71,7 +75,8 @@ storiesOf('Message', module)
       <Message height={300} message={message} />
     </div>
   );
-}).add('Message displays on the right with an image and an avatar', () => {
+})
+.add('Message displays on the right with an image and an avatar', () => {
   const message = {
     message: `This is a really really really really really really really really
     really really really really really really really really really

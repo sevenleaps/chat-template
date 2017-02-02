@@ -43,17 +43,37 @@ class Conversation extends React.Component {
     super(props, context);
     this.state = {
       startingDelay: props.delay || 1000,
-      messages: [],
+      messages: props.historicMessages ? props.historicMessages.slice() : [],
+      historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
       messagesToBeDisplayed: props.messages.slice(),
-      originalMessages: props.messages.slice(),
+      originalMessagesToBeDisplayed: props.messages.slice(),
       isTyping: false,
       inbound: true,
       reset: false,
+      turnOffLoop: props.turnOffLoop,
     };
   }
 
   componentDidMount() {
     this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const previousMessagesLength =
+    this.state.messagesToBeDisplayed.length + this.state.messages.length - this.state.historicMessages.length;
+
+    if (nextProps.messages.length > previousMessagesLength) {
+      clearTimeout(this.timeoutId);
+      this.setState(
+        {
+          messagesToBeDisplayed: this.state.messagesToBeDisplayed.concat(
+            nextProps.messages.slice(previousMessagesLength)
+          ),
+        }
+      );
+
+      this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
+    }
   }
 
   componentWillUnmount() {
@@ -88,11 +108,11 @@ class Conversation extends React.Component {
         reset,
       }, onDisplay);
       this.timeoutId = setTimeout(this.showMessage, message.duration || 800);
-    } else {
+    } else if (!this.state.turnOffLoop) {
       this.setState({
         ...this.state,
-        messagesToBeDisplayed: this.state.originalMessages.slice(),
-        messages: [],
+        messagesToBeDisplayed: this.state.originalMessagesToBeDisplayed.slice(),
+        messages: this.state.historicMessages.slice(),
         isTyping: false,
         inbound: true,
         reset: !reset,
@@ -128,6 +148,7 @@ class Conversation extends React.Component {
 Conversation.propTypes = {
   delay: PropTypes.number,
   height: PropTypes.number,
+  turnOffLoop: PropTypes.bool,
   messages: PropTypes.arrayOf(
     PropTypes.shape({
       message: PropTypes.string,
@@ -139,6 +160,17 @@ Conversation.propTypes = {
       textColor: PropTypes.string,
     }),
   ).isRequired,
+  historicMessages: PropTypes.arrayOf(
+    PropTypes.shape({
+      message: PropTypes.string,
+      src: PropTypes.string,
+      inbound: PropTypes.bool.isRequired,
+      avatar: PropTypes.string,
+      duration: PropTypes.number,
+      backColor: PropTypes.string,
+      textColor: PropTypes.string,
+    }),
+  ),
   styles: PropTypes.object,
 };
 

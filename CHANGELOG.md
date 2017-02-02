@@ -4,6 +4,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.24] - 2017-02-03
+
+- Fixed #6: When new messages are added to the queue, they now display - Only supports adding, not removing. (Paul.O'Flaherty)
+- No Issue: A user can now have historic messages appear when they start the conversation (Paul.O'Flaherty)
+- No Issue: Added a rough story to storybook to simulate a chat (Paul.O'Flaherty)
+
+## [0.0.23] - 2017-01-19
+
+- Fixed #3: Adding a feature to persist messages (Paul.O'Flaherty)
+
 ## [0.0.22] - 2016-05-07
 
 - No Issue: updated dependencies to latest (conor.fennell)
