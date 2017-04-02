@@ -80,7 +80,7 @@ class Conversation extends React.Component {
     clearTimeout(this.timeoutId);
   }
 
-  showMessage = () => {
+  showMessage() {
     const messages = this.state.messages;
     const messagesToBeDisplayed = this.state.messagesToBeDisplayed;
     const reset = this.state.reset;
