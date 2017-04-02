@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.25] - 2017-04-02
+
+- Fixed #11: Allow changing styles from Chat component. (Paul.O'Flaherty)
+
 ## [0.0.24] - 2017-02-03
 
 - Fixed #6: When new messages are added to the queue, they now display - Only supports adding, not removing. (Paul.O'Flaherty)

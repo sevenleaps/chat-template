@@ -14732,13 +14732,16 @@ var showChatTemplate =
 	    overflow: 'hidden',
 	    height: '340px'
 	  },
-	  inputDiv: {
+	  conversation: {
+	    height: '300px'
+	  },
+	  textInputContainer: {
 	    height: '40px',
 	    width: '100%',
 	    backgroundColor: '#efefef',
 	    borderRadius: '5px'
 	  },
-	  input: {
+	  textInput: {
 	    margin: '8px',
 	    width: 'calc(100% - 20px)',
 	    height: 'calc(100% - 20px)',
@@ -14756,8 +14759,7 @@ var showChatTemplate =
 
 	    _this.state = {
 	      messages: props.messages ? props.messages.slice() : [],
-	      historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
-	      turnOffLoop: props.turnOffLoop
+	      historicMessages: props.historicMessages ? props.historicMessages.slice() : []
 	    };
 	    _this.keyPress = _this.keyPress.bind(_this);
 	    return _this;
@@ -14786,15 +14788,17 @@ var showChatTemplate =
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var style = _aphrodite.StyleSheet.create((0, _objectAssignDeep2.default)({}, defaultStyle, this.props.styles || {}));
+	      var chatStyles = (0, _objectAssignDeep2.default)({}, defaultStyle, this.props.styles || {});
+	      var style = _aphrodite.StyleSheet.create(chatStyles);
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: (0, _aphrodite.css)(style.chat) },
-	        _react2.default.createElement(_Conversation2.default, { height: 300, historicMessages: this.state.historicMessages, messages: this.state.messages, turnOffLoop: true }),
+	        _react2.default.createElement(_Conversation2.default, { styles: chatStyles, historicMessages: this.state.historicMessages, messages: this.state.messages, turnOffLoop: true }),
 	        _react2.default.createElement(
 	          'div',
-	          { className: (0, _aphrodite.css)(style.inputDiv) },
-	          _react2.default.createElement('input', { type: 'text', onKeyPress: this.keyPress, className: (0, _aphrodite.css)(style.input), placeholder: 'Type your message here...' })
+	          { className: (0, _aphrodite.css)(style.textInputContainer) },
+	          _react2.default.createElement('input', { type: 'text', onKeyPress: this.keyPress, className: (0, _aphrodite.css)(style.textInput), placeholder: 'Type your message here...' })
 	        )
 	      );
 	    }
@@ -15000,11 +15004,13 @@ var showChatTemplate =
 	      var isInbound = isTyping && inbound;
 	      var isOutbound = isTyping && !inbound;
 
-	      var style = _aphrodite.StyleSheet.create((0, _objectAssignDeep2.default)({}, defaultStyle, {
+	      var chatStyles = (0, _objectAssignDeep2.default)({}, defaultStyle, {
 	        conversation: {
 	          height: this.props.height || defaultStyle.conversation.height
 	        }
-	      }, this.props.styles || {}));
+	      }, this.props.styles || {});
+	      var style = _aphrodite.StyleSheet.create(chatStyles);
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: (0, _aphrodite.css)(style.conversation) },
@@ -15012,7 +15018,7 @@ var showChatTemplate =
 	        _react2.default.createElement(
 	          'div',
 	          { className: (0, _aphrodite.css)(style.messages) },
-	          _react2.default.createElement(_Messages2.default, { key: this.state.reset, height: this.props.height, messages: this.state.messages })
+	          _react2.default.createElement(_Messages2.default, { key: this.state.reset, height: style.conversation.height, messages: this.state.messages })
 	        ),
 	        _react2.default.createElement(
 	          'div',
