@@ -126,16 +126,18 @@ class Conversation extends React.Component {
     const isInbound = isTyping && inbound;
     const isOutbound = isTyping && !inbound;
 
-    const style = StyleSheet.create(assignDeep({}, defaultStyle, {
+    const chatStyles = assignDeep({}, defaultStyle, {
       conversation: {
         height: this.props.height || defaultStyle.conversation.height,
       },
-    }, this.props.styles || {}));
+    }, this.props.styles || {});
+    const style = StyleSheet.create(chatStyles);
+
     return (
       <div className={css(style.conversation)}>
         <ImageLoader messages={this.props.messages} />
         <div className={css(style.messages)}>
-          <Messages key={this.state.reset} height={this.props.height} messages={this.state.messages} />
+          <Messages key={this.state.reset} height={style.conversation.height} messages={this.state.messages} />
         </div>
         <div className={css(isInbound && style.inbound, isOutbound && style.outbound, !isTyping && style.noTyping)}>
           {isTyping && <Typing styles={typingStyles} />}

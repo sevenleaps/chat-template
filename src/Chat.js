@@ -9,13 +9,16 @@ const defaultStyle = {
     overflow: 'hidden',
     height: '340px',
   },
-  inputDiv: {
+  conversation: {
+    height: '300px',
+  },
+  textInputContainer: {
     height: '40px',
     width: '100%',
     backgroundColor: '#efefef',
     borderRadius: '5px',
   },
-  input: {
+  textInput: {
     margin: '8px',
     width: 'calc(100% - 20px)',
     height: 'calc(100% - 20px)',
@@ -49,12 +52,14 @@ class Chat extends React.Component {
     }
   }
   render() {
-    const style = StyleSheet.create(assignDeep({}, defaultStyle, this.props.styles || {}));
+    const chatStyles = assignDeep({}, defaultStyle, this.props.styles || {});
+    const style = StyleSheet.create(chatStyles);
+
     return (
       <div className={css(style.chat)}>
-        <Conversation height={300} historicMessages={this.state.historicMessages} messages={this.state.messages} turnOffLoop />
-        <div className={css(style.inputDiv)}>
-          <input type="text" onKeyPress={this.keyPress} className={css(style.input)} placeholder="Type your message here..." />
+        <Conversation styles={chatStyles} historicMessages={this.state.historicMessages} messages={this.state.messages} turnOffLoop />
+        <div className={css(style.textInputContainer)}>
+          <input type="text" onKeyPress={this.keyPress} className={css(style.textInput)} placeholder="Type your message here..." />
         </div>
       </div>
     );
