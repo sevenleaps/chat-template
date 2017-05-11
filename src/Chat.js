@@ -42,8 +42,11 @@ class Chat extends React.Component {
       backColor: '#dcf8c6',
       duration: 800,
     };
-    this.state.messages.push(message);
-    this.setState({ messages: this.state.messages });
+    let messages = this.state.messages;
+    messages = messages.filter((element) => element.type !== 'typing');
+    messages.push({type: 'typing', duration: 500, inbound: true});
+    messages.push(message);
+    this.setState({ messages: messages });
   }
   keyPress(e) {
     if (e.key === 'Enter' && e.target.value) {

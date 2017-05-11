@@ -4,9 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.26] - 2017-05-12
+
+- Fixed #17: Showing some messages twice (Paul.O'Flaherty)
+
 ## [0.0.25] - 2017-04-02
 
-- Fixed #11: Allow changing styles from Chat component. (Paul.O'Flaherty)
+- Fixed #11: Allow changing styles from Chat component (Paul.O'Flaherty)
 
 ## [0.0.24] - 2017-02-03
 
