@@ -1,6 +1,6 @@
 {
   "name": "chat-template",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Chat-Template is a React component that enables quick prototyping of bot conversations.",
   "repository": {
     "type": "git",
@@ -56,10 +56,12 @@
   },
   "dependencies": {
     "aphrodite": "0.3.1",
-    "object-assign-deep": "0.0.4",
     "material-ui": "0.15.0",
+    "object-assign-deep": "0.0.4",
     "react-addons-css-transition-group": "15.1.0",
-    "react-dom": "15.1.0"
+    "react-dom": "15.1.0",
+    "react-scroll": "^1.5.2",
+    "react-scrollbar": "^0.5.1"
   },
   "main": "dist/index.js",
   "engines": {
