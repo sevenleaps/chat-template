@@ -47,6 +47,7 @@ class Conversation extends React.Component {
       historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
       messagesToBeDisplayed: props.messages.slice(),
       originalMessagesToBeDisplayed: props.messages.slice(),
+      isScrollable: props.isScrollable,
       isTyping: false,
       inbound: true,
       reset: false,
@@ -119,7 +120,49 @@ class Conversation extends React.Component {
       });
       this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
     }
-  }
+  };
+  paneDidMount = (node) => {
+    if (node && this.state.isScrollable) {
+      node.addEventListener('wheel', (event) => {
+        const mouseMoveY = event.deltaY;
+        const conversationDisplayElement = node;
+        const scrollElement = node.children[0];
+        const messagesElement = node.children[0].children[1];
+        const heightOfDisplay = conversationDisplayElement.getBoundingClientRect().height;
+        const bottomOfDisplay = conversationDisplayElement.getBoundingClientRect().bottom;
+        const heightOfActualMessages = messagesElement.getBoundingClientRect().height;
+        const scrollElementClientRect = scrollElement.getBoundingClientRect();
+        const scrollElementTopOfMessages = scrollElementClientRect.top;
+
+        const maxTop = heightOfDisplay - bottomOfDisplay;
+        const minTop = (heightOfActualMessages - heightOfDisplay) * -1;
+
+        const isScrollingEnabled = heightOfActualMessages > heightOfDisplay;
+
+        if (isScrollingEnabled) {
+          let topPixels;
+          if (mouseMoveY < 0) {
+            const isScrollAmountAboveTopMessage = maxTop < (scrollElementTopOfMessages - mouseMoveY);
+            if (isScrollAmountAboveTopMessage) {
+              topPixels = maxTop;
+            } else {
+              const topElementToBeMoved = scrollElementTopOfMessages - mouseMoveY;
+              topPixels = isScrollAmountAboveTopMessage ? maxTop : topElementToBeMoved;
+            }
+          } else {
+            const isScrollAmountBelowBottomMessage = minTop > (scrollElementTopOfMessages - mouseMoveY + maxTop);
+            if (isScrollAmountBelowBottomMessage) {
+              topPixels = minTop;
+            } else {
+              const topElementToBeMoved = (scrollElementTopOfMessages - mouseMoveY) + maxTop;
+              topPixels = isScrollAmountBelowBottomMessage ? minTop : topElementToBeMoved;
+            }
+          }
+          scrollElement.style.top = `${topPixels}px`;
+        }
+      });
+    }
+  };
 
   render() {
     const { isTyping, inbound } = this.state;
@@ -136,7 +179,7 @@ class Conversation extends React.Component {
     return (
       <div className={css(style.conversation)}>
         <ImageLoader messages={this.props.messages} />
-        <div className={css(style.messages)}>
+        <div ref={this.paneDidMount} className={css(style.messages)}>
           <Messages key={this.state.reset} height={style.conversation.height} messages={this.state.messages} />
         </div>
         <div className={css(isInbound && style.inbound, isOutbound && style.outbound, !isTyping && style.noTyping)}>
@@ -151,6 +194,7 @@ Conversation.propTypes = {
   delay: PropTypes.number,
   height: PropTypes.number,
   turnOffLoop: PropTypes.bool,
+  isScrollable: PropTypes.bool,
   messages: PropTypes.arrayOf(
     PropTypes.shape({
       message: PropTypes.string,

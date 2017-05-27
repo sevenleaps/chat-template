@@ -14759,7 +14759,8 @@ var showChatTemplate =
 
 	    _this.state = {
 	      messages: props.messages ? props.messages.slice() : [],
-	      historicMessages: props.historicMessages ? props.historicMessages.slice() : []
+	      historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
+	      isScrollable: props.isScrollable
 	    };
 	    _this.keyPress = _this.keyPress.bind(_this);
 	    return _this;
@@ -14774,8 +14775,13 @@ var showChatTemplate =
 	        backColor: '#dcf8c6',
 	        duration: 800
 	      };
-	      this.state.messages.push(message);
-	      this.setState({ messages: this.state.messages });
+	      var messages = this.state.messages;
+	      messages = messages.filter(function (element) {
+	        return element.type !== 'typing';
+	      });
+	      messages.push({ type: 'typing', duration: 500, inbound: true });
+	      messages.push(message);
+	      this.setState({ messages: messages });
 	    }
 	  }, {
 	    key: 'keyPress',
@@ -14794,7 +14800,7 @@ var showChatTemplate =
 	      return _react2.default.createElement(
 	        'div',
 	        { className: (0, _aphrodite.css)(style.chat) },
-	        _react2.default.createElement(_Conversation2.default, { styles: chatStyles, historicMessages: this.state.historicMessages, messages: this.state.messages, turnOffLoop: true }),
+	        _react2.default.createElement(_Conversation2.default, { styles: chatStyles, historicMessages: this.state.historicMessages, messages: this.state.messages, turnOffLoop: true, isScrollable: this.state.isScrollable }),
 	        _react2.default.createElement(
 	          'div',
 	          { className: (0, _aphrodite.css)(style.textInputContainer) },
@@ -14809,6 +14815,7 @@ var showChatTemplate =
 
 	Chat.propTypes = {
 	  turnOffLoop: _react.PropTypes.bool,
+	  isScrollable: _react.PropTypes.bool,
 	  messages: _react.PropTypes.arrayOf(_react.PropTypes.shape({
 	    message: _react.PropTypes.string,
 	    src: _react.PropTypes.string,
@@ -14956,12 +14963,56 @@ var showChatTemplate =
 	      }
 	    };
 
+	    _this.paneDidMount = function (node) {
+	      if (node && _this.state.isScrollable) {
+	        node.addEventListener('wheel', function (event) {
+	          var mouseMoveY = event.deltaY;
+	          var conversationDisplayElement = node;
+	          var scrollElement = node.children[0];
+	          var messagesElement = node.children[0].children[1];
+	          var heightOfDisplay = conversationDisplayElement.getBoundingClientRect().height;
+	          var bottomOfDisplay = conversationDisplayElement.getBoundingClientRect().bottom;
+	          var heightOfActualMessages = messagesElement.getBoundingClientRect().height;
+	          var scrollElementClientRect = scrollElement.getBoundingClientRect();
+	          var scrollElementTopOfMessages = scrollElementClientRect.top;
+
+	          var maxTop = heightOfDisplay - bottomOfDisplay;
+	          var minTop = (heightOfActualMessages - heightOfDisplay) * -1;
+
+	          var isScrollingEnabled = heightOfActualMessages > heightOfDisplay;
+
+	          if (isScrollingEnabled) {
+	            var topPixels = void 0;
+	            if (mouseMoveY < 0) {
+	              var isScrollAmountAboveTopMessage = maxTop < scrollElementTopOfMessages - mouseMoveY;
+	              if (isScrollAmountAboveTopMessage) {
+	                topPixels = maxTop;
+	              } else {
+	                var topElementToBeMoved = scrollElementTopOfMessages - mouseMoveY;
+	                topPixels = isScrollAmountAboveTopMessage ? maxTop : topElementToBeMoved;
+	              }
+	            } else {
+	              var isScrollAmountBelowBottomMessage = minTop > scrollElementTopOfMessages - mouseMoveY + maxTop;
+	              if (isScrollAmountBelowBottomMessage) {
+	                topPixels = minTop;
+	              } else {
+	                var _topElementToBeMoved = scrollElementTopOfMessages - mouseMoveY + maxTop;
+	                topPixels = isScrollAmountBelowBottomMessage ? minTop : _topElementToBeMoved;
+	              }
+	            }
+	            scrollElement.style.top = topPixels + 'px';
+	          }
+	        });
+	      }
+	    };
+
 	    _this.state = {
 	      startingDelay: props.delay || 1000,
 	      messages: props.historicMessages ? props.historicMessages.slice() : [],
 	      historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
 	      messagesToBeDisplayed: props.messages.slice(),
 	      originalMessagesToBeDisplayed: props.messages.slice(),
+	      isScrollable: props.isScrollable,
 	      isTyping: false,
 	      inbound: true,
 	      reset: false,
@@ -15017,7 +15068,7 @@ var showChatTemplate =
 	        _react2.default.createElement(_ImageLoader2.default, { messages: this.props.messages }),
 	        _react2.default.createElement(
 	          'div',
-	          { className: (0, _aphrodite.css)(style.messages) },
+	          { ref: this.paneDidMount, className: (0, _aphrodite.css)(style.messages) },
 	          _react2.default.createElement(_Messages2.default, { key: this.state.reset, height: style.conversation.height, messages: this.state.messages })
 	        ),
 	        _react2.default.createElement(
@@ -15036,6 +15087,7 @@ var showChatTemplate =
 	  delay: _react.PropTypes.number,
 	  height: _react.PropTypes.number,
 	  turnOffLoop: _react.PropTypes.bool,
+	  isScrollable: _react.PropTypes.bool,
 	  messages: _react.PropTypes.arrayOf(_react.PropTypes.shape({
 	    message: _react.PropTypes.string,
 	    src: _react.PropTypes.string,

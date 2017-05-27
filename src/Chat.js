@@ -32,6 +32,7 @@ class Chat extends React.Component {
     this.state = {
       messages: props.messages ? props.messages.slice() : [],
       historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
+      isScrollable: props.isScrollable,
     };
     this.keyPress = this.keyPress.bind(this);
   }
@@ -44,9 +45,9 @@ class Chat extends React.Component {
     };
     let messages = this.state.messages;
     messages = messages.filter((element) => element.type !== 'typing');
-    messages.push({type: 'typing', duration: 500, inbound: true});
+    messages.push({ type: 'typing', duration: 500, inbound: true });
     messages.push(message);
-    this.setState({ messages: messages });
+    this.setState({ messages });
   }
   keyPress(e) {
     if (e.key === 'Enter' && e.target.value) {
@@ -60,7 +61,7 @@ class Chat extends React.Component {
 
     return (
       <div className={css(style.chat)}>
-        <Conversation styles={chatStyles} historicMessages={this.state.historicMessages} messages={this.state.messages} turnOffLoop />
+        <Conversation styles={chatStyles} historicMessages={this.state.historicMessages} messages={this.state.messages} turnOffLoop isScrollable={this.state.isScrollable} />
         <div className={css(style.textInputContainer)}>
           <input type="text" onKeyPress={this.keyPress} className={css(style.textInput)} placeholder="Type your message here..." />
         </div>
@@ -70,6 +71,7 @@ class Chat extends React.Component {
 }
 Chat.propTypes = {
   turnOffLoop: PropTypes.bool,
+  isScrollable: PropTypes.bool,
   messages: PropTypes.arrayOf(
     PropTypes.shape({
       message: PropTypes.string,

@@ -50,6 +50,16 @@ This parameter is optional.
    <Conversation height={300} messages={messages} turnOffLoop />
 ```
 
+### Turning on scrollable conversation (Temporary fix - v1 release will have a more supported scrollable conversation)
+The conversation is not scrollable by default.
+
+To enable scrolling, add a isScrollable attribute to Conversation.
+
+This parameter is optional.
+```
+   <Conversation height={300} messages={messages} turnOffLoop isScrollable />
+```
+
 ## Storybook examples
 
 Live stories are displayed [here](http://sevenleaps.github.io/chat-template/).

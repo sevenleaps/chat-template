@@ -4,9 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.0.26] - 2017-05-12
+## [0.0.26] - 2017-05-27
 
 - Fixed #17: Showing some messages twice (Paul.O'Flaherty)
+- Fixed #10: Made the conversation scrollable -> This is a temporary fix (Paul.O'Flaherty)
 
 ## [0.0.25] - 2017-04-02
 

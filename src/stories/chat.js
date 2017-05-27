@@ -70,12 +70,12 @@ storiesOf('Chat', module)
     </div>
   );
 })
-.add('Ch2at configured styles and ends at the last message and allows the user to add messages', () => {
+.add('Chat configured styles and ends at the last message and allows the user to add and scroll messages', () => {
   const messagesForConversation = [
     {
       type: 'typing',
       duration: 500,
-      inbound: true
+      inbound: true,
     },
     {
       message: 'Press enter to write a message',
@@ -93,7 +93,7 @@ storiesOf('Chat', module)
   ];
   return (
     <div>
-      <Chat historicMessages={historicMessages} messages={messagesForConversation} turnOffLoop />
+      <Chat historicMessages={historicMessages} messages={messagesForConversation} turnOffLoop isScrollable />
     </div>
   );
 });
