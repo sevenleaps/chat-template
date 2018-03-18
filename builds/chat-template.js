@@ -43,13 +43,13 @@ var showChatTemplate =
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _index = __webpack_require__(1);
 
-	var _reactDom = __webpack_require__(298);
+	var _reactDom = __webpack_require__(305);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -65,12 +65,11 @@ var showChatTemplate =
 
 	  _reactDom2.default.render(_react2.default.createElement(_index.Conversation, { delay: delay, height: height, messages: messages }), element);
 	};
-
 	module.exports = showChatTemplate;
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -83,27 +82,27 @@ var showChatTemplate =
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
-	var _Chat = __webpack_require__(155);
+	var _Chat = __webpack_require__(162);
 
 	var _Chat2 = _interopRequireDefault(_Chat);
 
-	var _Conversation = __webpack_require__(156);
+	var _Conversation = __webpack_require__(163);
 
 	var _Conversation2 = _interopRequireDefault(_Conversation);
 
-	var _ImageLoader = __webpack_require__(297);
+	var _ImageLoader = __webpack_require__(304);
 
 	var _ImageLoader2 = _interopRequireDefault(_ImageLoader);
 
-	var _Message = __webpack_require__(158);
+	var _Message = __webpack_require__(165);
 
 	var _Message2 = _interopRequireDefault(_Message);
 
-	var _MessageContent = __webpack_require__(159);
+	var _MessageContent = __webpack_require__(166);
 
 	var _MessageContent2 = _interopRequireDefault(_MessageContent);
 
-	var _Typing = __webpack_require__(296);
+	var _Typing = __webpack_require__(303);
 
 	var _Typing2 = _interopRequireDefault(_Typing);
 
@@ -117,9 +116,9 @@ var showChatTemplate =
 	exports.MessageContent = _MessageContent2.default;
 	exports.Typing = _Typing2.default;
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -145,7 +144,7 @@ var showChatTemplate =
 
 	var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
 
-	var _MuiThemeProvider = __webpack_require__(154);
+	var _MuiThemeProvider = __webpack_require__(161);
 
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
@@ -185,18 +184,18 @@ var showChatTemplate =
 
 	exports.default = Avatar;
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	module.exports = __webpack_require__(4);
 
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -287,9 +286,9 @@ var showChatTemplate =
 	module.exports = React;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// shim for using process in browser
 	var process = module.exports = {};
@@ -461,6 +460,10 @@ var showChatTemplate =
 	process.removeListener = noop;
 	process.removeAllListeners = noop;
 	process.emit = noop;
+	process.prependListener = noop;
+	process.prependOnceListener = noop;
+
+	process.listeners = function (name) { return [] }
 
 	process.binding = function (name) {
 	    throw new Error('process.binding is not supported');
@@ -473,9 +476,9 @@ var showChatTemplate =
 	process.umask = function() { return 0; };
 
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	object-assign
@@ -569,9 +572,9 @@ var showChatTemplate =
 	};
 
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -765,9 +768,9 @@ var showChatTemplate =
 
 	module.exports = ReactChildren;
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -890,17 +893,15 @@ var showChatTemplate =
 	module.exports = PooledClass;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 */
 
@@ -951,9 +952,9 @@ var showChatTemplate =
 	module.exports = invariant;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -1270,9 +1271,9 @@ var showChatTemplate =
 	module.exports = ReactElement;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -1306,17 +1307,15 @@ var showChatTemplate =
 
 	module.exports = ReactCurrentOwner;
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2014-2015, Facebook, Inc.
-	 * All rights reserved.
+	 * Copyright (c) 2014-present, Facebook, Inc.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 */
 
@@ -1334,63 +1333,59 @@ var showChatTemplate =
 	var warning = emptyFunction;
 
 	if (process.env.NODE_ENV !== 'production') {
-	  (function () {
-	    var printWarning = function printWarning(format) {
-	      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-	        args[_key - 1] = arguments[_key];
+	  var printWarning = function printWarning(format) {
+	    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	      args[_key - 1] = arguments[_key];
+	    }
+
+	    var argIndex = 0;
+	    var message = 'Warning: ' + format.replace(/%s/g, function () {
+	      return args[argIndex++];
+	    });
+	    if (typeof console !== 'undefined') {
+	      console.error(message);
+	    }
+	    try {
+	      // --- Welcome to debugging React ---
+	      // This error was thrown as a convenience so that you can use this stack
+	      // to find the callsite that caused this warning to fire.
+	      throw new Error(message);
+	    } catch (x) {}
+	  };
+
+	  warning = function warning(condition, format) {
+	    if (format === undefined) {
+	      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+	    }
+
+	    if (format.indexOf('Failed Composite propType: ') === 0) {
+	      return; // Ignore CompositeComponent proptype check.
+	    }
+
+	    if (!condition) {
+	      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+	        args[_key2 - 2] = arguments[_key2];
 	      }
 
-	      var argIndex = 0;
-	      var message = 'Warning: ' + format.replace(/%s/g, function () {
-	        return args[argIndex++];
-	      });
-	      if (typeof console !== 'undefined') {
-	        console.error(message);
-	      }
-	      try {
-	        // --- Welcome to debugging React ---
-	        // This error was thrown as a convenience so that you can use this stack
-	        // to find the callsite that caused this warning to fire.
-	        throw new Error(message);
-	      } catch (x) {}
-	    };
-
-	    warning = function warning(condition, format) {
-	      if (format === undefined) {
-	        throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-	      }
-
-	      if (format.indexOf('Failed Composite propType: ') === 0) {
-	        return; // Ignore CompositeComponent proptype check.
-	      }
-
-	      if (!condition) {
-	        for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-	          args[_key2 - 2] = arguments[_key2];
-	        }
-
-	        printWarning.apply(undefined, [format].concat(args));
-	      }
-	    };
-	  })();
+	      printWarning.apply(undefined, [format].concat(args));
+	    }
+	  };
 	}
 
 	module.exports = warning;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * 
 	 */
@@ -1421,9 +1416,9 @@ var showChatTemplate =
 
 	module.exports = emptyFunction;
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -1451,9 +1446,9 @@ var showChatTemplate =
 	module.exports = canDefineProperty;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -1615,9 +1610,9 @@ var showChatTemplate =
 	module.exports = traverseAllChildren;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -1660,9 +1655,9 @@ var showChatTemplate =
 
 	module.exports = getIteratorFn;
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -1723,9 +1718,9 @@ var showChatTemplate =
 
 	module.exports = KeyEscapeUtils;
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -1850,9 +1845,9 @@ var showChatTemplate =
 	module.exports = ReactComponent;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2015-present, Facebook, Inc.
@@ -1951,9 +1946,9 @@ var showChatTemplate =
 	module.exports = ReactNoopUpdateQueue;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2016-present, Facebook, Inc.
@@ -1972,9 +1967,9 @@ var showChatTemplate =
 
 	module.exports = { debugTool: ReactDebugTool };
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2016-present, Facebook, Inc.
@@ -2228,17 +2223,15 @@ var showChatTemplate =
 	module.exports = ReactDebugTool;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 */
 
@@ -2268,19 +2261,17 @@ var showChatTemplate =
 
 	module.exports = ExecutionEnvironment;
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -2306,17 +2297,15 @@ var showChatTemplate =
 
 	module.exports = performanceNow;
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -2333,9 +2322,9 @@ var showChatTemplate =
 
 	module.exports = performance || {};
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2016-present, Facebook, Inc.
@@ -2375,9 +2364,9 @@ var showChatTemplate =
 	module.exports = ReactInvalidSetStateWarningDevTool;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2016-present, Facebook, Inc.
@@ -2417,9 +2406,9 @@ var showChatTemplate =
 
 	module.exports = ReactNativeOperationHistoryDevtool;
 
-/***/ },
+/***/ }),
 /* 27 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2016-present, Facebook, Inc.
@@ -2568,17 +2557,15 @@ var showChatTemplate =
 	module.exports = ReactComponentTreeDevtool;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 28 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 */
 
@@ -2593,9 +2580,9 @@ var showChatTemplate =
 	module.exports = emptyObject;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 29 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -3323,9 +3310,9 @@ var showChatTemplate =
 	module.exports = ReactClass;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 30 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -3350,17 +3337,15 @@ var showChatTemplate =
 
 	module.exports = ReactPropTypeLocations;
 
-/***/ },
+/***/ }),
 /* 31 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks static-only
 	 */
@@ -3403,9 +3388,9 @@ var showChatTemplate =
 	module.exports = keyMirror;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 32 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -3433,19 +3418,17 @@ var showChatTemplate =
 	module.exports = ReactPropTypeLocationNames;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 33 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 */
 
@@ -3472,9 +3455,9 @@ var showChatTemplate =
 
 	module.exports = keyOf;
 
-/***/ },
+/***/ }),
 /* 34 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -3654,9 +3637,9 @@ var showChatTemplate =
 	module.exports = ReactDOMFactories;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 35 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -3941,17 +3924,15 @@ var showChatTemplate =
 	module.exports = ReactElementValidator;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 36 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 */
 
@@ -3996,9 +3977,9 @@ var showChatTemplate =
 
 	module.exports = mapObject;
 
-/***/ },
+/***/ }),
 /* 37 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -4381,9 +4362,9 @@ var showChatTemplate =
 
 	module.exports = ReactPropTypes;
 
-/***/ },
+/***/ }),
 /* 38 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -4400,9 +4381,9 @@ var showChatTemplate =
 
 	module.exports = '15.1.0';
 
-/***/ },
+/***/ }),
 /* 39 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -4442,9 +4423,9 @@ var showChatTemplate =
 	module.exports = onlyChild;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 40 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -4532,9 +4513,9 @@ var showChatTemplate =
 	};
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 41 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// {K1: V1, K2: V2, ...} -> [[K1, V1], [K2, V2]]
 	'use strict';
@@ -4763,9 +4744,9 @@ var showChatTemplate =
 	};
 	exports.importantify = importantify;
 
-/***/ },
+/***/ }),
 /* 42 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -4967,9 +4948,9 @@ var showChatTemplate =
 	};
 	exports.addRenderedClassNames = addRenderedClassNames;
 
-/***/ },
+/***/ }),
 /* 43 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 
@@ -5039,9 +5020,9 @@ var showChatTemplate =
 	};
 
 
-/***/ },
+/***/ }),
 /* 44 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
 
@@ -5121,9 +5102,12 @@ var showChatTemplate =
 
 	// Safari 6 and 6.1 for desktop, iPad, and iPhone are the only browsers that
 	// have WebKitMutationObserver but not un-prefixed MutationObserver.
-	// Must use `global` instead of `window` to work in both frames and web
+	// Must use `global` or `self` instead of `window` to work in both frames and web
 	// workers. `global` is a provision of Browserify, Mr, Mrs, or Mop.
-	var BrowserMutationObserver = global.MutationObserver || global.WebKitMutationObserver;
+
+	/* globals self */
+	var scope = typeof global !== "undefined" ? global : self;
+	var BrowserMutationObserver = scope.MutationObserver || scope.WebKitMutationObserver;
 
 	// MutationObservers are desirable because they have high priority and work
 	// reliably everywhere they are implemented.
@@ -5266,9 +5250,9 @@ var showChatTemplate =
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
-/***/ },
+/***/ }),
 /* 45 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5352,9 +5336,9 @@ var showChatTemplate =
 	};
 	exports.generateCSSRuleset = generateCSSRuleset;
 
-/***/ },
+/***/ }),
 /* 46 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5446,9 +5430,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 47 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
@@ -5458,9 +5442,9 @@ var showChatTemplate =
 	exports["default"] = { "Webkit": { "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "backfaceVisibility": true, "perspective": true, "perspectiveOrigin": true, "transformStyle": true, "transformOriginZ": true, "animation": true, "animationDelay": true, "animationDirection": true, "animationFillMode": true, "animationDuration": true, "animationIterationCount": true, "animationName": true, "animationPlayState": true, "animationTimingFunction": true, "appearance": true, "userSelect": true, "fontKerning": true, "textEmphasisPosition": true, "textEmphasis": true, "textEmphasisStyle": true, "textEmphasisColor": true, "boxDecorationBreak": true, "clipPath": true, "maskImage": true, "maskMode": true, "maskRepeat": true, "maskPosition": true, "maskClip": true, "maskOrigin": true, "maskSize": true, "maskComposite": true, "mask": true, "maskBorderSource": true, "maskBorderMode": true, "maskBorderSlice": true, "maskBorderWidth": true, "maskBorderOutset": true, "maskBorderRepeat": true, "maskBorder": true, "maskType": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "filter": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true, "flex": true, "flexBasis": true, "flexDirection": true, "flexGrow": true, "flexFlow": true, "flexShrink": true, "flexWrap": true, "alignContent": true, "alignItems": true, "alignSelf": true, "justifyContent": true, "order": true, "transition": true, "transitionDelay": true, "transitionDuration": true, "transitionProperty": true, "transitionTimingFunction": true, "backdropFilter": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "shapeImageThreshold": true, "shapeImageMargin": true, "shapeImageOutside": true, "hyphens": true, "flowInto": true, "flowFrom": true, "regionFragment": true, "textSizeAdjust": true, "borderImage": true, "borderImageOutset": true, "borderImageRepeat": true, "borderImageSlice": true, "borderImageSource": true, "borderImageWidth": true, "tabSize": true, "objectFit": true, "objectPosition": true }, "Moz": { "appearance": true, "userSelect": true, "boxSizing": true, "textAlignLast": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "tabSize": true, "hyphens": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true }, "ms": { "flex": true, "flexBasis": false, "flexDirection": true, "flexGrow": false, "flexFlow": true, "flexShrink": false, "flexWrap": true, "alignContent": false, "alignItems": false, "alignSelf": false, "justifyContent": false, "order": false, "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "userSelect": true, "wrapFlow": true, "wrapThrough": true, "wrapMargin": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "touchAction": true, "hyphens": true, "flowInto": true, "flowFrom": true, "breakBefore": true, "breakAfter": true, "breakInside": true, "regionFragment": true, "gridTemplateColumns": true, "gridTemplateRows": true, "gridTemplateAreas": true, "gridTemplate": true, "gridAutoColumns": true, "gridAutoRows": true, "gridAutoFlow": true, "grid": true, "gridRowStart": true, "gridColumnStart": true, "gridRowEnd": true, "gridRow": true, "gridColumn": true, "gridColumnEnd": true, "gridColumnGap": true, "gridRowGap": true, "gridArea": true, "gridGap": true, "textSizeAdjust": true } };
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 48 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// helper to capitalize strings
 	"use strict";
@@ -5475,9 +5459,9 @@ var showChatTemplate =
 
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 49 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// leight polyfill for Object.assign
 	"use strict";
@@ -5496,9 +5480,9 @@ var showChatTemplate =
 
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 50 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5523,9 +5507,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 51 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5556,9 +5540,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 52 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Converts a camel-case string to a dash-case string
@@ -5578,9 +5562,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 53 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5610,9 +5594,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 54 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5642,9 +5626,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 55 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5684,9 +5668,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 56 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5711,9 +5695,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 57 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5792,9 +5776,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 58 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -5809,9 +5793,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 59 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -5847,9 +5831,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 60 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5895,9 +5879,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 61 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	 * Object Assign Deep.
@@ -5951,9 +5935,9 @@ var showChatTemplate =
 
 	};
 
-/***/ },
+/***/ }),
 /* 62 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -5983,9 +5967,9 @@ var showChatTemplate =
 	};
 
 
-/***/ },
+/***/ }),
 /* 63 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.7.0
 	//     http://underscorejs.org
@@ -7404,9 +7388,9 @@ var showChatTemplate =
 	}.call(this));
 
 
-/***/ },
+/***/ }),
 /* 64 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -7423,9 +7407,9 @@ var showChatTemplate =
 
 	exports.default = _Avatar2.default;
 
-/***/ },
+/***/ }),
 /* 65 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -7590,9 +7574,9 @@ var showChatTemplate =
 	};
 	exports.default = Avatar;
 
-/***/ },
+/***/ }),
 /* 66 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function (target) {
 	  for (var i = 1; i < arguments.length; i++) {
@@ -7607,9 +7591,9 @@ var showChatTemplate =
 	};
 
 
-/***/ },
+/***/ }),
 /* 67 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -7648,7 +7632,7 @@ var showChatTemplate =
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _typography = __webpack_require__(153);
+	var _typography = __webpack_require__(160);
 
 	var _typography2 = _interopRequireDefault(_typography);
 
@@ -7969,14 +7953,14 @@ var showChatTemplate =
 	  return muiTheme;
 	}
 
-/***/ },
+/***/ }),
 /* 68 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, module) {/**
-	 * lodash (Custom Build) <https://lodash.com/>
+	 * Lodash (Custom Build) <https://lodash.com/>
 	 * Build: `lodash modularize exports="npm" -o ./`
-	 * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+	 * Copyright JS Foundation and other contributors <https://js.foundation/>
 	 * Released under MIT license <https://lodash.com/license>
 	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
 	 * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -7988,12 +7972,17 @@ var showChatTemplate =
 	/** Used to stand-in for `undefined` hash values. */
 	var HASH_UNDEFINED = '__lodash_hash_undefined__';
 
+	/** Used to detect hot functions by number of calls within a span of milliseconds. */
+	var HOT_COUNT = 800,
+	    HOT_SPAN = 16;
+
 	/** Used as references for various `Number` constants. */
 	var MAX_SAFE_INTEGER = 9007199254740991;
 
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]',
 	    arrayTag = '[object Array]',
+	    asyncTag = '[object AsyncFunction]',
 	    boolTag = '[object Boolean]',
 	    dateTag = '[object Date]',
 	    errorTag = '[object Error]',
@@ -8001,12 +7990,13 @@ var showChatTemplate =
 	    genTag = '[object GeneratorFunction]',
 	    mapTag = '[object Map]',
 	    numberTag = '[object Number]',
+	    nullTag = '[object Null]',
 	    objectTag = '[object Object]',
-	    promiseTag = '[object Promise]',
+	    proxyTag = '[object Proxy]',
 	    regexpTag = '[object RegExp]',
 	    setTag = '[object Set]',
 	    stringTag = '[object String]',
-	    symbolTag = '[object Symbol]',
+	    undefinedTag = '[object Undefined]',
 	    weakMapTag = '[object WeakMap]';
 
 	var arrayBufferTag = '[object ArrayBuffer]',
@@ -8026,9 +8016,6 @@ var showChatTemplate =
 	 * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
 	 */
 	var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
-
-	/** Used to match `RegExp` flags from their coerced string values. */
-	var reFlags = /\w*$/;
 
 	/** Used to detect host constructors (Safari). */
 	var reIsHostCtor = /^\[object .+?Constructor\]$/;
@@ -8051,22 +8038,6 @@ var showChatTemplate =
 	typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
 	typedArrayTags[setTag] = typedArrayTags[stringTag] =
 	typedArrayTags[weakMapTag] = false;
-
-	/** Used to identify `toStringTag` values supported by `_.clone`. */
-	var cloneableTags = {};
-	cloneableTags[argsTag] = cloneableTags[arrayTag] =
-	cloneableTags[arrayBufferTag] = cloneableTags[dataViewTag] =
-	cloneableTags[boolTag] = cloneableTags[dateTag] =
-	cloneableTags[float32Tag] = cloneableTags[float64Tag] =
-	cloneableTags[int8Tag] = cloneableTags[int16Tag] =
-	cloneableTags[int32Tag] = cloneableTags[mapTag] =
-	cloneableTags[numberTag] = cloneableTags[objectTag] =
-	cloneableTags[regexpTag] = cloneableTags[setTag] =
-	cloneableTags[stringTag] = cloneableTags[symbolTag] =
-	cloneableTags[uint8Tag] = cloneableTags[uint8ClampedTag] =
-	cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true;
-	cloneableTags[errorTag] = cloneableTags[funcTag] =
-	cloneableTags[weakMapTag] = false;
 
 	/** Detect free variable `global` from Node.js. */
 	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -8092,40 +8063,12 @@ var showChatTemplate =
 	/** Used to access faster Node.js helpers. */
 	var nodeUtil = (function() {
 	  try {
-	    return freeProcess && freeProcess.binding('util');
+	    return freeProcess && freeProcess.binding && freeProcess.binding('util');
 	  } catch (e) {}
 	}());
 
 	/* Node.js helper references. */
 	var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
-
-	/**
-	 * Adds the key-value `pair` to `map`.
-	 *
-	 * @private
-	 * @param {Object} map The map to modify.
-	 * @param {Array} pair The key-value pair to add.
-	 * @returns {Object} Returns `map`.
-	 */
-	function addMapEntry(map, pair) {
-	  // Don't return `map.set` because it's not chainable in IE 11.
-	  map.set(pair[0], pair[1]);
-	  return map;
-	}
-
-	/**
-	 * Adds `value` to `set`.
-	 *
-	 * @private
-	 * @param {Object} set The set to modify.
-	 * @param {*} value The value to add.
-	 * @returns {Object} Returns `set`.
-	 */
-	function addSetEntry(set, value) {
-	  // Don't return `set.add` because it's not chainable in IE 11.
-	  set.add(value);
-	  return set;
-	}
 
 	/**
 	 * A faster alternative to `Function#apply`, this function invokes `func`
@@ -8145,71 +8088,6 @@ var showChatTemplate =
 	    case 3: return func.call(thisArg, args[0], args[1], args[2]);
 	  }
 	  return func.apply(thisArg, args);
-	}
-
-	/**
-	 * A specialized version of `_.forEach` for arrays without support for
-	 * iteratee shorthands.
-	 *
-	 * @private
-	 * @param {Array} [array] The array to iterate over.
-	 * @param {Function} iteratee The function invoked per iteration.
-	 * @returns {Array} Returns `array`.
-	 */
-	function arrayEach(array, iteratee) {
-	  var index = -1,
-	      length = array ? array.length : 0;
-
-	  while (++index < length) {
-	    if (iteratee(array[index], index, array) === false) {
-	      break;
-	    }
-	  }
-	  return array;
-	}
-
-	/**
-	 * Appends the elements of `values` to `array`.
-	 *
-	 * @private
-	 * @param {Array} array The array to modify.
-	 * @param {Array} values The values to append.
-	 * @returns {Array} Returns `array`.
-	 */
-	function arrayPush(array, values) {
-	  var index = -1,
-	      length = values.length,
-	      offset = array.length;
-
-	  while (++index < length) {
-	    array[offset + index] = values[index];
-	  }
-	  return array;
-	}
-
-	/**
-	 * A specialized version of `_.reduce` for arrays without support for
-	 * iteratee shorthands.
-	 *
-	 * @private
-	 * @param {Array} [array] The array to iterate over.
-	 * @param {Function} iteratee The function invoked per iteration.
-	 * @param {*} [accumulator] The initial value.
-	 * @param {boolean} [initAccum] Specify using the first element of `array` as
-	 *  the initial value.
-	 * @returns {*} Returns the accumulated value.
-	 */
-	function arrayReduce(array, iteratee, accumulator, initAccum) {
-	  var index = -1,
-	      length = array ? array.length : 0;
-
-	  if (initAccum && length) {
-	    accumulator = array[++index];
-	  }
-	  while (++index < length) {
-	    accumulator = iteratee(accumulator, array[index], index, array);
-	  }
-	  return accumulator;
 	}
 
 	/**
@@ -8257,42 +8135,6 @@ var showChatTemplate =
 	}
 
 	/**
-	 * Checks if `value` is a host object in IE < 9.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
-	 */
-	function isHostObject(value) {
-	  // Many host objects are `Object` objects that can coerce to strings
-	  // despite having improperly defined `toString` methods.
-	  var result = false;
-	  if (value != null && typeof value.toString != 'function') {
-	    try {
-	      result = !!(value + '');
-	    } catch (e) {}
-	  }
-	  return result;
-	}
-
-	/**
-	 * Converts `map` to its key-value pairs.
-	 *
-	 * @private
-	 * @param {Object} map The map to convert.
-	 * @returns {Array} Returns the key-value pairs.
-	 */
-	function mapToArray(map) {
-	  var index = -1,
-	      result = Array(map.size);
-
-	  map.forEach(function(value, key) {
-	    result[++index] = [key, value];
-	  });
-	  return result;
-	}
-
-	/**
 	 * Creates a unary function that invokes `func` with its argument transformed.
 	 *
 	 * @private
@@ -8307,20 +8149,17 @@ var showChatTemplate =
 	}
 
 	/**
-	 * Converts `set` to an array of its values.
+	 * Gets the value at `key`, unless `key` is "__proto__".
 	 *
 	 * @private
-	 * @param {Object} set The set to convert.
-	 * @returns {Array} Returns the values.
+	 * @param {Object} object The object to query.
+	 * @param {string} key The key of the property to get.
+	 * @returns {*} Returns the property value.
 	 */
-	function setToArray(set) {
-	  var index = -1,
-	      result = Array(set.size);
-
-	  set.forEach(function(value) {
-	    result[++index] = value;
-	  });
-	  return result;
+	function safeGet(object, key) {
+	  return key == '__proto__'
+	    ? undefined
+	    : object[key];
 	}
 
 	/** Used for built-in method references. */
@@ -8331,27 +8170,27 @@ var showChatTemplate =
 	/** Used to detect overreaching core-js shims. */
 	var coreJsData = root['__core-js_shared__'];
 
-	/** Used to detect methods masquerading as native. */
-	var maskSrcKey = (function() {
-	  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
-	  return uid ? ('Symbol(src)_1.' + uid) : '';
-	}());
-
 	/** Used to resolve the decompiled source of functions. */
 	var funcToString = funcProto.toString;
 
 	/** Used to check objects for own properties. */
 	var hasOwnProperty = objectProto.hasOwnProperty;
 
-	/** Used to infer the `Object` constructor. */
-	var objectCtorString = funcToString.call(Object);
+	/** Used to detect methods masquerading as native. */
+	var maskSrcKey = (function() {
+	  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+	  return uid ? ('Symbol(src)_1.' + uid) : '';
+	}());
 
 	/**
 	 * Used to resolve the
 	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
 	 * of values.
 	 */
-	var objectToString = objectProto.toString;
+	var nativeObjectToString = objectProto.toString;
+
+	/** Used to infer the `Object` constructor. */
+	var objectCtorString = funcToString.call(Object);
 
 	/** Used to detect if a method is native. */
 	var reIsNative = RegExp('^' +
@@ -8363,35 +8202,53 @@ var showChatTemplate =
 	var Buffer = moduleExports ? root.Buffer : undefined,
 	    Symbol = root.Symbol,
 	    Uint8Array = root.Uint8Array,
+	    allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined,
 	    getPrototype = overArg(Object.getPrototypeOf, Object),
 	    objectCreate = Object.create,
 	    propertyIsEnumerable = objectProto.propertyIsEnumerable,
-	    splice = arrayProto.splice;
+	    splice = arrayProto.splice,
+	    symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+	var defineProperty = (function() {
+	  try {
+	    var func = getNative(Object, 'defineProperty');
+	    func({}, '', {});
+	    return func;
+	  } catch (e) {}
+	}());
 
 	/* Built-in method references for those with the same name as other `lodash` methods. */
-	var nativeGetSymbols = Object.getOwnPropertySymbols,
-	    nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined,
-	    nativeKeys = overArg(Object.keys, Object),
-	    nativeMax = Math.max;
+	var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined,
+	    nativeMax = Math.max,
+	    nativeNow = Date.now;
 
 	/* Built-in method references that are verified to be native. */
-	var DataView = getNative(root, 'DataView'),
-	    Map = getNative(root, 'Map'),
-	    Promise = getNative(root, 'Promise'),
-	    Set = getNative(root, 'Set'),
-	    WeakMap = getNative(root, 'WeakMap'),
+	var Map = getNative(root, 'Map'),
 	    nativeCreate = getNative(Object, 'create');
 
-	/** Used to detect maps, sets, and weakmaps. */
-	var dataViewCtorString = toSource(DataView),
-	    mapCtorString = toSource(Map),
-	    promiseCtorString = toSource(Promise),
-	    setCtorString = toSource(Set),
-	    weakMapCtorString = toSource(WeakMap);
-
-	/** Used to convert symbols to primitives and strings. */
-	var symbolProto = Symbol ? Symbol.prototype : undefined,
-	    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+	/**
+	 * The base implementation of `_.create` without support for assigning
+	 * properties to the created object.
+	 *
+	 * @private
+	 * @param {Object} proto The object to inherit from.
+	 * @returns {Object} Returns the new object.
+	 */
+	var baseCreate = (function() {
+	  function object() {}
+	  return function(proto) {
+	    if (!isObject(proto)) {
+	      return {};
+	    }
+	    if (objectCreate) {
+	      return objectCreate(proto);
+	    }
+	    object.prototype = proto;
+	    var result = new object;
+	    object.prototype = undefined;
+	    return result;
+	  };
+	}());
 
 	/**
 	 * Creates a hash object.
@@ -8402,7 +8259,7 @@ var showChatTemplate =
 	 */
 	function Hash(entries) {
 	  var index = -1,
-	      length = entries ? entries.length : 0;
+	      length = entries == null ? 0 : entries.length;
 
 	  this.clear();
 	  while (++index < length) {
@@ -8420,6 +8277,7 @@ var showChatTemplate =
 	 */
 	function hashClear() {
 	  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+	  this.size = 0;
 	}
 
 	/**
@@ -8433,7 +8291,9 @@ var showChatTemplate =
 	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
 	 */
 	function hashDelete(key) {
-	  return this.has(key) && delete this.__data__[key];
+	  var result = this.has(key) && delete this.__data__[key];
+	  this.size -= result ? 1 : 0;
+	  return result;
 	}
 
 	/**
@@ -8465,7 +8325,7 @@ var showChatTemplate =
 	 */
 	function hashHas(key) {
 	  var data = this.__data__;
-	  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+	  return nativeCreate ? (data[key] !== undefined) : hasOwnProperty.call(data, key);
 	}
 
 	/**
@@ -8480,6 +8340,7 @@ var showChatTemplate =
 	 */
 	function hashSet(key, value) {
 	  var data = this.__data__;
+	  this.size += this.has(key) ? 0 : 1;
 	  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
 	  return this;
 	}
@@ -8500,7 +8361,7 @@ var showChatTemplate =
 	 */
 	function ListCache(entries) {
 	  var index = -1,
-	      length = entries ? entries.length : 0;
+	      length = entries == null ? 0 : entries.length;
 
 	  this.clear();
 	  while (++index < length) {
@@ -8518,6 +8379,7 @@ var showChatTemplate =
 	 */
 	function listCacheClear() {
 	  this.__data__ = [];
+	  this.size = 0;
 	}
 
 	/**
@@ -8542,6 +8404,7 @@ var showChatTemplate =
 	  } else {
 	    splice.call(data, index, 1);
 	  }
+	  --this.size;
 	  return true;
 	}
 
@@ -8589,6 +8452,7 @@ var showChatTemplate =
 	      index = assocIndexOf(data, key);
 
 	  if (index < 0) {
+	    ++this.size;
 	    data.push([key, value]);
 	  } else {
 	    data[index][1] = value;
@@ -8612,7 +8476,7 @@ var showChatTemplate =
 	 */
 	function MapCache(entries) {
 	  var index = -1,
-	      length = entries ? entries.length : 0;
+	      length = entries == null ? 0 : entries.length;
 
 	  this.clear();
 	  while (++index < length) {
@@ -8629,6 +8493,7 @@ var showChatTemplate =
 	 * @memberOf MapCache
 	 */
 	function mapCacheClear() {
+	  this.size = 0;
 	  this.__data__ = {
 	    'hash': new Hash,
 	    'map': new (Map || ListCache),
@@ -8646,7 +8511,9 @@ var showChatTemplate =
 	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
 	 */
 	function mapCacheDelete(key) {
-	  return getMapData(this, key)['delete'](key);
+	  var result = getMapData(this, key)['delete'](key);
+	  this.size -= result ? 1 : 0;
+	  return result;
 	}
 
 	/**
@@ -8686,7 +8553,11 @@ var showChatTemplate =
 	 * @returns {Object} Returns the map cache instance.
 	 */
 	function mapCacheSet(key, value) {
-	  getMapData(this, key).set(key, value);
+	  var data = getMapData(this, key),
+	      size = data.size;
+
+	  data.set(key, value);
+	  this.size += data.size == size ? 0 : 1;
 	  return this;
 	}
 
@@ -8705,7 +8576,8 @@ var showChatTemplate =
 	 * @param {Array} [entries] The key-value pairs to cache.
 	 */
 	function Stack(entries) {
-	  this.__data__ = new ListCache(entries);
+	  var data = this.__data__ = new ListCache(entries);
+	  this.size = data.size;
 	}
 
 	/**
@@ -8717,6 +8589,7 @@ var showChatTemplate =
 	 */
 	function stackClear() {
 	  this.__data__ = new ListCache;
+	  this.size = 0;
 	}
 
 	/**
@@ -8729,7 +8602,11 @@ var showChatTemplate =
 	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
 	 */
 	function stackDelete(key) {
-	  return this.__data__['delete'](key);
+	  var data = this.__data__,
+	      result = data['delete'](key);
+
+	  this.size = data.size;
+	  return result;
 	}
 
 	/**
@@ -8769,16 +8646,18 @@ var showChatTemplate =
 	 * @returns {Object} Returns the stack cache instance.
 	 */
 	function stackSet(key, value) {
-	  var cache = this.__data__;
-	  if (cache instanceof ListCache) {
-	    var pairs = cache.__data__;
+	  var data = this.__data__;
+	  if (data instanceof ListCache) {
+	    var pairs = data.__data__;
 	    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
 	      pairs.push([key, value]);
+	      this.size = ++data.size;
 	      return this;
 	    }
-	    cache = this.__data__ = new MapCache(pairs);
+	    data = this.__data__ = new MapCache(pairs);
 	  }
-	  cache.set(key, value);
+	  data.set(key, value);
+	  this.size = data.size;
 	  return this;
 	}
 
@@ -8798,18 +8677,26 @@ var showChatTemplate =
 	 * @returns {Array} Returns the array of property names.
 	 */
 	function arrayLikeKeys(value, inherited) {
-	  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-	  // Safari 9 makes `arguments.length` enumerable in strict mode.
-	  var result = (isArray(value) || isArguments(value))
-	    ? baseTimes(value.length, String)
-	    : [];
-
-	  var length = result.length,
-	      skipIndexes = !!length;
+	  var isArr = isArray(value),
+	      isArg = !isArr && isArguments(value),
+	      isBuff = !isArr && !isArg && isBuffer(value),
+	      isType = !isArr && !isArg && !isBuff && isTypedArray(value),
+	      skipIndexes = isArr || isArg || isBuff || isType,
+	      result = skipIndexes ? baseTimes(value.length, String) : [],
+	      length = result.length;
 
 	  for (var key in value) {
 	    if ((inherited || hasOwnProperty.call(value, key)) &&
-	        !(skipIndexes && (key == 'length' || isIndex(key, length)))) {
+	        !(skipIndexes && (
+	           // Safari 9 has enumerable `arguments.length` in strict mode.
+	           key == 'length' ||
+	           // Node.js 0.10 has enumerable non-index properties on buffers.
+	           (isBuff && (key == 'offset' || key == 'parent')) ||
+	           // PhantomJS 2 has enumerable non-index properties on typed arrays.
+	           (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
+	           // Skip index properties.
+	           isIndex(key, length)
+	        ))) {
 	      result.push(key);
 	    }
 	  }
@@ -8827,8 +8714,8 @@ var showChatTemplate =
 	 */
 	function assignMergeValue(object, key, value) {
 	  if ((value !== undefined && !eq(object[key], value)) ||
-	      (typeof key == 'number' && value === undefined && !(key in object))) {
-	    object[key] = value;
+	      (value === undefined && !(key in object))) {
+	    baseAssignValue(object, key, value);
 	  }
 	}
 
@@ -8846,7 +8733,7 @@ var showChatTemplate =
 	  var objValue = object[key];
 	  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
 	      (value === undefined && !(key in object))) {
-	    object[key] = value;
+	    baseAssignValue(object, key, value);
 	  }
 	}
 
@@ -8869,130 +8756,65 @@ var showChatTemplate =
 	}
 
 	/**
-	 * The base implementation of `_.assign` without support for multiple sources
-	 * or `customizer` functions.
+	 * The base implementation of `assignValue` and `assignMergeValue` without
+	 * value checks.
 	 *
 	 * @private
-	 * @param {Object} object The destination object.
-	 * @param {Object} source The source object.
+	 * @param {Object} object The object to modify.
+	 * @param {string} key The key of the property to assign.
+	 * @param {*} value The value to assign.
+	 */
+	function baseAssignValue(object, key, value) {
+	  if (key == '__proto__' && defineProperty) {
+	    defineProperty(object, key, {
+	      'configurable': true,
+	      'enumerable': true,
+	      'value': value,
+	      'writable': true
+	    });
+	  } else {
+	    object[key] = value;
+	  }
+	}
+
+	/**
+	 * The base implementation of `baseForOwn` which iterates over `object`
+	 * properties returned by `keysFunc` and invokes `iteratee` for each property.
+	 * Iteratee functions may exit iteration early by explicitly returning `false`.
+	 *
+	 * @private
+	 * @param {Object} object The object to iterate over.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @param {Function} keysFunc The function to get the keys of `object`.
 	 * @returns {Object} Returns `object`.
 	 */
-	function baseAssign(object, source) {
-	  return object && copyObject(source, keys(source), object);
-	}
+	var baseFor = createBaseFor();
 
 	/**
-	 * The base implementation of `_.clone` and `_.cloneDeep` which tracks
-	 * traversed objects.
-	 *
-	 * @private
-	 * @param {*} value The value to clone.
-	 * @param {boolean} [isDeep] Specify a deep clone.
-	 * @param {boolean} [isFull] Specify a clone including symbols.
-	 * @param {Function} [customizer] The function to customize cloning.
-	 * @param {string} [key] The key of `value`.
-	 * @param {Object} [object] The parent object of `value`.
-	 * @param {Object} [stack] Tracks traversed objects and their clone counterparts.
-	 * @returns {*} Returns the cloned value.
-	 */
-	function baseClone(value, isDeep, isFull, customizer, key, object, stack) {
-	  var result;
-	  if (customizer) {
-	    result = object ? customizer(value, key, object, stack) : customizer(value);
-	  }
-	  if (result !== undefined) {
-	    return result;
-	  }
-	  if (!isObject(value)) {
-	    return value;
-	  }
-	  var isArr = isArray(value);
-	  if (isArr) {
-	    result = initCloneArray(value);
-	    if (!isDeep) {
-	      return copyArray(value, result);
-	    }
-	  } else {
-	    var tag = getTag(value),
-	        isFunc = tag == funcTag || tag == genTag;
-
-	    if (isBuffer(value)) {
-	      return cloneBuffer(value, isDeep);
-	    }
-	    if (tag == objectTag || tag == argsTag || (isFunc && !object)) {
-	      if (isHostObject(value)) {
-	        return object ? value : {};
-	      }
-	      result = initCloneObject(isFunc ? {} : value);
-	      if (!isDeep) {
-	        return copySymbols(value, baseAssign(result, value));
-	      }
-	    } else {
-	      if (!cloneableTags[tag]) {
-	        return object ? value : {};
-	      }
-	      result = initCloneByTag(value, tag, baseClone, isDeep);
-	    }
-	  }
-	  // Check for circular references and return its corresponding clone.
-	  stack || (stack = new Stack);
-	  var stacked = stack.get(value);
-	  if (stacked) {
-	    return stacked;
-	  }
-	  stack.set(value, result);
-
-	  if (!isArr) {
-	    var props = isFull ? getAllKeys(value) : keys(value);
-	  }
-	  arrayEach(props || value, function(subValue, key) {
-	    if (props) {
-	      key = subValue;
-	      subValue = value[key];
-	    }
-	    // Recursively populate clone (susceptible to call stack limits).
-	    assignValue(result, key, baseClone(subValue, isDeep, isFull, customizer, key, value, stack));
-	  });
-	  return result;
-	}
-
-	/**
-	 * The base implementation of `_.create` without support for assigning
-	 * properties to the created object.
-	 *
-	 * @private
-	 * @param {Object} prototype The object to inherit from.
-	 * @returns {Object} Returns the new object.
-	 */
-	function baseCreate(proto) {
-	  return isObject(proto) ? objectCreate(proto) : {};
-	}
-
-	/**
-	 * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
-	 * `keysFunc` and `symbolsFunc` to get the enumerable property names and
-	 * symbols of `object`.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @param {Function} keysFunc The function to get the keys of `object`.
-	 * @param {Function} symbolsFunc The function to get the symbols of `object`.
-	 * @returns {Array} Returns the array of property names and symbols.
-	 */
-	function baseGetAllKeys(object, keysFunc, symbolsFunc) {
-	  var result = keysFunc(object);
-	  return isArray(object) ? result : arrayPush(result, symbolsFunc(object));
-	}
-
-	/**
-	 * The base implementation of `getTag`.
+	 * The base implementation of `getTag` without fallbacks for buggy environments.
 	 *
 	 * @private
 	 * @param {*} value The value to query.
 	 * @returns {string} Returns the `toStringTag`.
 	 */
 	function baseGetTag(value) {
-	  return objectToString.call(value);
+	  if (value == null) {
+	    return value === undefined ? undefinedTag : nullTag;
+	  }
+	  return (symToStringTag && symToStringTag in Object(value))
+	    ? getRawTag(value)
+	    : objectToString(value);
+	}
+
+	/**
+	 * The base implementation of `_.isArguments`.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+	 */
+	function baseIsArguments(value) {
+	  return isObjectLike(value) && baseGetTag(value) == argsTag;
 	}
 
 	/**
@@ -9007,7 +8829,7 @@ var showChatTemplate =
 	  if (!isObject(value) || isMasked(value)) {
 	    return false;
 	  }
-	  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
+	  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
 	  return pattern.test(toSource(value));
 	}
 
@@ -9020,27 +8842,7 @@ var showChatTemplate =
 	 */
 	function baseIsTypedArray(value) {
 	  return isObjectLike(value) &&
-	    isLength(value.length) && !!typedArrayTags[objectToString.call(value)];
-	}
-
-	/**
-	 * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names.
-	 */
-	function baseKeys(object) {
-	  if (!isPrototype(object)) {
-	    return nativeKeys(object);
-	  }
-	  var result = [];
-	  for (var key in Object(object)) {
-	    if (hasOwnProperty.call(object, key) && key != 'constructor') {
-	      result.push(key);
-	    }
-	  }
-	  return result;
+	    isLength(value.length) && !!typedArrayTags[baseGetTag(value)];
 	}
 
 	/**
@@ -9080,21 +8882,14 @@ var showChatTemplate =
 	  if (object === source) {
 	    return;
 	  }
-	  if (!(isArray(source) || isTypedArray(source))) {
-	    var props = baseKeysIn(source);
-	  }
-	  arrayEach(props || source, function(srcValue, key) {
-	    if (props) {
-	      key = srcValue;
-	      srcValue = source[key];
-	    }
+	  baseFor(source, function(srcValue, key) {
 	    if (isObject(srcValue)) {
 	      stack || (stack = new Stack);
 	      baseMergeDeep(object, source, key, srcIndex, baseMerge, customizer, stack);
 	    }
 	    else {
 	      var newValue = customizer
-	        ? customizer(object[key], srcValue, (key + ''), object, source, stack)
+	        ? customizer(safeGet(object, key), srcValue, (key + ''), object, source, stack)
 	        : undefined;
 
 	      if (newValue === undefined) {
@@ -9102,7 +8897,7 @@ var showChatTemplate =
 	      }
 	      assignMergeValue(object, key, newValue);
 	    }
-	  });
+	  }, keysIn);
 	}
 
 	/**
@@ -9121,8 +8916,8 @@ var showChatTemplate =
 	 *  counterparts.
 	 */
 	function baseMergeDeep(object, source, key, srcIndex, mergeFunc, customizer, stack) {
-	  var objValue = object[key],
-	      srcValue = source[key],
+	  var objValue = safeGet(object, key),
+	      srcValue = safeGet(source, key),
 	      stacked = stack.get(srcValue);
 
 	  if (stacked) {
@@ -9136,29 +8931,37 @@ var showChatTemplate =
 	  var isCommon = newValue === undefined;
 
 	  if (isCommon) {
+	    var isArr = isArray(srcValue),
+	        isBuff = !isArr && isBuffer(srcValue),
+	        isTyped = !isArr && !isBuff && isTypedArray(srcValue);
+
 	    newValue = srcValue;
-	    if (isArray(srcValue) || isTypedArray(srcValue)) {
+	    if (isArr || isBuff || isTyped) {
 	      if (isArray(objValue)) {
 	        newValue = objValue;
 	      }
 	      else if (isArrayLikeObject(objValue)) {
 	        newValue = copyArray(objValue);
 	      }
-	      else {
+	      else if (isBuff) {
 	        isCommon = false;
-	        newValue = baseClone(srcValue, true);
+	        newValue = cloneBuffer(srcValue, true);
+	      }
+	      else if (isTyped) {
+	        isCommon = false;
+	        newValue = cloneTypedArray(srcValue, true);
+	      }
+	      else {
+	        newValue = [];
 	      }
 	    }
 	    else if (isPlainObject(srcValue) || isArguments(srcValue)) {
+	      newValue = objValue;
 	      if (isArguments(objValue)) {
 	        newValue = toPlainObject(objValue);
 	      }
 	      else if (!isObject(objValue) || (srcIndex && isFunction(objValue))) {
-	        isCommon = false;
-	        newValue = baseClone(srcValue, true);
-	      }
-	      else {
-	        newValue = objValue;
+	        newValue = initCloneObject(srcValue);
 	      }
 	    }
 	    else {
@@ -9183,25 +8986,25 @@ var showChatTemplate =
 	 * @returns {Function} Returns the new function.
 	 */
 	function baseRest(func, start) {
-	  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
-	  return function() {
-	    var args = arguments,
-	        index = -1,
-	        length = nativeMax(args.length - start, 0),
-	        array = Array(length);
-
-	    while (++index < length) {
-	      array[index] = args[start + index];
-	    }
-	    index = -1;
-	    var otherArgs = Array(start + 1);
-	    while (++index < start) {
-	      otherArgs[index] = args[index];
-	    }
-	    otherArgs[start] = array;
-	    return apply(func, this, otherArgs);
-	  };
+	  return setToString(overRest(func, start, identity), func + '');
 	}
+
+	/**
+	 * The base implementation of `setToString` without support for hot loop shorting.
+	 *
+	 * @private
+	 * @param {Function} func The function to modify.
+	 * @param {Function} string The `toString` result.
+	 * @returns {Function} Returns `func`.
+	 */
+	var baseSetToString = !defineProperty ? identity : function(func, string) {
+	  return defineProperty(func, 'toString', {
+	    'configurable': true,
+	    'enumerable': false,
+	    'value': constant(string),
+	    'writable': true
+	  });
+	};
 
 	/**
 	 * Creates a clone of  `buffer`.
@@ -9215,7 +9018,9 @@ var showChatTemplate =
 	  if (isDeep) {
 	    return buffer.slice();
 	  }
-	  var result = new buffer.constructor(buffer.length);
+	  var length = buffer.length,
+	      result = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length);
+
 	  buffer.copy(result);
 	  return result;
 	}
@@ -9231,71 +9036,6 @@ var showChatTemplate =
 	  var result = new arrayBuffer.constructor(arrayBuffer.byteLength);
 	  new Uint8Array(result).set(new Uint8Array(arrayBuffer));
 	  return result;
-	}
-
-	/**
-	 * Creates a clone of `dataView`.
-	 *
-	 * @private
-	 * @param {Object} dataView The data view to clone.
-	 * @param {boolean} [isDeep] Specify a deep clone.
-	 * @returns {Object} Returns the cloned data view.
-	 */
-	function cloneDataView(dataView, isDeep) {
-	  var buffer = isDeep ? cloneArrayBuffer(dataView.buffer) : dataView.buffer;
-	  return new dataView.constructor(buffer, dataView.byteOffset, dataView.byteLength);
-	}
-
-	/**
-	 * Creates a clone of `map`.
-	 *
-	 * @private
-	 * @param {Object} map The map to clone.
-	 * @param {Function} cloneFunc The function to clone values.
-	 * @param {boolean} [isDeep] Specify a deep clone.
-	 * @returns {Object} Returns the cloned map.
-	 */
-	function cloneMap(map, isDeep, cloneFunc) {
-	  var array = isDeep ? cloneFunc(mapToArray(map), true) : mapToArray(map);
-	  return arrayReduce(array, addMapEntry, new map.constructor);
-	}
-
-	/**
-	 * Creates a clone of `regexp`.
-	 *
-	 * @private
-	 * @param {Object} regexp The regexp to clone.
-	 * @returns {Object} Returns the cloned regexp.
-	 */
-	function cloneRegExp(regexp) {
-	  var result = new regexp.constructor(regexp.source, reFlags.exec(regexp));
-	  result.lastIndex = regexp.lastIndex;
-	  return result;
-	}
-
-	/**
-	 * Creates a clone of `set`.
-	 *
-	 * @private
-	 * @param {Object} set The set to clone.
-	 * @param {Function} cloneFunc The function to clone values.
-	 * @param {boolean} [isDeep] Specify a deep clone.
-	 * @returns {Object} Returns the cloned set.
-	 */
-	function cloneSet(set, isDeep, cloneFunc) {
-	  var array = isDeep ? cloneFunc(setToArray(set), true) : setToArray(set);
-	  return arrayReduce(array, addSetEntry, new set.constructor);
-	}
-
-	/**
-	 * Creates a clone of the `symbol` object.
-	 *
-	 * @private
-	 * @param {Object} symbol The symbol object to clone.
-	 * @returns {Object} Returns the cloned symbol object.
-	 */
-	function cloneSymbol(symbol) {
-	  return symbolValueOf ? Object(symbolValueOf.call(symbol)) : {};
 	}
 
 	/**
@@ -9341,6 +9081,7 @@ var showChatTemplate =
 	 * @returns {Object} Returns `object`.
 	 */
 	function copyObject(source, props, object, customizer) {
+	  var isNew = !object;
 	  object || (object = {});
 
 	  var index = -1,
@@ -9353,21 +9094,16 @@ var showChatTemplate =
 	      ? customizer(object[key], source[key], key, object, source)
 	      : undefined;
 
-	    assignValue(object, key, newValue === undefined ? source[key] : newValue);
+	    if (newValue === undefined) {
+	      newValue = source[key];
+	    }
+	    if (isNew) {
+	      baseAssignValue(object, key, newValue);
+	    } else {
+	      assignValue(object, key, newValue);
+	    }
 	  }
 	  return object;
-	}
-
-	/**
-	 * Copies own symbol properties of `source` to `object`.
-	 *
-	 * @private
-	 * @param {Object} source The object to copy symbols from.
-	 * @param {Object} [object={}] The object to copy symbols to.
-	 * @returns {Object} Returns `object`.
-	 */
-	function copySymbols(source, object) {
-	  return copyObject(source, getSymbols(source), object);
 	}
 
 	/**
@@ -9404,14 +9140,27 @@ var showChatTemplate =
 	}
 
 	/**
-	 * Creates an array of own enumerable property names and symbols of `object`.
+	 * Creates a base function for methods like `_.forIn` and `_.forOwn`.
 	 *
 	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names and symbols.
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {Function} Returns the new base function.
 	 */
-	function getAllKeys(object) {
-	  return baseGetAllKeys(object, keys, getSymbols);
+	function createBaseFor(fromRight) {
+	  return function(object, iteratee, keysFunc) {
+	    var index = -1,
+	        iterable = Object(object),
+	        props = keysFunc(object),
+	        length = props.length;
+
+	    while (length--) {
+	      var key = props[fromRight ? length : ++index];
+	      if (iteratee(iterable[key], key, iterable) === false) {
+	        break;
+	      }
+	    }
+	    return object;
+	  };
 	}
 
 	/**
@@ -9443,63 +9192,28 @@ var showChatTemplate =
 	}
 
 	/**
-	 * Creates an array of the own enumerable symbol properties of `object`.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of symbols.
-	 */
-	var getSymbols = nativeGetSymbols ? overArg(nativeGetSymbols, Object) : stubArray;
-
-	/**
-	 * Gets the `toStringTag` of `value`.
+	 * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
 	 *
 	 * @private
 	 * @param {*} value The value to query.
-	 * @returns {string} Returns the `toStringTag`.
+	 * @returns {string} Returns the raw `toStringTag`.
 	 */
-	var getTag = baseGetTag;
+	function getRawTag(value) {
+	  var isOwn = hasOwnProperty.call(value, symToStringTag),
+	      tag = value[symToStringTag];
 
-	// Fallback for data views, maps, sets, and weak maps in IE 11,
-	// for data views in Edge < 14, and promises in Node.js.
-	if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
-	    (Map && getTag(new Map) != mapTag) ||
-	    (Promise && getTag(Promise.resolve()) != promiseTag) ||
-	    (Set && getTag(new Set) != setTag) ||
-	    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
-	  getTag = function(value) {
-	    var result = objectToString.call(value),
-	        Ctor = result == objectTag ? value.constructor : undefined,
-	        ctorString = Ctor ? toSource(Ctor) : undefined;
+	  try {
+	    value[symToStringTag] = undefined;
+	    var unmasked = true;
+	  } catch (e) {}
 
-	    if (ctorString) {
-	      switch (ctorString) {
-	        case dataViewCtorString: return dataViewTag;
-	        case mapCtorString: return mapTag;
-	        case promiseCtorString: return promiseTag;
-	        case setCtorString: return setTag;
-	        case weakMapCtorString: return weakMapTag;
-	      }
+	  var result = nativeObjectToString.call(value);
+	  if (unmasked) {
+	    if (isOwn) {
+	      value[symToStringTag] = tag;
+	    } else {
+	      delete value[symToStringTag];
 	    }
-	    return result;
-	  };
-	}
-
-	/**
-	 * Initializes an array clone.
-	 *
-	 * @private
-	 * @param {Array} array The array to clone.
-	 * @returns {Array} Returns the initialized clone.
-	 */
-	function initCloneArray(array) {
-	  var length = array.length,
-	      result = array.constructor(length);
-
-	  // Add properties assigned by `RegExp#exec`.
-	  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
-	    result.index = array.index;
-	    result.input = array.input;
 	  }
 	  return result;
 	}
@@ -9518,55 +9232,6 @@ var showChatTemplate =
 	}
 
 	/**
-	 * Initializes an object clone based on its `toStringTag`.
-	 *
-	 * **Note:** This function only supports cloning values with tags of
-	 * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
-	 *
-	 * @private
-	 * @param {Object} object The object to clone.
-	 * @param {string} tag The `toStringTag` of the object to clone.
-	 * @param {Function} cloneFunc The function to clone values.
-	 * @param {boolean} [isDeep] Specify a deep clone.
-	 * @returns {Object} Returns the initialized clone.
-	 */
-	function initCloneByTag(object, tag, cloneFunc, isDeep) {
-	  var Ctor = object.constructor;
-	  switch (tag) {
-	    case arrayBufferTag:
-	      return cloneArrayBuffer(object);
-
-	    case boolTag:
-	    case dateTag:
-	      return new Ctor(+object);
-
-	    case dataViewTag:
-	      return cloneDataView(object, isDeep);
-
-	    case float32Tag: case float64Tag:
-	    case int8Tag: case int16Tag: case int32Tag:
-	    case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
-	      return cloneTypedArray(object, isDeep);
-
-	    case mapTag:
-	      return cloneMap(object, isDeep, cloneFunc);
-
-	    case numberTag:
-	    case stringTag:
-	      return new Ctor(object);
-
-	    case regexpTag:
-	      return cloneRegExp(object);
-
-	    case setTag:
-	      return cloneSet(object, isDeep, cloneFunc);
-
-	    case symbolTag:
-	      return cloneSymbol(object);
-	  }
-	}
-
-	/**
 	 * Checks if `value` is a valid array-like index.
 	 *
 	 * @private
@@ -9575,10 +9240,13 @@ var showChatTemplate =
 	 * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
 	 */
 	function isIndex(value, length) {
+	  var type = typeof value;
 	  length = length == null ? MAX_SAFE_INTEGER : length;
+
 	  return !!length &&
-	    (typeof value == 'number' || reIsUint.test(value)) &&
-	    (value > -1 && value % 1 == 0 && value < length);
+	    (type == 'number' ||
+	      (type != 'symbol' && reIsUint.test(value))) &&
+	        (value > -1 && value % 1 == 0 && value < length);
 	}
 
 	/**
@@ -9664,10 +9332,90 @@ var showChatTemplate =
 	}
 
 	/**
+	 * Converts `value` to a string using `Object.prototype.toString`.
+	 *
+	 * @private
+	 * @param {*} value The value to convert.
+	 * @returns {string} Returns the converted string.
+	 */
+	function objectToString(value) {
+	  return nativeObjectToString.call(value);
+	}
+
+	/**
+	 * A specialized version of `baseRest` which transforms the rest array.
+	 *
+	 * @private
+	 * @param {Function} func The function to apply a rest parameter to.
+	 * @param {number} [start=func.length-1] The start position of the rest parameter.
+	 * @param {Function} transform The rest array transform.
+	 * @returns {Function} Returns the new function.
+	 */
+	function overRest(func, start, transform) {
+	  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
+	  return function() {
+	    var args = arguments,
+	        index = -1,
+	        length = nativeMax(args.length - start, 0),
+	        array = Array(length);
+
+	    while (++index < length) {
+	      array[index] = args[start + index];
+	    }
+	    index = -1;
+	    var otherArgs = Array(start + 1);
+	    while (++index < start) {
+	      otherArgs[index] = args[index];
+	    }
+	    otherArgs[start] = transform(array);
+	    return apply(func, this, otherArgs);
+	  };
+	}
+
+	/**
+	 * Sets the `toString` method of `func` to return `string`.
+	 *
+	 * @private
+	 * @param {Function} func The function to modify.
+	 * @param {Function} string The `toString` result.
+	 * @returns {Function} Returns `func`.
+	 */
+	var setToString = shortOut(baseSetToString);
+
+	/**
+	 * Creates a function that'll short out and invoke `identity` instead
+	 * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
+	 * milliseconds.
+	 *
+	 * @private
+	 * @param {Function} func The function to restrict.
+	 * @returns {Function} Returns the new shortable function.
+	 */
+	function shortOut(func) {
+	  var count = 0,
+	      lastCalled = 0;
+
+	  return function() {
+	    var stamp = nativeNow(),
+	        remaining = HOT_SPAN - (stamp - lastCalled);
+
+	    lastCalled = stamp;
+	    if (remaining > 0) {
+	      if (++count >= HOT_COUNT) {
+	        return arguments[0];
+	      }
+	    } else {
+	      count = 0;
+	    }
+	    return func.apply(undefined, arguments);
+	  };
+	}
+
+	/**
 	 * Converts `func` to its source code.
 	 *
 	 * @private
-	 * @param {Function} func The function to process.
+	 * @param {Function} func The function to convert.
 	 * @returns {string} Returns the source code.
 	 */
 	function toSource(func) {
@@ -9736,11 +9484,10 @@ var showChatTemplate =
 	 * _.isArguments([1, 2, 3]);
 	 * // => false
 	 */
-	function isArguments(value) {
-	  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-	  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
-	    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
-	}
+	var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsArguments : function(value) {
+	  return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
+	    !propertyIsEnumerable.call(value, 'callee');
+	};
 
 	/**
 	 * Checks if `value` is classified as an `Array` object.
@@ -9862,10 +9609,13 @@ var showChatTemplate =
 	 * // => false
 	 */
 	function isFunction(value) {
+	  if (!isObject(value)) {
+	    return false;
+	  }
 	  // The use of `Object#toString` avoids issues with the `typeof` operator
-	  // in Safari 8-9 which returns 'object' for typed array and other constructors.
-	  var tag = isObject(value) ? objectToString.call(value) : '';
-	  return tag == funcTag || tag == genTag;
+	  // in Safari 9 which returns 'object' for typed arrays and other constructors.
+	  var tag = baseGetTag(value);
+	  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
 	}
 
 	/**
@@ -9926,7 +9676,7 @@ var showChatTemplate =
 	 */
 	function isObject(value) {
 	  var type = typeof value;
-	  return !!value && (type == 'object' || type == 'function');
+	  return value != null && (type == 'object' || type == 'function');
 	}
 
 	/**
@@ -9954,7 +9704,7 @@ var showChatTemplate =
 	 * // => false
 	 */
 	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
+	  return value != null && typeof value == 'object';
 	}
 
 	/**
@@ -9986,8 +9736,7 @@ var showChatTemplate =
 	 * // => true
 	 */
 	function isPlainObject(value) {
-	  if (!isObjectLike(value) ||
-	      objectToString.call(value) != objectTag || isHostObject(value)) {
+	  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
 	    return false;
 	  }
 	  var proto = getPrototype(value);
@@ -9995,8 +9744,8 @@ var showChatTemplate =
 	    return true;
 	  }
 	  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
-	  return (typeof Ctor == 'function' &&
-	    Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString);
+	  return typeof Ctor == 'function' && Ctor instanceof Ctor &&
+	    funcToString.call(Ctor) == objectCtorString;
 	}
 
 	/**
@@ -10044,38 +9793,6 @@ var showChatTemplate =
 	 */
 	function toPlainObject(value) {
 	  return copyObject(value, keysIn(value));
-	}
-
-	/**
-	 * Creates an array of the own enumerable property names of `object`.
-	 *
-	 * **Note:** Non-object values are coerced to objects. See the
-	 * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
-	 * for more details.
-	 *
-	 * @static
-	 * @since 0.1.0
-	 * @memberOf _
-	 * @category Object
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names.
-	 * @example
-	 *
-	 * function Foo() {
-	 *   this.a = 1;
-	 *   this.b = 2;
-	 * }
-	 *
-	 * Foo.prototype.c = 3;
-	 *
-	 * _.keys(new Foo);
-	 * // => ['a', 'b'] (iteration order is not guaranteed)
-	 *
-	 * _.keys('hi');
-	 * // => ['0', '1']
-	 */
-	function keys(object) {
-	  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
 	}
 
 	/**
@@ -10141,25 +9858,48 @@ var showChatTemplate =
 	});
 
 	/**
-	 * This method returns a new empty array.
+	 * Creates a function that returns `value`.
 	 *
 	 * @static
 	 * @memberOf _
-	 * @since 4.13.0
+	 * @since 2.4.0
 	 * @category Util
-	 * @returns {Array} Returns the new empty array.
+	 * @param {*} value The value to return from the new function.
+	 * @returns {Function} Returns the new constant function.
 	 * @example
 	 *
-	 * var arrays = _.times(2, _.stubArray);
+	 * var objects = _.times(2, _.constant({ 'a': 1 }));
 	 *
-	 * console.log(arrays);
-	 * // => [[], []]
+	 * console.log(objects);
+	 * // => [{ 'a': 1 }, { 'a': 1 }]
 	 *
-	 * console.log(arrays[0] === arrays[1]);
-	 * // => false
+	 * console.log(objects[0] === objects[1]);
+	 * // => true
 	 */
-	function stubArray() {
-	  return [];
+	function constant(value) {
+	  return function() {
+	    return value;
+	  };
+	}
+
+	/**
+	 * This method returns the first argument it receives.
+	 *
+	 * @static
+	 * @since 0.1.0
+	 * @memberOf _
+	 * @category Util
+	 * @param {*} value Any value.
+	 * @returns {*} Returns `value`.
+	 * @example
+	 *
+	 * var object = { 'a': 1 };
+	 *
+	 * console.log(_.identity(object) === object);
+	 * // => true
+	 */
+	function identity(value) {
+	  return value;
 	}
 
 	/**
@@ -10183,9 +9923,9 @@ var showChatTemplate =
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(69)(module)))
 
-/***/ },
+/***/ }),
 /* 69 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function(module) {
 		if(!module.webpackPolyfill) {
@@ -10199,9 +9939,9 @@ var showChatTemplate =
 	}
 
 
-/***/ },
+/***/ }),
 /* 70 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -10436,9 +10176,9 @@ var showChatTemplate =
 	  return convertColorToString(color);
 	}
 
-/***/ },
+/***/ }),
 /* 71 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -10483,9 +10223,9 @@ var showChatTemplate =
 	  }
 	};
 
-/***/ },
+/***/ }),
 /* 72 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -10778,9 +10518,9 @@ var showChatTemplate =
 	var darkWhite = exports.darkWhite = 'rgba(255, 255, 255, 0.87)';
 	var lightWhite = exports.lightWhite = 'rgba(255, 255, 255, 0.54)';
 
-/***/ },
+/***/ }),
 /* 73 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
@@ -10802,9 +10542,9 @@ var showChatTemplate =
 	  desktopToolbarHeight: 56
 	};
 
-/***/ },
+/***/ }),
 /* 74 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
@@ -10824,9 +10564,9 @@ var showChatTemplate =
 	  tooltip: 3000
 	};
 
-/***/ },
+/***/ }),
 /* 75 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
@@ -10887,9 +10627,9 @@ var showChatTemplate =
 	var hasWarnedAboutUserAgent = false;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 76 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11090,9 +10830,9 @@ var showChatTemplate =
 	exports['default'] = Prefixer;
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 77 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11184,9 +10924,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 78 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
@@ -11196,9 +10936,9 @@ var showChatTemplate =
 	exports["default"] = { "Webkit": { "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "backfaceVisibility": true, "perspective": true, "perspectiveOrigin": true, "transformStyle": true, "transformOriginZ": true, "animation": true, "animationDelay": true, "animationDirection": true, "animationFillMode": true, "animationDuration": true, "animationIterationCount": true, "animationName": true, "animationPlayState": true, "animationTimingFunction": true, "appearance": true, "userSelect": true, "fontKerning": true, "textEmphasisPosition": true, "textEmphasis": true, "textEmphasisStyle": true, "textEmphasisColor": true, "boxDecorationBreak": true, "clipPath": true, "maskImage": true, "maskMode": true, "maskRepeat": true, "maskPosition": true, "maskClip": true, "maskOrigin": true, "maskSize": true, "maskComposite": true, "mask": true, "maskBorderSource": true, "maskBorderMode": true, "maskBorderSlice": true, "maskBorderWidth": true, "maskBorderOutset": true, "maskBorderRepeat": true, "maskBorder": true, "maskType": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "filter": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true, "flex": true, "flexBasis": true, "flexDirection": true, "flexGrow": true, "flexFlow": true, "flexShrink": true, "flexWrap": true, "alignContent": true, "alignItems": true, "alignSelf": true, "justifyContent": true, "order": true, "transition": true, "transitionDelay": true, "transitionDuration": true, "transitionProperty": true, "transitionTimingFunction": true, "backdropFilter": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "shapeImageThreshold": true, "shapeImageMargin": true, "shapeImageOutside": true, "hyphens": true, "flowInto": true, "flowFrom": true, "regionFragment": true, "textSizeAdjust": true, "borderImage": true, "borderImageOutset": true, "borderImageRepeat": true, "borderImageSlice": true, "borderImageSource": true, "borderImageWidth": true, "tabSize": true, "objectFit": true, "objectPosition": true }, "Moz": { "appearance": true, "userSelect": true, "boxSizing": true, "textAlignLast": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "tabSize": true, "hyphens": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true }, "ms": { "flex": true, "flexBasis": false, "flexDirection": true, "flexGrow": false, "flexFlow": true, "flexShrink": false, "flexWrap": true, "alignContent": false, "alignItems": false, "alignSelf": false, "justifyContent": false, "order": false, "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "userSelect": true, "wrapFlow": true, "wrapThrough": true, "wrapMargin": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "touchAction": true, "hyphens": true, "flowInto": true, "flowFrom": true, "breakBefore": true, "breakAfter": true, "breakInside": true, "regionFragment": true, "gridTemplateColumns": true, "gridTemplateRows": true, "gridTemplateAreas": true, "gridTemplate": true, "gridAutoColumns": true, "gridAutoRows": true, "gridAutoFlow": true, "grid": true, "gridRowStart": true, "gridColumnStart": true, "gridRowEnd": true, "gridRow": true, "gridColumn": true, "gridColumnEnd": true, "gridColumnGap": true, "gridRowGap": true, "gridArea": true, "gridGap": true, "textSizeAdjust": true } };
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 79 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// helper to capitalize strings
 	"use strict";
@@ -11213,9 +10953,9 @@ var showChatTemplate =
 
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 80 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// leight polyfill for Object.assign
 	"use strict";
@@ -11234,9 +10974,9 @@ var showChatTemplate =
 
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 81 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11267,9 +11007,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 82 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11300,9 +11040,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 83 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Converts a camel-case string to a dash-case string
@@ -11322,9 +11062,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 84 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -11340,9 +11080,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 85 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11372,9 +11112,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 86 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11401,9 +11141,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 87 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11443,9 +11183,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 88 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11476,9 +11216,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 89 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11563,9 +11303,9 @@ var showChatTemplate =
 	}
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 90 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -11601,9 +11341,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 91 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11649,9 +11389,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 92 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11747,9 +11487,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 93 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*!
 	 * Bowser - a browser detector
@@ -11795,9 +11535,9 @@ var showChatTemplate =
 	      , windows = !windowsphone && /windows/i.test(ua)
 	      , mac = !iosdevice && !silk && /macintosh/i.test(ua)
 	      , linux = !android && !sailfish && !tizen && !webos && /linux/i.test(ua)
-	      , edgeVersion = getFirstMatch(/edge\/(\d+(\.\d+)?)/i)
+	      , edgeVersion = getSecondMatch(/edg([ea]|ios)\/(\d+(\.\d+)?)/i)
 	      , versionIdentifier = getFirstMatch(/version\/(\d+(\.\d+)?)/i)
-	      , tablet = /tablet/i.test(ua)
+	      , tablet = /tablet/i.test(ua) && !/tablet pc/i.test(ua)
 	      , mobile = !tablet && /[^-]mobi/i.test(ua)
 	      , xbox = /xbox/i.test(ua)
 	      , result
@@ -11809,7 +11549,7 @@ var showChatTemplate =
 	      , opera: t
 	      , version: versionIdentifier || getFirstMatch(/(?:opera|opr|opios)[\s\/](\d+(\.\d+)?)/i)
 	      }
-	    } else if (/opr|opios/i.test(ua)) {
+	    } else if (/opr\/|opios/i.test(ua)) {
 	      // a new Opera
 	      result = {
 	        name: 'Opera'
@@ -11883,6 +11623,7 @@ var showChatTemplate =
 	    else if (windowsphone) {
 	      result = {
 	        name: 'Windows Phone'
+	      , osname: 'Windows Phone'
 	      , windowsphone: t
 	      }
 	      if (edgeVersion) {
@@ -11903,12 +11644,13 @@ var showChatTemplate =
 	    } else if (chromeos) {
 	      result = {
 	        name: 'Chrome'
+	      , osname: 'Chrome OS'
 	      , chromeos: t
 	      , chromeBook: t
 	      , chrome: t
 	      , version: getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)
 	      }
-	    } else if (/chrome.+? edge/i.test(ua)) {
+	    } else if (/edg([ea]|ios)/i.test(ua)) {
 	      result = {
 	        name: 'Microsoft Edge'
 	      , msedge: t
@@ -11925,6 +11667,7 @@ var showChatTemplate =
 	    else if (sailfish) {
 	      result = {
 	        name: 'Sailfish'
+	      , osname: 'Sailfish OS'
 	      , sailfish: t
 	      , version: getFirstMatch(/sailfish\s?browser\/(\d+(\.\d+)?)/i)
 	      }
@@ -11944,6 +11687,7 @@ var showChatTemplate =
 	      }
 	      if (/\((mobile|tablet);[^\)]*rv:[\d\.]+\)/i.test(ua)) {
 	        result.firefoxos = t
+	        result.osname = 'Firefox OS'
 	      }
 	    }
 	    else if (silk) {
@@ -11970,6 +11714,7 @@ var showChatTemplate =
 	    else if (/blackberry|\bbb\d+/i.test(ua) || /rim\stablet/i.test(ua)) {
 	      result = {
 	        name: 'BlackBerry'
+	      , osname: 'BlackBerry OS'
 	      , blackberry: t
 	      , version: versionIdentifier || getFirstMatch(/blackberry[\d]+\/(\d+(\.\d+)?)/i)
 	      }
@@ -11977,6 +11722,7 @@ var showChatTemplate =
 	    else if (webos) {
 	      result = {
 	        name: 'WebOS'
+	      , osname: 'WebOS'
 	      , webos: t
 	      , version: versionIdentifier || getFirstMatch(/w(?:eb)?osbrowser\/(\d+(\.\d+)?)/i)
 	      };
@@ -11985,6 +11731,7 @@ var showChatTemplate =
 	    else if (/bada/i.test(ua)) {
 	      result = {
 	        name: 'Bada'
+	      , osname: 'Bada'
 	      , bada: t
 	      , version: getFirstMatch(/dolfin\/(\d+(\.\d+)?)/i)
 	      };
@@ -11992,6 +11739,7 @@ var showChatTemplate =
 	    else if (tizen) {
 	      result = {
 	        name: 'Tizen'
+	      , osname: 'Tizen'
 	      , tizen: t
 	      , version: getFirstMatch(/(?:tizen\s?)?browser\/(\d+(\.\d+)?)/i) || versionIdentifier
 	      };
@@ -12074,25 +11822,52 @@ var showChatTemplate =
 	    }
 
 	    // set OS flags for platforms that have multiple browsers
-	    if (!result.windowsphone && !result.msedge && (android || result.silk)) {
+	    if (!result.windowsphone && (android || result.silk)) {
 	      result.android = t
-	    } else if (!result.windowsphone && !result.msedge && iosdevice) {
+	      result.osname = 'Android'
+	    } else if (!result.windowsphone && iosdevice) {
 	      result[iosdevice] = t
 	      result.ios = t
+	      result.osname = 'iOS'
 	    } else if (mac) {
 	      result.mac = t
+	      result.osname = 'macOS'
 	    } else if (xbox) {
 	      result.xbox = t
+	      result.osname = 'Xbox'
 	    } else if (windows) {
 	      result.windows = t
+	      result.osname = 'Windows'
 	    } else if (linux) {
 	      result.linux = t
+	      result.osname = 'Linux'
+	    }
+
+	    function getWindowsVersion (s) {
+	      switch (s) {
+	        case 'NT': return 'NT'
+	        case 'XP': return 'XP'
+	        case 'NT 5.0': return '2000'
+	        case 'NT 5.1': return 'XP'
+	        case 'NT 5.2': return '2003'
+	        case 'NT 6.0': return 'Vista'
+	        case 'NT 6.1': return '7'
+	        case 'NT 6.2': return '8'
+	        case 'NT 6.3': return '8.1'
+	        case 'NT 10.0': return '10'
+	        default: return undefined
+	      }
 	    }
 
 	    // OS version extraction
 	    var osVersion = '';
-	    if (result.windowsphone) {
+	    if (result.windows) {
+	      osVersion = getWindowsVersion(getFirstMatch(/Windows ((NT|XP)( \d\d?.\d)?)/i))
+	    } else if (result.windowsphone) {
 	      osVersion = getFirstMatch(/windows phone (?:os)?\s?(\d+(\.\d+)*)/i);
+	    } else if (result.mac) {
+	      osVersion = getFirstMatch(/Mac OS X (\d+([_\.\s]\d+)*)/i);
+	      osVersion = osVersion.replace(/[_\s]/g, '.');
 	    } else if (iosdevice) {
 	      osVersion = getFirstMatch(/os (\d+([_\s]\d+)*) like mac os x/i);
 	      osVersion = osVersion.replace(/[_\s]/g, '.');
@@ -12112,7 +11887,7 @@ var showChatTemplate =
 	    }
 
 	    // device type extraction
-	    var osMajorVersion = osVersion.split('.')[0];
+	    var osMajorVersion = !result.windows && osVersion.split('.')[0];
 	    if (
 	         tablet
 	      || nexusTablet
@@ -12329,20 +12104,25 @@ var showChatTemplate =
 	   */
 	  bowser._detect = detect;
 
+	  /*
+	   * Set our detect public method to the main bowser object
+	   * This is needed to implement bowser in server side
+	   */
+	  bowser.detect = detect;
 	  return bowser
 	});
 
 
-/***/ },
+/***/ }),
 /* 94 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
-/***/ },
+/***/ }),
 /* 95 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -12365,9 +12145,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 96 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// helper to capitalize strings
 	"use strict";
@@ -12382,9 +12162,9 @@ var showChatTemplate =
 
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 97 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// leight polyfill for Object.assign
 	"use strict";
@@ -12404,9 +12184,9 @@ var showChatTemplate =
 
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 98 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
@@ -12416,9 +12196,9 @@ var showChatTemplate =
 	exports["default"] = { "chrome": { "transform": 35, "transformOrigin": 35, "transformOriginX": 35, "transformOriginY": 35, "backfaceVisibility": 35, "perspective": 35, "perspectiveOrigin": 35, "transformStyle": 35, "transformOriginZ": 35, "animation": 42, "animationDelay": 42, "animationDirection": 42, "animationFillMode": 42, "animationDuration": 42, "animationIterationCount": 42, "animationName": 42, "animationPlayState": 42, "animationTimingFunction": 42, "appearance": 52, "userSelect": 52, "fontKerning": 32, "textEmphasisPosition": 52, "textEmphasis": 52, "textEmphasisStyle": 52, "textEmphasisColor": 52, "boxDecorationBreak": 52, "clipPath": 52, "maskImage": 52, "maskMode": 52, "maskRepeat": 52, "maskPosition": 52, "maskClip": 52, "maskOrigin": 52, "maskSize": 52, "maskComposite": 52, "mask": 52, "maskBorderSource": 52, "maskBorderMode": 52, "maskBorderSlice": 52, "maskBorderWidth": 52, "maskBorderOutset": 52, "maskBorderRepeat": 52, "maskBorder": 52, "maskType": 52, "textDecorationStyle": 52, "textDecorationSkip": 52, "textDecorationLine": 52, "textDecorationColor": 52, "filter": 52, "fontFeatureSettings": 47, "breakAfter": 52, "breakBefore": 52, "breakInside": 52, "columnCount": 52, "columnFill": 52, "columnGap": 52, "columnRule": 52, "columnRuleColor": 52, "columnRuleStyle": 52, "columnRuleWidth": 52, "columns": 52, "columnSpan": 52, "columnWidth": 52 }, "safari": { "flex": 8, "flexBasis": 8, "flexDirection": 8, "flexGrow": 8, "flexFlow": 8, "flexShrink": 8, "flexWrap": 8, "alignContent": 8, "alignItems": 8, "alignSelf": 8, "justifyContent": 8, "order": 8, "transition": 6, "transitionDelay": 6, "transitionDuration": 6, "transitionProperty": 6, "transitionTimingFunction": 6, "transform": 8, "transformOrigin": 8, "transformOriginX": 8, "transformOriginY": 8, "backfaceVisibility": 8, "perspective": 8, "perspectiveOrigin": 8, "transformStyle": 8, "transformOriginZ": 8, "animation": 8, "animationDelay": 8, "animationDirection": 8, "animationFillMode": 8, "animationDuration": 8, "animationIterationCount": 8, "animationName": 8, "animationPlayState": 8, "animationTimingFunction": 8, "appearance": 9.1, "userSelect": 9.1, "backdropFilter": 9.1, "fontKerning": 9.1, "scrollSnapType": 9.1, "scrollSnapPointsX": 9.1, "scrollSnapPointsY": 9.1, "scrollSnapDestination": 9.1, "scrollSnapCoordinate": 9.1, "textEmphasisPosition": 7, "textEmphasis": 7, "textEmphasisStyle": 7, "textEmphasisColor": 7, "boxDecorationBreak": 9.1, "clipPath": 9.1, "maskImage": 9.1, "maskMode": 9.1, "maskRepeat": 9.1, "maskPosition": 9.1, "maskClip": 9.1, "maskOrigin": 9.1, "maskSize": 9.1, "maskComposite": 9.1, "mask": 9.1, "maskBorderSource": 9.1, "maskBorderMode": 9.1, "maskBorderSlice": 9.1, "maskBorderWidth": 9.1, "maskBorderOutset": 9.1, "maskBorderRepeat": 9.1, "maskBorder": 9.1, "maskType": 9.1, "textDecorationStyle": 9.1, "textDecorationSkip": 9.1, "textDecorationLine": 9.1, "textDecorationColor": 9.1, "shapeImageThreshold": 9.1, "shapeImageMargin": 9.1, "shapeImageOutside": 9.1, "filter": 9, "hyphens": 9.1, "flowInto": 9.1, "flowFrom": 9.1, "breakBefore": 8, "breakAfter": 8, "breakInside": 8, "regionFragment": 9.1, "columnCount": 8, "columnFill": 8, "columnGap": 8, "columnRule": 8, "columnRuleColor": 8, "columnRuleStyle": 8, "columnRuleWidth": 8, "columns": 8, "columnSpan": 8, "columnWidth": 8 }, "firefox": { "appearance": 47, "userSelect": 47, "boxSizing": 28, "textAlignLast": 47, "textDecorationStyle": 35, "textDecorationSkip": 35, "textDecorationLine": 35, "textDecorationColor": 35, "tabSize": 47, "hyphens": 42, "fontFeatureSettings": 33, "breakAfter": 47, "breakBefore": 47, "breakInside": 47, "columnCount": 47, "columnFill": 47, "columnGap": 47, "columnRule": 47, "columnRuleColor": 47, "columnRuleStyle": 47, "columnRuleWidth": 47, "columns": 47, "columnSpan": 47, "columnWidth": 47 }, "opera": { "flex": 16, "flexBasis": 16, "flexDirection": 16, "flexGrow": 16, "flexFlow": 16, "flexShrink": 16, "flexWrap": 16, "alignContent": 16, "alignItems": 16, "alignSelf": 16, "justifyContent": 16, "order": 16, "transform": 22, "transformOrigin": 22, "transformOriginX": 22, "transformOriginY": 22, "backfaceVisibility": 22, "perspective": 22, "perspectiveOrigin": 22, "transformStyle": 22, "transformOriginZ": 22, "animation": 29, "animationDelay": 29, "animationDirection": 29, "animationFillMode": 29, "animationDuration": 29, "animationIterationCount": 29, "animationName": 29, "animationPlayState": 29, "animationTimingFunction": 29, "appearance": 37, "userSelect": 37, "fontKerning": 19, "textEmphasisPosition": 37, "textEmphasis": 37, "textEmphasisStyle": 37, "textEmphasisColor": 37, "boxDecorationBreak": 37, "clipPath": 37, "maskImage": 37, "maskMode": 37, "maskRepeat": 37, "maskPosition": 37, "maskClip": 37, "maskOrigin": 37, "maskSize": 37, "maskComposite": 37, "mask": 37, "maskBorderSource": 37, "maskBorderMode": 37, "maskBorderSlice": 37, "maskBorderWidth": 37, "maskBorderOutset": 37, "maskBorderRepeat": 37, "maskBorder": 37, "maskType": 37, "filter": 37, "fontFeatureSettings": 37, "breakAfter": 37, "breakBefore": 37, "breakInside": 37, "columnCount": 37, "columnFill": 37, "columnGap": 37, "columnRule": 37, "columnRuleColor": 37, "columnRuleStyle": 37, "columnRuleWidth": 37, "columns": 37, "columnSpan": 37, "columnWidth": 37 }, "ie": { "gridTemplateRows": 11, "breakInside": 11, "transformOriginY": 9, "gridRowStart": 11, "gridColumn": 11, "regionFragment": 11, "breakBefore": 11, "userSelect": 11, "gridColumnEnd": 11, "gridRowEnd": 11, "gridTemplateColumns": 11, "gridColumnStart": 11, "gridArea": 11, "flexDirection": 10, "gridRowGap": 11, "gridTemplateAreas": 11, "gridAutoRows": 11, "gridRow": 11, "scrollSnapDestination": 11, "scrollSnapPointsY": 11, "touchAction": 10, "gridGap": 11, "gridColumnGap": 11, "wrapFlow": 11, "scrollSnapPointsX": 11, "flowFrom": 11, "transform": 9, "breakAfter": 11, "wrapMargin": 11, "scrollSnapCoordinate": 11, "flexWrap": 10, "scrollSnapType": 11, "flex": 10, "wrapThrough": 11, "gridAutoColumns": 11, "flexFlow": 10, "gridTemplate": 11, "hyphens": 11, "grid": 11, "transformOriginX": 9, "flowInto": 11, "transformOrigin": 9, "gridAutoFlow": 11, "textSizeAdjust": 11 }, "edge": { "userSelect": 14, "wrapFlow": 14, "wrapThrough": 14, "wrapMargin": 14, "scrollSnapType": 14, "scrollSnapPointsX": 14, "scrollSnapPointsY": 14, "scrollSnapDestination": 14, "scrollSnapCoordinate": 14, "hyphens": 14, "flowInto": 14, "flowFrom": 14, "breakBefore": 14, "breakAfter": 14, "breakInside": 14, "regionFragment": 14, "gridTemplateColumns": 14, "gridTemplateRows": 14, "gridTemplateAreas": 14, "gridTemplate": 14, "gridAutoColumns": 14, "gridAutoRows": 14, "gridAutoFlow": 14, "grid": 14, "gridRowStart": 14, "gridColumnStart": 14, "gridRowEnd": 14, "gridRow": 14, "gridColumn": 14, "gridColumnEnd": 14, "gridColumnGap": 14, "gridRowGap": 14, "gridArea": 14, "gridGap": 14 }, "ios_saf": { "flex": 8.1, "flexBasis": 8.1, "flexDirection": 8.1, "flexGrow": 8.1, "flexFlow": 8.1, "flexShrink": 8.1, "flexWrap": 8.1, "alignContent": 8.1, "alignItems": 8.1, "alignSelf": 8.1, "justifyContent": 8.1, "order": 8.1, "transition": 6, "transitionDelay": 6, "transitionDuration": 6, "transitionProperty": 6, "transitionTimingFunction": 6, "transform": 8.1, "transformOrigin": 8.1, "transformOriginX": 8.1, "transformOriginY": 8.1, "backfaceVisibility": 8.1, "perspective": 8.1, "perspectiveOrigin": 8.1, "transformStyle": 8.1, "transformOriginZ": 8.1, "animation": 8.1, "animationDelay": 8.1, "animationDirection": 8.1, "animationFillMode": 8.1, "animationDuration": 8.1, "animationIterationCount": 8.1, "animationName": 8.1, "animationPlayState": 8.1, "animationTimingFunction": 8.1, "appearance": 9.3, "userSelect": 9.3, "backdropFilter": 9.3, "fontKerning": 9.3, "scrollSnapType": 9.3, "scrollSnapPointsX": 9.3, "scrollSnapPointsY": 9.3, "scrollSnapDestination": 9.3, "scrollSnapCoordinate": 9.3, "boxDecorationBreak": 9.3, "clipPath": 9.3, "maskImage": 9.3, "maskMode": 9.3, "maskRepeat": 9.3, "maskPosition": 9.3, "maskClip": 9.3, "maskOrigin": 9.3, "maskSize": 9.3, "maskComposite": 9.3, "mask": 9.3, "maskBorderSource": 9.3, "maskBorderMode": 9.3, "maskBorderSlice": 9.3, "maskBorderWidth": 9.3, "maskBorderOutset": 9.3, "maskBorderRepeat": 9.3, "maskBorder": 9.3, "maskType": 9.3, "textSizeAdjust": 9.3, "textDecorationStyle": 9.3, "textDecorationSkip": 9.3, "textDecorationLine": 9.3, "textDecorationColor": 9.3, "shapeImageThreshold": 9.3, "shapeImageMargin": 9.3, "shapeImageOutside": 9.3, "filter": 9, "hyphens": 9.3, "flowInto": 9.3, "flowFrom": 9.3, "breakBefore": 8.1, "breakAfter": 8.1, "breakInside": 8.1, "regionFragment": 9.3, "columnCount": 8.1, "columnFill": 8.1, "columnGap": 8.1, "columnRule": 8.1, "columnRuleColor": 8.1, "columnRuleStyle": 8.1, "columnRuleWidth": 8.1, "columns": 8.1, "columnSpan": 8.1, "columnWidth": 8.1 }, "android": { "borderImage": 4.2, "borderImageOutset": 4.2, "borderImageRepeat": 4.2, "borderImageSlice": 4.2, "borderImageSource": 4.2, "borderImageWidth": 4.2, "flex": 4.2, "flexBasis": 4.2, "flexDirection": 4.2, "flexGrow": 4.2, "flexFlow": 4.2, "flexShrink": 4.2, "flexWrap": 4.2, "alignContent": 4.2, "alignItems": 4.2, "alignSelf": 4.2, "justifyContent": 4.2, "order": 4.2, "transition": 4.2, "transitionDelay": 4.2, "transitionDuration": 4.2, "transitionProperty": 4.2, "transitionTimingFunction": 4.2, "transform": 4.4, "transformOrigin": 4.4, "transformOriginX": 4.4, "transformOriginY": 4.4, "backfaceVisibility": 4.4, "perspective": 4.4, "perspectiveOrigin": 4.4, "transformStyle": 4.4, "transformOriginZ": 4.4, "animation": 4.4, "animationDelay": 4.4, "animationDirection": 4.4, "animationFillMode": 4.4, "animationDuration": 4.4, "animationIterationCount": 4.4, "animationName": 4.4, "animationPlayState": 4.4, "animationTimingFunction": 4.4, "appearance": 47, "userSelect": 47, "fontKerning": 4.4, "textEmphasisPosition": 47, "textEmphasis": 47, "textEmphasisStyle": 47, "textEmphasisColor": 47, "boxDecorationBreak": 47, "clipPath": 47, "maskImage": 47, "maskMode": 47, "maskRepeat": 47, "maskPosition": 47, "maskClip": 47, "maskOrigin": 47, "maskSize": 47, "maskComposite": 47, "mask": 47, "maskBorderSource": 47, "maskBorderMode": 47, "maskBorderSlice": 47, "maskBorderWidth": 47, "maskBorderOutset": 47, "maskBorderRepeat": 47, "maskBorder": 47, "maskType": 47, "filter": 47, "fontFeatureSettings": 47, "breakAfter": 47, "breakBefore": 47, "breakInside": 47, "columnCount": 47, "columnFill": 47, "columnGap": 47, "columnRule": 47, "columnRuleColor": 47, "columnRuleStyle": 47, "columnRuleWidth": 47, "columns": 47, "columnSpan": 47, "columnWidth": 47 }, "and_chr": { "appearance": 47, "userSelect": 47, "textEmphasisPosition": 47, "textEmphasis": 47, "textEmphasisStyle": 47, "textEmphasisColor": 47, "boxDecorationBreak": 47, "clipPath": 47, "maskImage": 47, "maskMode": 47, "maskRepeat": 47, "maskPosition": 47, "maskClip": 47, "maskOrigin": 47, "maskSize": 47, "maskComposite": 47, "mask": 47, "maskBorderSource": 47, "maskBorderMode": 47, "maskBorderSlice": 47, "maskBorderWidth": 47, "maskBorderOutset": 47, "maskBorderRepeat": 47, "maskBorder": 47, "maskType": 47, "textDecorationStyle": 47, "textDecorationSkip": 47, "textDecorationLine": 47, "textDecorationColor": 47, "filter": 47, "fontFeatureSettings": 47, "breakAfter": 47, "breakBefore": 47, "breakInside": 47, "columnCount": 47, "columnFill": 47, "columnGap": 47, "columnRule": 47, "columnRuleColor": 47, "columnRuleStyle": 47, "columnRuleWidth": 47, "columns": 47, "columnSpan": 47, "columnWidth": 47 }, "and_uc": { "flex": 9.9, "flexBasis": 9.9, "flexDirection": 9.9, "flexGrow": 9.9, "flexFlow": 9.9, "flexShrink": 9.9, "flexWrap": 9.9, "alignContent": 9.9, "alignItems": 9.9, "alignSelf": 9.9, "justifyContent": 9.9, "order": 9.9, "transition": 9.9, "transitionDelay": 9.9, "transitionDuration": 9.9, "transitionProperty": 9.9, "transitionTimingFunction": 9.9, "transform": 9.9, "transformOrigin": 9.9, "transformOriginX": 9.9, "transformOriginY": 9.9, "backfaceVisibility": 9.9, "perspective": 9.9, "perspectiveOrigin": 9.9, "transformStyle": 9.9, "transformOriginZ": 9.9, "animation": 9.9, "animationDelay": 9.9, "animationDirection": 9.9, "animationFillMode": 9.9, "animationDuration": 9.9, "animationIterationCount": 9.9, "animationName": 9.9, "animationPlayState": 9.9, "animationTimingFunction": 9.9, "appearance": 9.9, "userSelect": 9.9, "fontKerning": 9.9, "textEmphasisPosition": 9.9, "textEmphasis": 9.9, "textEmphasisStyle": 9.9, "textEmphasisColor": 9.9, "maskImage": 9.9, "maskMode": 9.9, "maskRepeat": 9.9, "maskPosition": 9.9, "maskClip": 9.9, "maskOrigin": 9.9, "maskSize": 9.9, "maskComposite": 9.9, "mask": 9.9, "maskBorderSource": 9.9, "maskBorderMode": 9.9, "maskBorderSlice": 9.9, "maskBorderWidth": 9.9, "maskBorderOutset": 9.9, "maskBorderRepeat": 9.9, "maskBorder": 9.9, "maskType": 9.9, "textSizeAdjust": 9.9, "filter": 9.9, "hyphens": 9.9, "flowInto": 9.9, "flowFrom": 9.9, "breakBefore": 9.9, "breakAfter": 9.9, "breakInside": 9.9, "regionFragment": 9.9, "fontFeatureSettings": 9.9, "columnCount": 9.9, "columnFill": 9.9, "columnGap": 9.9, "columnRule": 9.9, "columnRuleColor": 9.9, "columnRuleStyle": 9.9, "columnRuleWidth": 9.9, "columns": 9.9, "columnSpan": 9.9, "columnWidth": 9.9 }, "op_mini": { "borderImage": 5, "borderImageOutset": 5, "borderImageRepeat": 5, "borderImageSlice": 5, "borderImageSource": 5, "borderImageWidth": 5, "tabSize": 5, "objectFit": 5, "objectPosition": 5 } };
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 99 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -12451,9 +12231,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 100 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Converts a camel-case string to a dash-case string
@@ -12473,9 +12253,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 101 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -12515,9 +12295,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 102 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -12555,9 +12335,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 103 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -12606,9 +12386,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 104 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -12643,9 +12423,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 105 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -12709,9 +12489,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 106 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -12726,9 +12506,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 107 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -12796,9 +12576,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 108 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -12872,9 +12652,9 @@ var showChatTemplate =
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 109 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014-2015, Facebook, Inc.
@@ -12939,9 +12719,9 @@ var showChatTemplate =
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 110 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
@@ -12971,9 +12751,9 @@ var showChatTemplate =
 	}
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
+/***/ }),
 /* 111 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -13059,9 +12839,9 @@ var showChatTemplate =
 	  }
 	}
 
-/***/ },
+/***/ }),
 /* 112 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -13077,9 +12857,9 @@ var showChatTemplate =
 
 	exports.default = _flowRight2.default;
 
-/***/ },
+/***/ }),
 /* 113 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var createFlow = __webpack_require__(114);
 
@@ -13088,18 +12868,19 @@ var showChatTemplate =
 	 * invokes the given functions from right to left.
 	 *
 	 * @static
-	 * @since 0.1.0
+	 * @since 3.0.0
 	 * @memberOf _
 	 * @category Util
-	 * @param {...(Function|Function[])} [funcs] Functions to invoke.
-	 * @returns {Function} Returns the new function.
+	 * @param {...(Function|Function[])} [funcs] The functions to invoke.
+	 * @returns {Function} Returns the new composite function.
+	 * @see _.flow
 	 * @example
 	 *
 	 * function square(n) {
 	 *   return n * n;
 	 * }
 	 *
-	 * var addSquare = _.flowRight(square, _.add);
+	 * var addSquare = _.flowRight([square, _.add]);
 	 * addSquare(1, 2);
 	 * // => 9
 	 */
@@ -13108,29 +12889,25 @@ var showChatTemplate =
 	module.exports = flowRight;
 
 
-/***/ },
+/***/ }),
 /* 114 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var LodashWrapper = __webpack_require__(115),
-	    baseFlatten = __webpack_require__(119),
-	    getData = __webpack_require__(131),
-	    getFuncName = __webpack_require__(141),
-	    isArray = __webpack_require__(130),
-	    isLaziable = __webpack_require__(143),
-	    rest = __webpack_require__(148);
+	    flatRest = __webpack_require__(119),
+	    getData = __webpack_require__(149),
+	    getFuncName = __webpack_require__(153),
+	    isArray = __webpack_require__(133),
+	    isLaziable = __webpack_require__(155);
 
-	/** Used as the size to enable large array optimizations. */
-	var LARGE_ARRAY_SIZE = 200;
-
-	/** Used as the `TypeError` message for "Functions" methods. */
+	/** Error message constants. */
 	var FUNC_ERROR_TEXT = 'Expected a function';
 
-	/** Used to compose bitmasks for wrapper metadata. */
-	var CURRY_FLAG = 8,
-	    PARTIAL_FLAG = 32,
-	    ARY_FLAG = 128,
-	    REARG_FLAG = 256;
+	/** Used to compose bitmasks for function metadata. */
+	var WRAP_CURRY_FLAG = 8,
+	    WRAP_PARTIAL_FLAG = 32,
+	    WRAP_ARY_FLAG = 128,
+	    WRAP_REARG_FLAG = 256;
 
 	/**
 	 * Creates a `_.flow` or `_.flowRight` function.
@@ -13140,9 +12917,7 @@ var showChatTemplate =
 	 * @returns {Function} Returns the new flow function.
 	 */
 	function createFlow(fromRight) {
-	  return rest(function(funcs) {
-	    funcs = baseFlatten(funcs, 1);
-
+	  return flatRest(function(funcs) {
 	    var length = funcs.length,
 	        index = length,
 	        prereq = LodashWrapper.prototype.thru;
@@ -13167,7 +12942,7 @@ var showChatTemplate =
 	          data = funcName == 'wrapper' ? getData(func) : undefined;
 
 	      if (data && isLaziable(data[0]) &&
-	            data[1] == (ARY_FLAG | CURRY_FLAG | PARTIAL_FLAG | REARG_FLAG) &&
+	            data[1] == (WRAP_ARY_FLAG | WRAP_CURRY_FLAG | WRAP_PARTIAL_FLAG | WRAP_REARG_FLAG) &&
 	            !data[4].length && data[9] == 1
 	          ) {
 	        wrapper = wrapper[getFuncName(data[0])].apply(wrapper, data[3]);
@@ -13181,8 +12956,7 @@ var showChatTemplate =
 	      var args = arguments,
 	          value = args[0];
 
-	      if (wrapper && args.length == 1 &&
-	          isArray(value) && value.length >= LARGE_ARRAY_SIZE) {
+	      if (wrapper && args.length == 1 && isArray(value)) {
 	        return wrapper.plant(value).value();
 	      }
 	      var index = 0,
@@ -13199,9 +12973,9 @@ var showChatTemplate =
 	module.exports = createFlow;
 
 
-/***/ },
+/***/ }),
 /* 115 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var baseCreate = __webpack_require__(116),
 	    baseLodash = __webpack_require__(118);
@@ -13227,9 +13001,9 @@ var showChatTemplate =
 	module.exports = LodashWrapper;
 
 
-/***/ },
+/***/ }),
 /* 116 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(117);
 
@@ -13241,23 +13015,35 @@ var showChatTemplate =
 	 * properties to the created object.
 	 *
 	 * @private
-	 * @param {Object} prototype The object to inherit from.
+	 * @param {Object} proto The object to inherit from.
 	 * @returns {Object} Returns the new object.
 	 */
-	function baseCreate(proto) {
-	  return isObject(proto) ? objectCreate(proto) : {};
-	}
+	var baseCreate = (function() {
+	  function object() {}
+	  return function(proto) {
+	    if (!isObject(proto)) {
+	      return {};
+	    }
+	    if (objectCreate) {
+	      return objectCreate(proto);
+	    }
+	    object.prototype = proto;
+	    var result = new object;
+	    object.prototype = undefined;
+	    return result;
+	  };
+	}());
 
 	module.exports = baseCreate;
 
 
-/***/ },
+/***/ }),
 /* 117 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Checks if `value` is the
-	 * [language type](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
+	 * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
 	 * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
 	 *
 	 * @static
@@ -13282,15 +13068,15 @@ var showChatTemplate =
 	 */
 	function isObject(value) {
 	  var type = typeof value;
-	  return !!value && (type == 'object' || type == 'function');
+	  return value != null && (type == 'object' || type == 'function');
 	}
 
 	module.exports = isObject;
 
 
-/***/ },
+/***/ }),
 /* 118 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * The function whose prototype chain sequence wrappers inherit from.
@@ -13304,12 +13090,62 @@ var showChatTemplate =
 	module.exports = baseLodash;
 
 
-/***/ },
+/***/ }),
 /* 119 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	var arrayPush = __webpack_require__(120),
-	    isFlattenable = __webpack_require__(121);
+	var flatten = __webpack_require__(120),
+	    overRest = __webpack_require__(134),
+	    setToString = __webpack_require__(136);
+
+	/**
+	 * A specialized version of `baseRest` which flattens the rest array.
+	 *
+	 * @private
+	 * @param {Function} func The function to apply a rest parameter to.
+	 * @returns {Function} Returns the new function.
+	 */
+	function flatRest(func) {
+	  return setToString(overRest(func, undefined, flatten), func + '');
+	}
+
+	module.exports = flatRest;
+
+
+/***/ }),
+/* 120 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var baseFlatten = __webpack_require__(121);
+
+	/**
+	 * Flattens `array` a single level deep.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Array
+	 * @param {Array} array The array to flatten.
+	 * @returns {Array} Returns the new flattened array.
+	 * @example
+	 *
+	 * _.flatten([1, [2, [3, [4]], 5]]);
+	 * // => [1, 2, [3, [4]], 5]
+	 */
+	function flatten(array) {
+	  var length = array == null ? 0 : array.length;
+	  return length ? baseFlatten(array, 1) : [];
+	}
+
+	module.exports = flatten;
+
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var arrayPush = __webpack_require__(122),
+	    isFlattenable = __webpack_require__(123);
 
 	/**
 	 * The base implementation of `_.flatten` with support for restricting flattening.
@@ -13348,9 +13184,9 @@ var showChatTemplate =
 	module.exports = baseFlatten;
 
 
-/***/ },
-/* 120 */
-/***/ function(module, exports) {
+/***/ }),
+/* 122 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Appends the elements of `values` to `array`.
@@ -13374,13 +13210,16 @@ var showChatTemplate =
 	module.exports = arrayPush;
 
 
-/***/ },
-/* 121 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var isArguments = __webpack_require__(122),
-	    isArray = __webpack_require__(130),
-	    isArrayLikeObject = __webpack_require__(123);
+	var Symbol = __webpack_require__(124),
+	    isArguments = __webpack_require__(127),
+	    isArray = __webpack_require__(133);
+
+	/** Built-in value references. */
+	var spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;
 
 	/**
 	 * Checks if `value` is a flattenable `arguments` object or array.
@@ -13390,33 +13229,63 @@ var showChatTemplate =
 	 * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.
 	 */
 	function isFlattenable(value) {
-	  return isArrayLikeObject(value) && (isArray(value) || isArguments(value));
+	  return isArray(value) || isArguments(value) ||
+	    !!(spreadableSymbol && value && value[spreadableSymbol]);
 	}
 
 	module.exports = isFlattenable;
 
 
-/***/ },
-/* 122 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var isArrayLikeObject = __webpack_require__(123);
+	var root = __webpack_require__(125);
 
-	/** `Object#toString` result references. */
-	var argsTag = '[object Arguments]';
+	/** Built-in value references. */
+	var Symbol = root.Symbol;
+
+	module.exports = Symbol;
+
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var freeGlobal = __webpack_require__(126);
+
+	/** Detect free variable `self`. */
+	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+	/** Used as a reference to the global object. */
+	var root = freeGlobal || freeSelf || Function('return this')();
+
+	module.exports = root;
+
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
+	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+	module.exports = freeGlobal;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var baseIsArguments = __webpack_require__(128),
+	    isObjectLike = __webpack_require__(132);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
 
 	/** Used to check objects for own properties. */
 	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
 
 	/** Built-in value references. */
 	var propertyIsEnumerable = objectProto.propertyIsEnumerable;
@@ -13429,7 +13298,7 @@ var showChatTemplate =
 	 * @since 0.1.0
 	 * @category Lang
 	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified,
+	 * @returns {boolean} Returns `true` if `value` is an `arguments` object,
 	 *  else `false`.
 	 * @example
 	 *
@@ -13439,230 +13308,155 @@ var showChatTemplate =
 	 * _.isArguments([1, 2, 3]);
 	 * // => false
 	 */
-	function isArguments(value) {
-	  // Safari 8.1 incorrectly makes `arguments.callee` enumerable in strict mode.
-	  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
-	    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
-	}
+	var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsArguments : function(value) {
+	  return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
+	    !propertyIsEnumerable.call(value, 'callee');
+	};
 
 	module.exports = isArguments;
 
 
-/***/ },
-/* 123 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var isArrayLike = __webpack_require__(124),
-	    isObjectLike = __webpack_require__(129);
-
-	/**
-	 * This method is like `_.isArrayLike` except that it also checks if `value`
-	 * is an object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an array-like object,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isArrayLikeObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArrayLikeObject(document.body.children);
-	 * // => true
-	 *
-	 * _.isArrayLikeObject('abc');
-	 * // => false
-	 *
-	 * _.isArrayLikeObject(_.noop);
-	 * // => false
-	 */
-	function isArrayLikeObject(value) {
-	  return isObjectLike(value) && isArrayLike(value);
-	}
-
-	module.exports = isArrayLikeObject;
-
-
-/***/ },
-/* 124 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getLength = __webpack_require__(125),
-	    isFunction = __webpack_require__(127),
-	    isLength = __webpack_require__(128);
-
-	/**
-	 * Checks if `value` is array-like. A value is considered array-like if it's
-	 * not a function and has a `value.length` that's an integer greater than or
-	 * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
-	 * @example
-	 *
-	 * _.isArrayLike([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArrayLike(document.body.children);
-	 * // => true
-	 *
-	 * _.isArrayLike('abc');
-	 * // => true
-	 *
-	 * _.isArrayLike(_.noop);
-	 * // => false
-	 */
-	function isArrayLike(value) {
-	  return value != null && isLength(getLength(value)) && !isFunction(value);
-	}
-
-	module.exports = isArrayLike;
-
-
-/***/ },
-/* 125 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseProperty = __webpack_require__(126);
-
-	/**
-	 * Gets the "length" property value of `object`.
-	 *
-	 * **Note:** This function is used to avoid a
-	 * [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792) that affects
-	 * Safari on at least iOS 8.1-8.3 ARM64.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {*} Returns the "length" value.
-	 */
-	var getLength = baseProperty('length');
-
-	module.exports = getLength;
-
-
-/***/ },
-/* 126 */
-/***/ function(module, exports) {
-
-	/**
-	 * The base implementation of `_.property` without support for deep paths.
-	 *
-	 * @private
-	 * @param {string} key The key of the property to get.
-	 * @returns {Function} Returns the new function.
-	 */
-	function baseProperty(key) {
-	  return function(object) {
-	    return object == null ? undefined : object[key];
-	  };
-	}
-
-	module.exports = baseProperty;
-
-
-/***/ },
-/* 127 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(117);
+	var baseGetTag = __webpack_require__(129),
+	    isObjectLike = __webpack_require__(132);
 
 	/** `Object#toString` result references. */
-	var funcTag = '[object Function]',
-	    genTag = '[object GeneratorFunction]';
+	var argsTag = '[object Arguments]';
+
+	/**
+	 * The base implementation of `_.isArguments`.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+	 */
+	function baseIsArguments(value) {
+	  return isObjectLike(value) && baseGetTag(value) == argsTag;
+	}
+
+	module.exports = baseIsArguments;
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var Symbol = __webpack_require__(124),
+	    getRawTag = __webpack_require__(130),
+	    objectToString = __webpack_require__(131);
+
+	/** `Object#toString` result references. */
+	var nullTag = '[object Null]',
+	    undefinedTag = '[object Undefined]';
+
+	/** Built-in value references. */
+	var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+	/**
+	 * The base implementation of `getTag` without fallbacks for buggy environments.
+	 *
+	 * @private
+	 * @param {*} value The value to query.
+	 * @returns {string} Returns the `toStringTag`.
+	 */
+	function baseGetTag(value) {
+	  if (value == null) {
+	    return value === undefined ? undefinedTag : nullTag;
+	  }
+	  return (symToStringTag && symToStringTag in Object(value))
+	    ? getRawTag(value)
+	    : objectToString(value);
+	}
+
+	module.exports = baseGetTag;
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var Symbol = __webpack_require__(124);
+
+	/** Used for built-in method references. */
+	var objectProto = Object.prototype;
+
+	/** Used to check objects for own properties. */
+	var hasOwnProperty = objectProto.hasOwnProperty;
+
+	/**
+	 * Used to resolve the
+	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+	 * of values.
+	 */
+	var nativeObjectToString = objectProto.toString;
+
+	/** Built-in value references. */
+	var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+	/**
+	 * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+	 *
+	 * @private
+	 * @param {*} value The value to query.
+	 * @returns {string} Returns the raw `toStringTag`.
+	 */
+	function getRawTag(value) {
+	  var isOwn = hasOwnProperty.call(value, symToStringTag),
+	      tag = value[symToStringTag];
+
+	  try {
+	    value[symToStringTag] = undefined;
+	    var unmasked = true;
+	  } catch (e) {}
+
+	  var result = nativeObjectToString.call(value);
+	  if (unmasked) {
+	    if (isOwn) {
+	      value[symToStringTag] = tag;
+	    } else {
+	      delete value[symToStringTag];
+	    }
+	  }
+	  return result;
+	}
+
+	module.exports = getRawTag;
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports) {
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
 
 	/**
 	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
 	 * of values.
 	 */
-	var objectToString = objectProto.toString;
+	var nativeObjectToString = objectProto.toString;
 
 	/**
-	 * Checks if `value` is classified as a `Function` object.
+	 * Converts `value` to a string using `Object.prototype.toString`.
 	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isFunction(_);
-	 * // => true
-	 *
-	 * _.isFunction(/abc/);
-	 * // => false
+	 * @private
+	 * @param {*} value The value to convert.
+	 * @returns {string} Returns the converted string.
 	 */
-	function isFunction(value) {
-	  // The use of `Object#toString` avoids issues with the `typeof` operator
-	  // in Safari 8 which returns 'object' for typed array and weak map constructors,
-	  // and PhantomJS 1.9 which returns 'function' for `NodeList` instances.
-	  var tag = isObject(value) ? objectToString.call(value) : '';
-	  return tag == funcTag || tag == genTag;
+	function objectToString(value) {
+	  return nativeObjectToString.call(value);
 	}
 
-	module.exports = isFunction;
+	module.exports = objectToString;
 
 
-/***/ },
-/* 128 */
-/***/ function(module, exports) {
-
-	/** Used as references for various `Number` constants. */
-	var MAX_SAFE_INTEGER = 9007199254740991;
-
-	/**
-	 * Checks if `value` is a valid array-like length.
-	 *
-	 * **Note:** This function is loosely based on
-	 * [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a valid length,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isLength(3);
-	 * // => true
-	 *
-	 * _.isLength(Number.MIN_VALUE);
-	 * // => false
-	 *
-	 * _.isLength(Infinity);
-	 * // => false
-	 *
-	 * _.isLength('3');
-	 * // => false
-	 */
-	function isLength(value) {
-	  return typeof value == 'number' &&
-	    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-	}
-
-	module.exports = isLength;
-
-
-/***/ },
-/* 129 */
-/***/ function(module, exports) {
+/***/ }),
+/* 132 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Checks if `value` is object-like. A value is object-like if it's not `null`
@@ -13689,15 +13483,15 @@ var showChatTemplate =
 	 * // => false
 	 */
 	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
+	  return value != null && typeof value == 'object';
 	}
 
 	module.exports = isObjectLike;
 
 
-/***/ },
-/* 130 */
-/***/ function(module, exports) {
+/***/ }),
+/* 133 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Checks if `value` is classified as an `Array` object.
@@ -13705,11 +13499,9 @@ var showChatTemplate =
 	 * @static
 	 * @memberOf _
 	 * @since 0.1.0
-	 * @type {Function}
 	 * @category Lang
 	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified,
-	 *  else `false`.
+	 * @returns {boolean} Returns `true` if `value` is an array, else `false`.
 	 * @example
 	 *
 	 * _.isArray([1, 2, 3]);
@@ -13729,57 +13521,178 @@ var showChatTemplate =
 	module.exports = isArray;
 
 
-/***/ },
-/* 131 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var metaMap = __webpack_require__(132),
-	    noop = __webpack_require__(140);
+	var apply = __webpack_require__(135);
+
+	/* Built-in method references for those with the same name as other `lodash` methods. */
+	var nativeMax = Math.max;
 
 	/**
-	 * Gets metadata for `func`.
+	 * A specialized version of `baseRest` which transforms the rest array.
 	 *
 	 * @private
-	 * @param {Function} func The function to query.
-	 * @returns {*} Returns the metadata for `func`.
+	 * @param {Function} func The function to apply a rest parameter to.
+	 * @param {number} [start=func.length-1] The start position of the rest parameter.
+	 * @param {Function} transform The rest array transform.
+	 * @returns {Function} Returns the new function.
 	 */
-	var getData = !metaMap ? noop : function(func) {
-	  return metaMap.get(func);
+	function overRest(func, start, transform) {
+	  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
+	  return function() {
+	    var args = arguments,
+	        index = -1,
+	        length = nativeMax(args.length - start, 0),
+	        array = Array(length);
+
+	    while (++index < length) {
+	      array[index] = args[start + index];
+	    }
+	    index = -1;
+	    var otherArgs = Array(start + 1);
+	    while (++index < start) {
+	      otherArgs[index] = args[index];
+	    }
+	    otherArgs[start] = transform(array);
+	    return apply(func, this, otherArgs);
+	  };
+	}
+
+	module.exports = overRest;
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports) {
+
+	/**
+	 * A faster alternative to `Function#apply`, this function invokes `func`
+	 * with the `this` binding of `thisArg` and the arguments of `args`.
+	 *
+	 * @private
+	 * @param {Function} func The function to invoke.
+	 * @param {*} thisArg The `this` binding of `func`.
+	 * @param {Array} args The arguments to invoke `func` with.
+	 * @returns {*} Returns the result of `func`.
+	 */
+	function apply(func, thisArg, args) {
+	  switch (args.length) {
+	    case 0: return func.call(thisArg);
+	    case 1: return func.call(thisArg, args[0]);
+	    case 2: return func.call(thisArg, args[0], args[1]);
+	    case 3: return func.call(thisArg, args[0], args[1], args[2]);
+	  }
+	  return func.apply(thisArg, args);
+	}
+
+	module.exports = apply;
+
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var baseSetToString = __webpack_require__(137),
+	    shortOut = __webpack_require__(148);
+
+	/**
+	 * Sets the `toString` method of `func` to return `string`.
+	 *
+	 * @private
+	 * @param {Function} func The function to modify.
+	 * @param {Function} string The `toString` result.
+	 * @returns {Function} Returns `func`.
+	 */
+	var setToString = shortOut(baseSetToString);
+
+	module.exports = setToString;
+
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var constant = __webpack_require__(138),
+	    defineProperty = __webpack_require__(139),
+	    identity = __webpack_require__(147);
+
+	/**
+	 * The base implementation of `setToString` without support for hot loop shorting.
+	 *
+	 * @private
+	 * @param {Function} func The function to modify.
+	 * @param {Function} string The `toString` result.
+	 * @returns {Function} Returns `func`.
+	 */
+	var baseSetToString = !defineProperty ? identity : function(func, string) {
+	  return defineProperty(func, 'toString', {
+	    'configurable': true,
+	    'enumerable': false,
+	    'value': constant(string),
+	    'writable': true
+	  });
 	};
 
-	module.exports = getData;
+	module.exports = baseSetToString;
 
 
-/***/ },
-/* 132 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 138 */
+/***/ (function(module, exports) {
 
-	var WeakMap = __webpack_require__(133);
+	/**
+	 * Creates a function that returns `value`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 2.4.0
+	 * @category Util
+	 * @param {*} value The value to return from the new function.
+	 * @returns {Function} Returns the new constant function.
+	 * @example
+	 *
+	 * var objects = _.times(2, _.constant({ 'a': 1 }));
+	 *
+	 * console.log(objects);
+	 * // => [{ 'a': 1 }, { 'a': 1 }]
+	 *
+	 * console.log(objects[0] === objects[1]);
+	 * // => true
+	 */
+	function constant(value) {
+	  return function() {
+	    return value;
+	  };
+	}
 
-	/** Used to store function metadata. */
-	var metaMap = WeakMap && new WeakMap;
-
-	module.exports = metaMap;
+	module.exports = constant;
 
 
-/***/ },
-/* 133 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var getNative = __webpack_require__(134),
-	    root = __webpack_require__(138);
+	var getNative = __webpack_require__(140);
 
-	/* Built-in method references that are verified to be native. */
-	var WeakMap = getNative(root, 'WeakMap');
+	var defineProperty = (function() {
+	  try {
+	    var func = getNative(Object, 'defineProperty');
+	    func({}, '', {});
+	    return func;
+	  } catch (e) {}
+	}());
 
-	module.exports = WeakMap;
+	module.exports = defineProperty;
 
 
-/***/ },
-/* 134 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 140 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var isNative = __webpack_require__(135);
+	var baseIsNative = __webpack_require__(141),
+	    getValue = __webpack_require__(146);
 
 	/**
 	 * Gets the native function at `key` of `object`.
@@ -13790,25 +13703,25 @@ var showChatTemplate =
 	 * @returns {*} Returns the function if it's native, else `undefined`.
 	 */
 	function getNative(object, key) {
-	  var value = object[key];
-	  return isNative(value) ? value : undefined;
+	  var value = getValue(object, key);
+	  return baseIsNative(value) ? value : undefined;
 	}
 
 	module.exports = getNative;
 
 
-/***/ },
-/* 135 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(127),
-	    isHostObject = __webpack_require__(136),
+	var isFunction = __webpack_require__(142),
+	    isMasked = __webpack_require__(143),
 	    isObject = __webpack_require__(117),
-	    toSource = __webpack_require__(137);
+	    toSource = __webpack_require__(145);
 
 	/**
 	 * Used to match `RegExp`
-	 * [syntax characters](http://ecma-international.org/ecma-262/6.0/#sec-patterns).
+	 * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
 	 */
 	var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
 
@@ -13816,10 +13729,11 @@ var showChatTemplate =
 	var reIsHostCtor = /^\[object .+?Constructor\]$/;
 
 	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
+	var funcProto = Function.prototype,
+	    objectProto = Object.prototype;
 
 	/** Used to resolve the decompiled source of functions. */
-	var funcToString = Function.prototype.toString;
+	var funcToString = funcProto.toString;
 
 	/** Used to check objects for own properties. */
 	var hasOwnProperty = objectProto.hasOwnProperty;
@@ -13831,72 +13745,120 @@ var showChatTemplate =
 	);
 
 	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 3.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a native function,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isNative(Array.prototype.push);
-	 * // => true
-	 *
-	 * _.isNative(_);
-	 * // => false
-	 */
-	function isNative(value) {
-	  if (!isObject(value)) {
-	    return false;
-	  }
-	  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
-	  return pattern.test(toSource(value));
-	}
-
-	module.exports = isNative;
-
-
-/***/ },
-/* 136 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is a host object in IE < 9.
+	 * The base implementation of `_.isNative` without bad shim checks.
 	 *
 	 * @private
 	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
+	 * @returns {boolean} Returns `true` if `value` is a native function,
+	 *  else `false`.
 	 */
-	function isHostObject(value) {
-	  // Many host objects are `Object` objects that can coerce to strings
-	  // despite having improperly defined `toString` methods.
-	  var result = false;
-	  if (value != null && typeof value.toString != 'function') {
-	    try {
-	      result = !!(value + '');
-	    } catch (e) {}
+	function baseIsNative(value) {
+	  if (!isObject(value) || isMasked(value)) {
+	    return false;
 	  }
-	  return result;
+	  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
+	  return pattern.test(toSource(value));
 	}
 
-	module.exports = isHostObject;
+	module.exports = baseIsNative;
 
 
-/***/ },
-/* 137 */
-/***/ function(module, exports) {
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var baseGetTag = __webpack_require__(129),
+	    isObject = __webpack_require__(117);
+
+	/** `Object#toString` result references. */
+	var asyncTag = '[object AsyncFunction]',
+	    funcTag = '[object Function]',
+	    genTag = '[object GeneratorFunction]',
+	    proxyTag = '[object Proxy]';
+
+	/**
+	 * Checks if `value` is classified as a `Function` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+	 * @example
+	 *
+	 * _.isFunction(_);
+	 * // => true
+	 *
+	 * _.isFunction(/abc/);
+	 * // => false
+	 */
+	function isFunction(value) {
+	  if (!isObject(value)) {
+	    return false;
+	  }
+	  // The use of `Object#toString` avoids issues with the `typeof` operator
+	  // in Safari 9 which returns 'object' for typed arrays and other constructors.
+	  var tag = baseGetTag(value);
+	  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+	}
+
+	module.exports = isFunction;
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var coreJsData = __webpack_require__(144);
+
+	/** Used to detect methods masquerading as native. */
+	var maskSrcKey = (function() {
+	  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+	  return uid ? ('Symbol(src)_1.' + uid) : '';
+	}());
+
+	/**
+	 * Checks if `func` has its source masked.
+	 *
+	 * @private
+	 * @param {Function} func The function to check.
+	 * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+	 */
+	function isMasked(func) {
+	  return !!maskSrcKey && (maskSrcKey in func);
+	}
+
+	module.exports = isMasked;
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var root = __webpack_require__(125);
+
+	/** Used to detect overreaching core-js shims. */
+	var coreJsData = root['__core-js_shared__'];
+
+	module.exports = coreJsData;
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports) {
+
+	/** Used for built-in method references. */
+	var funcProto = Function.prototype;
 
 	/** Used to resolve the decompiled source of functions. */
-	var funcToString = Function.prototype.toString;
+	var funcToString = funcProto.toString;
 
 	/**
 	 * Converts `func` to its source code.
 	 *
 	 * @private
-	 * @param {Function} func The function to process.
+	 * @param {Function} func The function to convert.
 	 * @returns {string} Returns the source code.
 	 */
 	function toSource(func) {
@@ -13914,79 +13876,147 @@ var showChatTemplate =
 	module.exports = toSource;
 
 
-/***/ },
-/* 138 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module, global) {var checkGlobal = __webpack_require__(139);
-
-	/** Used to determine if values are of the language type `Object`. */
-	var objectTypes = {
-	  'function': true,
-	  'object': true
-	};
-
-	/** Detect free variable `exports`. */
-	var freeExports = (objectTypes[typeof exports] && exports && !exports.nodeType)
-	  ? exports
-	  : undefined;
-
-	/** Detect free variable `module`. */
-	var freeModule = (objectTypes[typeof module] && module && !module.nodeType)
-	  ? module
-	  : undefined;
-
-	/** Detect free variable `global` from Node.js. */
-	var freeGlobal = checkGlobal(freeExports && freeModule && typeof global == 'object' && global);
-
-	/** Detect free variable `self`. */
-	var freeSelf = checkGlobal(objectTypes[typeof self] && self);
-
-	/** Detect free variable `window`. */
-	var freeWindow = checkGlobal(objectTypes[typeof window] && window);
-
-	/** Detect `this` as the global object. */
-	var thisGlobal = checkGlobal(objectTypes[typeof this] && this);
+/***/ }),
+/* 146 */
+/***/ (function(module, exports) {
 
 	/**
-	 * Used as a reference to the global object.
-	 *
-	 * The `this` value is used if it's the global object to avoid Greasemonkey's
-	 * restricted `window` object, otherwise the `window` object is used.
-	 */
-	var root = freeGlobal ||
-	  ((freeWindow !== (thisGlobal && thisGlobal.window)) && freeWindow) ||
-	    freeSelf || thisGlobal || Function('return this')();
-
-	module.exports = root;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(69)(module), (function() { return this; }())))
-
-/***/ },
-/* 139 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is a global object.
+	 * Gets the value at `key` of `object`.
 	 *
 	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {null|Object} Returns `value` if it's a global object, else `null`.
+	 * @param {Object} [object] The object to query.
+	 * @param {string} key The key of the property to get.
+	 * @returns {*} Returns the property value.
 	 */
-	function checkGlobal(value) {
-	  return (value && value.Object === Object) ? value : null;
+	function getValue(object, key) {
+	  return object == null ? undefined : object[key];
 	}
 
-	module.exports = checkGlobal;
+	module.exports = getValue;
 
 
-/***/ },
-/* 140 */
-/***/ function(module, exports) {
+/***/ }),
+/* 147 */
+/***/ (function(module, exports) {
 
 	/**
-	 * A no-operation function that returns `undefined` regardless of the
-	 * arguments it receives.
+	 * This method returns the first argument it receives.
+	 *
+	 * @static
+	 * @since 0.1.0
+	 * @memberOf _
+	 * @category Util
+	 * @param {*} value Any value.
+	 * @returns {*} Returns `value`.
+	 * @example
+	 *
+	 * var object = { 'a': 1 };
+	 *
+	 * console.log(_.identity(object) === object);
+	 * // => true
+	 */
+	function identity(value) {
+	  return value;
+	}
+
+	module.exports = identity;
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports) {
+
+	/** Used to detect hot functions by number of calls within a span of milliseconds. */
+	var HOT_COUNT = 800,
+	    HOT_SPAN = 16;
+
+	/* Built-in method references for those with the same name as other `lodash` methods. */
+	var nativeNow = Date.now;
+
+	/**
+	 * Creates a function that'll short out and invoke `identity` instead
+	 * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
+	 * milliseconds.
+	 *
+	 * @private
+	 * @param {Function} func The function to restrict.
+	 * @returns {Function} Returns the new shortable function.
+	 */
+	function shortOut(func) {
+	  var count = 0,
+	      lastCalled = 0;
+
+	  return function() {
+	    var stamp = nativeNow(),
+	        remaining = HOT_SPAN - (stamp - lastCalled);
+
+	    lastCalled = stamp;
+	    if (remaining > 0) {
+	      if (++count >= HOT_COUNT) {
+	        return arguments[0];
+	      }
+	    } else {
+	      count = 0;
+	    }
+	    return func.apply(undefined, arguments);
+	  };
+	}
+
+	module.exports = shortOut;
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var metaMap = __webpack_require__(150),
+	    noop = __webpack_require__(152);
+
+	/**
+	 * Gets metadata for `func`.
+	 *
+	 * @private
+	 * @param {Function} func The function to query.
+	 * @returns {*} Returns the metadata for `func`.
+	 */
+	var getData = !metaMap ? noop : function(func) {
+	  return metaMap.get(func);
+	};
+
+	module.exports = getData;
+
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var WeakMap = __webpack_require__(151);
+
+	/** Used to store function metadata. */
+	var metaMap = WeakMap && new WeakMap;
+
+	module.exports = metaMap;
+
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var getNative = __webpack_require__(140),
+	    root = __webpack_require__(125);
+
+	/* Built-in method references that are verified to be native. */
+	var WeakMap = getNative(root, 'WeakMap');
+
+	module.exports = WeakMap;
+
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports) {
+
+	/**
+	 * This method returns `undefined`.
 	 *
 	 * @static
 	 * @memberOf _
@@ -13994,10 +14024,8 @@ var showChatTemplate =
 	 * @category Util
 	 * @example
 	 *
-	 * var object = { 'user': 'fred' };
-	 *
-	 * _.noop(object) === undefined;
-	 * // => true
+	 * _.times(2, _.noop);
+	 * // => [undefined, undefined]
 	 */
 	function noop() {
 	  // No operation performed.
@@ -14006,11 +14034,11 @@ var showChatTemplate =
 	module.exports = noop;
 
 
-/***/ },
-/* 141 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var realNames = __webpack_require__(142);
+	var realNames = __webpack_require__(154);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -14043,9 +14071,9 @@ var showChatTemplate =
 	module.exports = getFuncName;
 
 
-/***/ },
-/* 142 */
-/***/ function(module, exports) {
+/***/ }),
+/* 154 */
+/***/ (function(module, exports) {
 
 	/** Used to lookup unminified function names. */
 	var realNames = {};
@@ -14053,14 +14081,14 @@ var showChatTemplate =
 	module.exports = realNames;
 
 
-/***/ },
-/* 143 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var LazyWrapper = __webpack_require__(144),
-	    getData = __webpack_require__(131),
-	    getFuncName = __webpack_require__(141),
-	    lodash = __webpack_require__(145);
+	var LazyWrapper = __webpack_require__(156),
+	    getData = __webpack_require__(149),
+	    getFuncName = __webpack_require__(153),
+	    lodash = __webpack_require__(157);
 
 	/**
 	 * Checks if `func` has a lazy counterpart.
@@ -14087,9 +14115,9 @@ var showChatTemplate =
 	module.exports = isLaziable;
 
 
-/***/ },
-/* 144 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var baseCreate = __webpack_require__(116),
 	    baseLodash = __webpack_require__(118);
@@ -14121,16 +14149,16 @@ var showChatTemplate =
 	module.exports = LazyWrapper;
 
 
-/***/ },
-/* 145 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var LazyWrapper = __webpack_require__(144),
+	var LazyWrapper = __webpack_require__(156),
 	    LodashWrapper = __webpack_require__(115),
 	    baseLodash = __webpack_require__(118),
-	    isArray = __webpack_require__(130),
-	    isObjectLike = __webpack_require__(129),
-	    wrapperClone = __webpack_require__(146);
+	    isArray = __webpack_require__(133),
+	    isObjectLike = __webpack_require__(132),
+	    wrapperClone = __webpack_require__(158);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -14156,9 +14184,9 @@ var showChatTemplate =
 	 * Shortcut fusion is an optimization to merge iteratee calls; this avoids
 	 * the creation of intermediate arrays and can greatly reduce the number of
 	 * iteratee executions. Sections of a chain sequence qualify for shortcut
-	 * fusion if the section is applied to an array of at least `200` elements
-	 * and any iteratees accept only one argument. The heuristic for whether a
-	 * section qualifies for shortcut fusion is subject to change.
+	 * fusion if the section is applied to an array and iteratees accept only
+	 * one argument. The heuristic for whether a section qualifies for shortcut
+	 * fusion is subject to change.
 	 *
 	 * Chaining is supported in custom builds as long as the `_#value` method is
 	 * directly or indirectly included in the build.
@@ -14204,28 +14232,30 @@ var showChatTemplate =
 	 *
 	 * The wrapper methods that are **not** chainable by default are:
 	 * `add`, `attempt`, `camelCase`, `capitalize`, `ceil`, `clamp`, `clone`,
-	 * `cloneDeep`, `cloneDeepWith`, `cloneWith`, `deburr`, `divide`, `each`,
-	 * `eachRight`, `endsWith`, `eq`, `escape`, `escapeRegExp`, `every`, `find`,
-	 * `findIndex`, `findKey`, `findLast`, `findLastIndex`, `findLastKey`, `first`,
-	 * `floor`, `forEach`, `forEachRight`, `forIn`, `forInRight`, `forOwn`,
-	 * `forOwnRight`, `get`, `gt`, `gte`, `has`, `hasIn`, `head`, `identity`,
-	 * `includes`, `indexOf`, `inRange`, `invoke`, `isArguments`, `isArray`,
-	 * `isArrayBuffer`, `isArrayLike`, `isArrayLikeObject`, `isBoolean`, `isBuffer`,
-	 * `isDate`, `isElement`, `isEmpty`, `isEqual`, `isEqualWith`, `isError`,
-	 * `isFinite`, `isFunction`, `isInteger`, `isLength`, `isMap`, `isMatch`,
-	 * `isMatchWith`, `isNaN`, `isNative`, `isNil`, `isNull`, `isNumber`,
-	 * `isObject`, `isObjectLike`, `isPlainObject`, `isRegExp`, `isSafeInteger`,
-	 * `isSet`, `isString`, `isUndefined`, `isTypedArray`, `isWeakMap`, `isWeakSet`,
-	 * `join`, `kebabCase`, `last`, `lastIndexOf`, `lowerCase`, `lowerFirst`,
-	 * `lt`, `lte`, `max`, `maxBy`, `mean`, `meanBy`, `min`, `minBy`, `multiply`,
-	 * `noConflict`, `noop`, `now`, `nth`, `pad`, `padEnd`, `padStart`, `parseInt`,
-	 * `pop`, `random`, `reduce`, `reduceRight`, `repeat`, `result`, `round`,
-	 * `runInContext`, `sample`, `shift`, `size`, `snakeCase`, `some`, `sortedIndex`,
-	 * `sortedIndexBy`, `sortedLastIndex`, `sortedLastIndexBy`, `startCase`,
-	 * `startsWith`, `subtract`, `sum`, `sumBy`, `template`, `times`, `toInteger`,
-	 * `toJSON`, `toLength`, `toLower`, `toNumber`, `toSafeInteger`, `toString`,
-	 * `toUpper`, `trim`, `trimEnd`, `trimStart`, `truncate`, `unescape`,
-	 * `uniqueId`, `upperCase`, `upperFirst`, `value`, and `words`
+	 * `cloneDeep`, `cloneDeepWith`, `cloneWith`, `conformsTo`, `deburr`,
+	 * `defaultTo`, `divide`, `each`, `eachRight`, `endsWith`, `eq`, `escape`,
+	 * `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`, `findLast`,
+	 * `findLastIndex`, `findLastKey`, `first`, `floor`, `forEach`, `forEachRight`,
+	 * `forIn`, `forInRight`, `forOwn`, `forOwnRight`, `get`, `gt`, `gte`, `has`,
+	 * `hasIn`, `head`, `identity`, `includes`, `indexOf`, `inRange`, `invoke`,
+	 * `isArguments`, `isArray`, `isArrayBuffer`, `isArrayLike`, `isArrayLikeObject`,
+	 * `isBoolean`, `isBuffer`, `isDate`, `isElement`, `isEmpty`, `isEqual`,
+	 * `isEqualWith`, `isError`, `isFinite`, `isFunction`, `isInteger`, `isLength`,
+	 * `isMap`, `isMatch`, `isMatchWith`, `isNaN`, `isNative`, `isNil`, `isNull`,
+	 * `isNumber`, `isObject`, `isObjectLike`, `isPlainObject`, `isRegExp`,
+	 * `isSafeInteger`, `isSet`, `isString`, `isUndefined`, `isTypedArray`,
+	 * `isWeakMap`, `isWeakSet`, `join`, `kebabCase`, `last`, `lastIndexOf`,
+	 * `lowerCase`, `lowerFirst`, `lt`, `lte`, `max`, `maxBy`, `mean`, `meanBy`,
+	 * `min`, `minBy`, `multiply`, `noConflict`, `noop`, `now`, `nth`, `pad`,
+	 * `padEnd`, `padStart`, `parseInt`, `pop`, `random`, `reduce`, `reduceRight`,
+	 * `repeat`, `result`, `round`, `runInContext`, `sample`, `shift`, `size`,
+	 * `snakeCase`, `some`, `sortedIndex`, `sortedIndexBy`, `sortedLastIndex`,
+	 * `sortedLastIndexBy`, `startCase`, `startsWith`, `stubArray`, `stubFalse`,
+	 * `stubObject`, `stubString`, `stubTrue`, `subtract`, `sum`, `sumBy`,
+	 * `template`, `times`, `toFinite`, `toInteger`, `toJSON`, `toLength`,
+	 * `toLower`, `toNumber`, `toSafeInteger`, `toString`, `toUpper`, `trim`,
+	 * `trimEnd`, `trimStart`, `truncate`, `unescape`, `uniqueId`, `upperCase`,
+	 * `upperFirst`, `value`, and `words`
 	 *
 	 * @name _
 	 * @constructor
@@ -14272,13 +14302,13 @@ var showChatTemplate =
 	module.exports = lodash;
 
 
-/***/ },
-/* 146 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	var LazyWrapper = __webpack_require__(144),
+	var LazyWrapper = __webpack_require__(156),
 	    LodashWrapper = __webpack_require__(115),
-	    copyArray = __webpack_require__(147);
+	    copyArray = __webpack_require__(159);
 
 	/**
 	 * Creates a clone of `wrapper`.
@@ -14301,9 +14331,9 @@ var showChatTemplate =
 	module.exports = wrapperClone;
 
 
-/***/ },
-/* 147 */
-/***/ function(module, exports) {
+/***/ }),
+/* 159 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copies the values of `source` to `array`.
@@ -14327,277 +14357,9 @@ var showChatTemplate =
 	module.exports = copyArray;
 
 
-/***/ },
-/* 148 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var apply = __webpack_require__(149),
-	    toInteger = __webpack_require__(150);
-
-	/** Used as the `TypeError` message for "Functions" methods. */
-	var FUNC_ERROR_TEXT = 'Expected a function';
-
-	/* Built-in method references for those with the same name as other `lodash` methods. */
-	var nativeMax = Math.max;
-
-	/**
-	 * Creates a function that invokes `func` with the `this` binding of the
-	 * created function and arguments from `start` and beyond provided as
-	 * an array.
-	 *
-	 * **Note:** This method is based on the
-	 * [rest parameter](https://mdn.io/rest_parameters).
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Function
-	 * @param {Function} func The function to apply a rest parameter to.
-	 * @param {number} [start=func.length-1] The start position of the rest parameter.
-	 * @returns {Function} Returns the new function.
-	 * @example
-	 *
-	 * var say = _.rest(function(what, names) {
-	 *   return what + ' ' + _.initial(names).join(', ') +
-	 *     (_.size(names) > 1 ? ', & ' : '') + _.last(names);
-	 * });
-	 *
-	 * say('hello', 'fred', 'barney', 'pebbles');
-	 * // => 'hello fred, barney, & pebbles'
-	 */
-	function rest(func, start) {
-	  if (typeof func != 'function') {
-	    throw new TypeError(FUNC_ERROR_TEXT);
-	  }
-	  start = nativeMax(start === undefined ? (func.length - 1) : toInteger(start), 0);
-	  return function() {
-	    var args = arguments,
-	        index = -1,
-	        length = nativeMax(args.length - start, 0),
-	        array = Array(length);
-
-	    while (++index < length) {
-	      array[index] = args[start + index];
-	    }
-	    switch (start) {
-	      case 0: return func.call(this, array);
-	      case 1: return func.call(this, args[0], array);
-	      case 2: return func.call(this, args[0], args[1], array);
-	    }
-	    var otherArgs = Array(start + 1);
-	    index = -1;
-	    while (++index < start) {
-	      otherArgs[index] = args[index];
-	    }
-	    otherArgs[start] = array;
-	    return apply(func, this, otherArgs);
-	  };
-	}
-
-	module.exports = rest;
-
-
-/***/ },
-/* 149 */
-/***/ function(module, exports) {
-
-	/**
-	 * A faster alternative to `Function#apply`, this function invokes `func`
-	 * with the `this` binding of `thisArg` and the arguments of `args`.
-	 *
-	 * @private
-	 * @param {Function} func The function to invoke.
-	 * @param {*} thisArg The `this` binding of `func`.
-	 * @param {Array} args The arguments to invoke `func` with.
-	 * @returns {*} Returns the result of `func`.
-	 */
-	function apply(func, thisArg, args) {
-	  var length = args.length;
-	  switch (length) {
-	    case 0: return func.call(thisArg);
-	    case 1: return func.call(thisArg, args[0]);
-	    case 2: return func.call(thisArg, args[0], args[1]);
-	    case 3: return func.call(thisArg, args[0], args[1], args[2]);
-	  }
-	  return func.apply(thisArg, args);
-	}
-
-	module.exports = apply;
-
-
-/***/ },
-/* 150 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var toNumber = __webpack_require__(151);
-
-	/** Used as references for various `Number` constants. */
-	var INFINITY = 1 / 0,
-	    MAX_INTEGER = 1.7976931348623157e+308;
-
-	/**
-	 * Converts `value` to an integer.
-	 *
-	 * **Note:** This function is loosely based on
-	 * [`ToInteger`](http://www.ecma-international.org/ecma-262/6.0/#sec-tointeger).
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to convert.
-	 * @returns {number} Returns the converted integer.
-	 * @example
-	 *
-	 * _.toInteger(3);
-	 * // => 3
-	 *
-	 * _.toInteger(Number.MIN_VALUE);
-	 * // => 0
-	 *
-	 * _.toInteger(Infinity);
-	 * // => 1.7976931348623157e+308
-	 *
-	 * _.toInteger('3');
-	 * // => 3
-	 */
-	function toInteger(value) {
-	  if (!value) {
-	    return value === 0 ? value : 0;
-	  }
-	  value = toNumber(value);
-	  if (value === INFINITY || value === -INFINITY) {
-	    var sign = (value < 0 ? -1 : 1);
-	    return sign * MAX_INTEGER;
-	  }
-	  var remainder = value % 1;
-	  return value === value ? (remainder ? value - remainder : value) : 0;
-	}
-
-	module.exports = toInteger;
-
-
-/***/ },
-/* 151 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isFunction = __webpack_require__(127),
-	    isObject = __webpack_require__(117),
-	    isSymbol = __webpack_require__(152);
-
-	/** Used as references for various `Number` constants. */
-	var NAN = 0 / 0;
-
-	/** Used to match leading and trailing whitespace. */
-	var reTrim = /^\s+|\s+$/g;
-
-	/** Used to detect bad signed hexadecimal string values. */
-	var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-
-	/** Used to detect binary string values. */
-	var reIsBinary = /^0b[01]+$/i;
-
-	/** Used to detect octal string values. */
-	var reIsOctal = /^0o[0-7]+$/i;
-
-	/** Built-in method references without a dependency on `root`. */
-	var freeParseInt = parseInt;
-
-	/**
-	 * Converts `value` to a number.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to process.
-	 * @returns {number} Returns the number.
-	 * @example
-	 *
-	 * _.toNumber(3);
-	 * // => 3
-	 *
-	 * _.toNumber(Number.MIN_VALUE);
-	 * // => 5e-324
-	 *
-	 * _.toNumber(Infinity);
-	 * // => Infinity
-	 *
-	 * _.toNumber('3');
-	 * // => 3
-	 */
-	function toNumber(value) {
-	  if (typeof value == 'number') {
-	    return value;
-	  }
-	  if (isSymbol(value)) {
-	    return NAN;
-	  }
-	  if (isObject(value)) {
-	    var other = isFunction(value.valueOf) ? value.valueOf() : value;
-	    value = isObject(other) ? (other + '') : other;
-	  }
-	  if (typeof value != 'string') {
-	    return value === 0 ? value : +value;
-	  }
-	  value = value.replace(reTrim, '');
-	  var isBinary = reIsBinary.test(value);
-	  return (isBinary || reIsOctal.test(value))
-	    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
-	    : (reIsBadHex.test(value) ? NAN : +value);
-	}
-
-	module.exports = toNumber;
-
-
-/***/ },
-/* 152 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObjectLike = __webpack_require__(129);
-
-	/** `Object#toString` result references. */
-	var symbolTag = '[object Symbol]';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/**
-	 * Checks if `value` is classified as a `Symbol` primitive or object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isSymbol(Symbol.iterator);
-	 * // => true
-	 *
-	 * _.isSymbol('abc');
-	 * // => false
-	 */
-	function isSymbol(value) {
-	  return typeof value == 'symbol' ||
-	    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-	}
-
-	module.exports = isSymbol;
-
-
-/***/ },
-/* 153 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 160 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -14631,9 +14393,9 @@ var showChatTemplate =
 
 	exports.default = new Typography();
 
-/***/ },
-/* 154 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -14692,9 +14454,9 @@ var showChatTemplate =
 	};
 	exports.default = MuiThemeProvider;
 
-/***/ },
-/* 155 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -14708,7 +14470,7 @@ var showChatTemplate =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Conversation = __webpack_require__(156);
+	var _Conversation = __webpack_require__(163);
 
 	var _Conversation2 = _interopRequireDefault(_Conversation);
 
@@ -14839,9 +14601,9 @@ var showChatTemplate =
 
 	exports.default = Chat;
 
-/***/ },
-/* 156 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 163 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -14857,15 +14619,15 @@ var showChatTemplate =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Messages = __webpack_require__(157);
+	var _Messages = __webpack_require__(164);
 
 	var _Messages2 = _interopRequireDefault(_Messages);
 
-	var _Typing = __webpack_require__(296);
+	var _Typing = __webpack_require__(303);
 
 	var _Typing2 = _interopRequireDefault(_Typing);
 
-	var _ImageLoader = __webpack_require__(297);
+	var _ImageLoader = __webpack_require__(304);
 
 	var _ImageLoader2 = _interopRequireDefault(_ImageLoader);
 
@@ -14924,14 +14686,55 @@ var showChatTemplate =
 
 	    var _this = _possibleConstructorReturn(this, (Conversation.__proto__ || Object.getPrototypeOf(Conversation)).call(this, props, context));
 
-	    _this.showMessage = function () {
-	      var messages = _this.state.messages;
-	      var messagesToBeDisplayed = _this.state.messagesToBeDisplayed;
-	      var reset = _this.state.reset;
-	      if (_this.state.messagesToBeDisplayed.length > 0) {
-	        var message = _this.state.messagesToBeDisplayed.shift();
-	        var isTyping = _this.state.isTyping;
-	        var inbound = _this.state.inbound;
+	    _this.state = {
+	      startingDelay: props.delay || 1000,
+	      messages: props.historicMessages ? props.historicMessages.slice() : [],
+	      historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
+	      messagesToBeDisplayed: props.messages.slice(),
+	      originalMessagesToBeDisplayed: props.messages.slice(),
+	      isScrollable: props.isScrollable,
+	      isTyping: false,
+	      inbound: true,
+	      reset: false,
+	      turnOffLoop: props.turnOffLoop
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Conversation, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var previousMessagesLength = this.state.messagesToBeDisplayed.length + this.state.messages.length - this.state.historicMessages.length;
+
+	      if (nextProps.messages.length > previousMessagesLength) {
+	        clearTimeout(this.timeoutId);
+	        this.setState({
+	          messagesToBeDisplayed: this.state.messagesToBeDisplayed.concat(nextProps.messages.slice(previousMessagesLength))
+	        });
+
+	        this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
+	      }
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      clearTimeout(this.timeoutId);
+	    }
+	  }, {
+	    key: 'showMessage',
+	    value: function showMessage() {
+	      var messages = this.state.messages;
+	      var messagesToBeDisplayed = this.state.messagesToBeDisplayed;
+	      var reset = this.state.reset;
+	      if (this.state.messagesToBeDisplayed.length > 0) {
+	        var message = this.state.messagesToBeDisplayed.shift();
+	        var isTyping = this.state.isTyping;
+	        var inbound = this.state.inbound;
 	        if (message.type === 'typing') {
 	          isTyping = true;
 	          inbound = message.inbound;
@@ -14943,28 +14746,29 @@ var showChatTemplate =
 	        if (message.onDisplay) {
 	          onDisplay = message.onDisplay.bind(null, message.id);
 	        }
-	        _this.setState(_extends({}, _this.state, {
+	        this.setState(_extends({}, this.state, {
 	          messages: messages,
 	          messagesToBeDisplayed: messagesToBeDisplayed,
 	          isTyping: isTyping,
 	          inbound: inbound,
 	          reset: reset
 	        }), onDisplay);
-	        _this.timeoutId = setTimeout(_this.showMessage, message.duration || 800);
-	      } else if (!_this.state.turnOffLoop) {
-	        _this.setState(_extends({}, _this.state, {
-	          messagesToBeDisplayed: _this.state.originalMessagesToBeDisplayed.slice(),
-	          messages: _this.state.historicMessages.slice(),
+	        this.timeoutId = setTimeout(this.showMessage, message.duration || 800);
+	      } else if (!this.state.turnOffLoop) {
+	        this.setState(_extends({}, this.state, {
+	          messagesToBeDisplayed: this.state.originalMessagesToBeDisplayed.slice(),
+	          messages: this.state.historicMessages.slice(),
 	          isTyping: false,
 	          inbound: true,
 	          reset: !reset
 	        }));
-	        _this.timeoutId = setTimeout(_this.showMessage, _this.state.startingDelay);
+	        this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
 	      }
-	    };
-
-	    _this.paneDidMount = function (node) {
-	      if (node && _this.state.isScrollable) {
+	    }
+	  }, {
+	    key: 'paneDidMount',
+	    value: function paneDidMount(node) {
+	      if (node && this.state.isScrollable) {
 	        node.addEventListener('wheel', function (event) {
 	          var mouseMoveY = event.deltaY;
 	          var conversationDisplayElement = node;
@@ -15004,46 +14808,6 @@ var showChatTemplate =
 	          }
 	        });
 	      }
-	    };
-
-	    _this.state = {
-	      startingDelay: props.delay || 1000,
-	      messages: props.historicMessages ? props.historicMessages.slice() : [],
-	      historicMessages: props.historicMessages ? props.historicMessages.slice() : [],
-	      messagesToBeDisplayed: props.messages.slice(),
-	      originalMessagesToBeDisplayed: props.messages.slice(),
-	      isScrollable: props.isScrollable,
-	      isTyping: false,
-	      inbound: true,
-	      reset: false,
-	      turnOffLoop: props.turnOffLoop
-	    };
-	    return _this;
-	  }
-
-	  _createClass(Conversation, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
-	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      var previousMessagesLength = this.state.messagesToBeDisplayed.length + this.state.messages.length - this.state.historicMessages.length;
-
-	      if (nextProps.messages.length > previousMessagesLength) {
-	        clearTimeout(this.timeoutId);
-	        this.setState({
-	          messagesToBeDisplayed: this.state.messagesToBeDisplayed.concat(nextProps.messages.slice(previousMessagesLength))
-	        });
-
-	        this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
-	      }
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      clearTimeout(this.timeoutId);
 	    }
 	  }, {
 	    key: 'render',
@@ -15111,9 +14875,9 @@ var showChatTemplate =
 
 	exports.default = Conversation;
 
-/***/ },
-/* 157 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15125,11 +14889,11 @@ var showChatTemplate =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Message = __webpack_require__(158);
+	var _Message = __webpack_require__(165);
 
 	var _Message2 = _interopRequireDefault(_Message);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(160);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(167);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
@@ -15190,9 +14954,9 @@ var showChatTemplate =
 
 	exports.default = Messages;
 
-/***/ },
-/* 158 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15208,7 +14972,7 @@ var showChatTemplate =
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
-	var _MessageContent = __webpack_require__(159);
+	var _MessageContent = __webpack_require__(166);
 
 	var _MessageContent2 = _interopRequireDefault(_MessageContent);
 
@@ -15265,9 +15029,9 @@ var showChatTemplate =
 
 	exports.default = Message;
 
-/***/ },
-/* 159 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15362,15 +15126,15 @@ var showChatTemplate =
 
 	exports.default = MessageContent;
 
-/***/ },
-/* 160 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(161);
+	module.exports = __webpack_require__(168);
 
-/***/ },
-/* 161 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -15389,8 +15153,8 @@ var showChatTemplate =
 
 	var React = __webpack_require__(4);
 
-	var ReactTransitionGroup = __webpack_require__(162);
-	var ReactCSSTransitionGroupChild = __webpack_require__(165);
+	var ReactTransitionGroup = __webpack_require__(169);
+	var ReactCSSTransitionGroupChild = __webpack_require__(172);
 
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -15460,9 +15224,9 @@ var showChatTemplate =
 
 	module.exports = ReactCSSTransitionGroup;
 
-/***/ },
-/* 162 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -15480,7 +15244,7 @@ var showChatTemplate =
 	var _assign = __webpack_require__(6);
 
 	var React = __webpack_require__(4);
-	var ReactTransitionChildMapping = __webpack_require__(163);
+	var ReactTransitionChildMapping = __webpack_require__(170);
 
 	var emptyFunction = __webpack_require__(13);
 
@@ -15676,9 +15440,9 @@ var showChatTemplate =
 
 	module.exports = ReactTransitionGroup;
 
-/***/ },
-/* 163 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -15693,7 +15457,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var flattenChildren = __webpack_require__(164);
+	var flattenChildren = __webpack_require__(171);
 
 	var ReactTransitionChildMapping = {
 	  /**
@@ -15778,9 +15542,9 @@ var showChatTemplate =
 
 	module.exports = ReactTransitionChildMapping;
 
-/***/ },
-/* 164 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -15833,9 +15597,9 @@ var showChatTemplate =
 	module.exports = flattenChildren;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 165 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -15851,10 +15615,10 @@ var showChatTemplate =
 	'use strict';
 
 	var React = __webpack_require__(4);
-	var ReactDOM = __webpack_require__(166);
+	var ReactDOM = __webpack_require__(173);
 
-	var CSSCore = __webpack_require__(294);
-	var ReactTransitionEvents = __webpack_require__(295);
+	var CSSCore = __webpack_require__(301);
+	var ReactTransitionEvents = __webpack_require__(302);
 
 	var onlyChild = __webpack_require__(39);
 
@@ -15998,9 +15762,9 @@ var showChatTemplate =
 
 	module.exports = ReactCSSTransitionGroupChild;
 
-/***/ },
-/* 166 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -16017,16 +15781,16 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactDefaultInjection = __webpack_require__(170);
-	var ReactMount = __webpack_require__(286);
-	var ReactReconciler = __webpack_require__(189);
-	var ReactUpdates = __webpack_require__(186);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactDefaultInjection = __webpack_require__(177);
+	var ReactMount = __webpack_require__(293);
+	var ReactReconciler = __webpack_require__(196);
+	var ReactUpdates = __webpack_require__(193);
 	var ReactVersion = __webpack_require__(38);
 
-	var findDOMNode = __webpack_require__(291);
-	var getNativeComponentFromComposite = __webpack_require__(292);
-	var renderSubtreeIntoContainer = __webpack_require__(293);
+	var findDOMNode = __webpack_require__(298);
+	var getNativeComponentFromComposite = __webpack_require__(299);
+	var renderSubtreeIntoContainer = __webpack_require__(300);
 	var warning = __webpack_require__(12);
 
 	ReactDefaultInjection.inject();
@@ -16105,9 +15869,9 @@ var showChatTemplate =
 	module.exports = React;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 167 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -16122,8 +15886,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(168);
-	var ReactDOMComponentFlags = __webpack_require__(169);
+	var DOMProperty = __webpack_require__(175);
+	var ReactDOMComponentFlags = __webpack_require__(176);
 
 	var invariant = __webpack_require__(9);
 
@@ -16297,9 +16061,9 @@ var showChatTemplate =
 	module.exports = ReactDOMComponentTree;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 168 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 175 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -16516,9 +16280,9 @@ var showChatTemplate =
 	module.exports = DOMProperty;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 169 */
-/***/ function(module, exports) {
+/***/ }),
+/* 176 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2015-present, Facebook, Inc.
@@ -16539,9 +16303,9 @@ var showChatTemplate =
 
 	module.exports = ReactDOMComponentFlags;
 
-/***/ },
-/* 170 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -16556,24 +16320,24 @@ var showChatTemplate =
 
 	'use strict';
 
-	var BeforeInputEventPlugin = __webpack_require__(171);
-	var ChangeEventPlugin = __webpack_require__(185);
-	var DefaultEventPluginOrder = __webpack_require__(196);
-	var EnterLeaveEventPlugin = __webpack_require__(197);
-	var HTMLDOMPropertyConfig = __webpack_require__(202);
-	var ReactComponentBrowserEnvironment = __webpack_require__(203);
-	var ReactDOMComponent = __webpack_require__(217);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactDOMEmptyComponent = __webpack_require__(257);
-	var ReactDOMTreeTraversal = __webpack_require__(258);
-	var ReactDOMTextComponent = __webpack_require__(259);
-	var ReactDefaultBatchingStrategy = __webpack_require__(260);
-	var ReactEventListener = __webpack_require__(261);
-	var ReactInjection = __webpack_require__(264);
-	var ReactReconcileTransaction = __webpack_require__(265);
-	var SVGDOMPropertyConfig = __webpack_require__(273);
-	var SelectEventPlugin = __webpack_require__(274);
-	var SimpleEventPlugin = __webpack_require__(275);
+	var BeforeInputEventPlugin = __webpack_require__(178);
+	var ChangeEventPlugin = __webpack_require__(192);
+	var DefaultEventPluginOrder = __webpack_require__(203);
+	var EnterLeaveEventPlugin = __webpack_require__(204);
+	var HTMLDOMPropertyConfig = __webpack_require__(209);
+	var ReactComponentBrowserEnvironment = __webpack_require__(210);
+	var ReactDOMComponent = __webpack_require__(224);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactDOMEmptyComponent = __webpack_require__(264);
+	var ReactDOMTreeTraversal = __webpack_require__(265);
+	var ReactDOMTextComponent = __webpack_require__(266);
+	var ReactDefaultBatchingStrategy = __webpack_require__(267);
+	var ReactEventListener = __webpack_require__(268);
+	var ReactInjection = __webpack_require__(271);
+	var ReactReconcileTransaction = __webpack_require__(272);
+	var SVGDOMPropertyConfig = __webpack_require__(280);
+	var SelectEventPlugin = __webpack_require__(281);
+	var SimpleEventPlugin = __webpack_require__(282);
 
 	var alreadyInjected = false;
 
@@ -16628,9 +16392,9 @@ var showChatTemplate =
 	  inject: inject
 	};
 
-/***/ },
-/* 171 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present Facebook, Inc.
@@ -16645,12 +16409,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(172);
-	var EventPropagators = __webpack_require__(173);
+	var EventConstants = __webpack_require__(179);
+	var EventPropagators = __webpack_require__(180);
 	var ExecutionEnvironment = __webpack_require__(22);
-	var FallbackCompositionState = __webpack_require__(180);
-	var SyntheticCompositionEvent = __webpack_require__(182);
-	var SyntheticInputEvent = __webpack_require__(184);
+	var FallbackCompositionState = __webpack_require__(187);
+	var SyntheticCompositionEvent = __webpack_require__(189);
+	var SyntheticInputEvent = __webpack_require__(191);
 
 	var keyOf = __webpack_require__(33);
 
@@ -17021,9 +16785,9 @@ var showChatTemplate =
 
 	module.exports = BeforeInputEventPlugin;
 
-/***/ },
-/* 172 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -17123,9 +16887,9 @@ var showChatTemplate =
 
 	module.exports = EventConstants;
 
-/***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 180 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -17140,12 +16904,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(172);
-	var EventPluginHub = __webpack_require__(174);
-	var EventPluginUtils = __webpack_require__(176);
+	var EventConstants = __webpack_require__(179);
+	var EventPluginHub = __webpack_require__(181);
+	var EventPluginUtils = __webpack_require__(183);
 
-	var accumulateInto = __webpack_require__(178);
-	var forEachAccumulated = __webpack_require__(179);
+	var accumulateInto = __webpack_require__(185);
+	var forEachAccumulated = __webpack_require__(186);
 	var warning = __webpack_require__(12);
 
 	var PropagationPhases = EventConstants.PropagationPhases;
@@ -17266,9 +17030,9 @@ var showChatTemplate =
 	module.exports = EventPropagators;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -17283,12 +17047,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventPluginRegistry = __webpack_require__(175);
-	var EventPluginUtils = __webpack_require__(176);
-	var ReactErrorUtils = __webpack_require__(177);
+	var EventPluginRegistry = __webpack_require__(182);
+	var EventPluginUtils = __webpack_require__(183);
+	var ReactErrorUtils = __webpack_require__(184);
 
-	var accumulateInto = __webpack_require__(178);
-	var forEachAccumulated = __webpack_require__(179);
+	var accumulateInto = __webpack_require__(185);
+	var forEachAccumulated = __webpack_require__(186);
 	var invariant = __webpack_require__(9);
 
 	/**
@@ -17507,9 +17271,9 @@ var showChatTemplate =
 	module.exports = EventPluginHub;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 175 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 182 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -17754,9 +17518,9 @@ var showChatTemplate =
 	module.exports = EventPluginRegistry;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 176 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -17771,8 +17535,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(172);
-	var ReactErrorUtils = __webpack_require__(177);
+	var EventConstants = __webpack_require__(179);
+	var ReactErrorUtils = __webpack_require__(184);
 
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
@@ -17987,9 +17751,9 @@ var showChatTemplate =
 	module.exports = EventPluginUtils;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 177 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -18069,9 +17833,9 @@ var showChatTemplate =
 	module.exports = ReactErrorUtils;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -18134,9 +17898,9 @@ var showChatTemplate =
 	module.exports = accumulateInto;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 179 */
-/***/ function(module, exports) {
+/***/ }),
+/* 186 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -18169,9 +17933,9 @@ var showChatTemplate =
 
 	module.exports = forEachAccumulated;
 
-/***/ },
-/* 180 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -18190,7 +17954,7 @@ var showChatTemplate =
 
 	var PooledClass = __webpack_require__(8);
 
-	var getTextContentAccessor = __webpack_require__(181);
+	var getTextContentAccessor = __webpack_require__(188);
 
 	/**
 	 * This helper class stores information about text content of a target node,
@@ -18269,9 +18033,9 @@ var showChatTemplate =
 
 	module.exports = FallbackCompositionState;
 
-/***/ },
-/* 181 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -18307,9 +18071,9 @@ var showChatTemplate =
 
 	module.exports = getTextContentAccessor;
 
-/***/ },
-/* 182 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -18324,7 +18088,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(183);
+	var SyntheticEvent = __webpack_require__(190);
 
 	/**
 	 * @interface Event
@@ -18348,9 +18112,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticCompositionEvent;
 
-/***/ },
-/* 183 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 190 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -18615,9 +18379,9 @@ var showChatTemplate =
 	}
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 184 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -18632,7 +18396,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(183);
+	var SyntheticEvent = __webpack_require__(190);
 
 	/**
 	 * @interface Event
@@ -18657,9 +18421,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticInputEvent;
 
-/***/ },
-/* 185 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -18674,17 +18438,17 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(172);
-	var EventPluginHub = __webpack_require__(174);
-	var EventPropagators = __webpack_require__(173);
+	var EventConstants = __webpack_require__(179);
+	var EventPluginHub = __webpack_require__(181);
+	var EventPropagators = __webpack_require__(180);
 	var ExecutionEnvironment = __webpack_require__(22);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactUpdates = __webpack_require__(186);
-	var SyntheticEvent = __webpack_require__(183);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactUpdates = __webpack_require__(193);
+	var SyntheticEvent = __webpack_require__(190);
 
-	var getEventTarget = __webpack_require__(193);
-	var isEventSupported = __webpack_require__(194);
-	var isTextInputElement = __webpack_require__(195);
+	var getEventTarget = __webpack_require__(200);
+	var isEventSupported = __webpack_require__(201);
+	var isTextInputElement = __webpack_require__(202);
 	var keyOf = __webpack_require__(33);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -18987,9 +18751,9 @@ var showChatTemplate =
 
 	module.exports = ChangeEventPlugin;
 
-/***/ },
-/* 186 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -19006,12 +18770,12 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var CallbackQueue = __webpack_require__(187);
+	var CallbackQueue = __webpack_require__(194);
 	var PooledClass = __webpack_require__(8);
-	var ReactFeatureFlags = __webpack_require__(188);
+	var ReactFeatureFlags = __webpack_require__(195);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactReconciler = __webpack_require__(189);
-	var Transaction = __webpack_require__(192);
+	var ReactReconciler = __webpack_require__(196);
+	var Transaction = __webpack_require__(199);
 
 	var invariant = __webpack_require__(9);
 
@@ -19252,9 +19016,9 @@ var showChatTemplate =
 	module.exports = ReactUpdates;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 187 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -19363,9 +19127,9 @@ var showChatTemplate =
 	module.exports = CallbackQueue;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 188 */
-/***/ function(module, exports) {
+/***/ }),
+/* 195 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -19389,9 +19153,9 @@ var showChatTemplate =
 
 	module.exports = ReactFeatureFlags;
 
-/***/ },
-/* 189 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -19406,7 +19170,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactRef = __webpack_require__(190);
+	var ReactRef = __webpack_require__(197);
 	var ReactInstrumentation = __webpack_require__(20);
 
 	var invariant = __webpack_require__(9);
@@ -19566,9 +19330,9 @@ var showChatTemplate =
 	module.exports = ReactReconciler;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 190 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -19583,7 +19347,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactOwner = __webpack_require__(191);
+	var ReactOwner = __webpack_require__(198);
 
 	var ReactRef = {};
 
@@ -19649,9 +19413,9 @@ var showChatTemplate =
 
 	module.exports = ReactRef;
 
-/***/ },
-/* 191 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -19747,9 +19511,9 @@ var showChatTemplate =
 	module.exports = ReactOwner;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 192 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 199 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -19984,9 +19748,9 @@ var showChatTemplate =
 	module.exports = Transaction;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 193 */
-/***/ function(module, exports) {
+/***/ }),
+/* 200 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20024,9 +19788,9 @@ var showChatTemplate =
 
 	module.exports = getEventTarget;
 
-/***/ },
-/* 194 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20089,9 +19853,9 @@ var showChatTemplate =
 
 	module.exports = isEventSupported;
 
-/***/ },
-/* 195 */
-/***/ function(module, exports) {
+/***/ }),
+/* 202 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20135,9 +19899,9 @@ var showChatTemplate =
 
 	module.exports = isTextInputElement;
 
-/***/ },
-/* 196 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20167,9 +19931,9 @@ var showChatTemplate =
 
 	module.exports = DefaultEventPluginOrder;
 
-/***/ },
-/* 197 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20184,10 +19948,10 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(172);
-	var EventPropagators = __webpack_require__(173);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var SyntheticMouseEvent = __webpack_require__(198);
+	var EventConstants = __webpack_require__(179);
+	var EventPropagators = __webpack_require__(180);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var SyntheticMouseEvent = __webpack_require__(205);
 
 	var keyOf = __webpack_require__(33);
 
@@ -20277,9 +20041,9 @@ var showChatTemplate =
 
 	module.exports = EnterLeaveEventPlugin;
 
-/***/ },
-/* 198 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20294,10 +20058,10 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(199);
-	var ViewportMetrics = __webpack_require__(200);
+	var SyntheticUIEvent = __webpack_require__(206);
+	var ViewportMetrics = __webpack_require__(207);
 
-	var getEventModifierState = __webpack_require__(201);
+	var getEventModifierState = __webpack_require__(208);
 
 	/**
 	 * @interface MouseEvent
@@ -20354,9 +20118,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticMouseEvent;
 
-/***/ },
-/* 199 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20371,9 +20135,9 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(183);
+	var SyntheticEvent = __webpack_require__(190);
 
-	var getEventTarget = __webpack_require__(193);
+	var getEventTarget = __webpack_require__(200);
 
 	/**
 	 * @interface UIEvent
@@ -20418,9 +20182,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticUIEvent;
 
-/***/ },
-/* 200 */
-/***/ function(module, exports) {
+/***/ }),
+/* 207 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20450,9 +20214,9 @@ var showChatTemplate =
 
 	module.exports = ViewportMetrics;
 
-/***/ },
-/* 201 */
-/***/ function(module, exports) {
+/***/ }),
+/* 208 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20498,9 +20262,9 @@ var showChatTemplate =
 
 	module.exports = getEventModifierState;
 
-/***/ },
-/* 202 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20515,7 +20279,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(168);
+	var DOMProperty = __webpack_require__(175);
 
 	var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
 	var HAS_BOOLEAN_VALUE = DOMProperty.injection.HAS_BOOLEAN_VALUE;
@@ -20712,9 +20476,9 @@ var showChatTemplate =
 
 	module.exports = HTMLDOMPropertyConfig;
 
-/***/ },
-/* 203 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20729,8 +20493,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMChildrenOperations = __webpack_require__(204);
-	var ReactDOMIDOperations = __webpack_require__(216);
+	var DOMChildrenOperations = __webpack_require__(211);
+	var ReactDOMIDOperations = __webpack_require__(223);
 
 	/**
 	 * Abstracts away all functionality of the reconciler that requires knowledge of
@@ -20756,9 +20520,9 @@ var showChatTemplate =
 
 	module.exports = ReactComponentBrowserEnvironment;
 
-/***/ },
-/* 204 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -20773,15 +20537,15 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMLazyTree = __webpack_require__(205);
-	var Danger = __webpack_require__(211);
-	var ReactMultiChildUpdateTypes = __webpack_require__(215);
-	var ReactDOMComponentTree = __webpack_require__(167);
+	var DOMLazyTree = __webpack_require__(212);
+	var Danger = __webpack_require__(218);
+	var ReactMultiChildUpdateTypes = __webpack_require__(222);
+	var ReactDOMComponentTree = __webpack_require__(174);
 	var ReactInstrumentation = __webpack_require__(20);
 
-	var createMicrosoftUnsafeLocalFunction = __webpack_require__(207);
-	var setInnerHTML = __webpack_require__(210);
-	var setTextContent = __webpack_require__(208);
+	var createMicrosoftUnsafeLocalFunction = __webpack_require__(214);
+	var setInnerHTML = __webpack_require__(217);
+	var setTextContent = __webpack_require__(215);
 
 	function getNodeAfter(parentNode, node) {
 	  // Special case for text components, which return [open, close] comments
@@ -20956,9 +20720,9 @@ var showChatTemplate =
 	module.exports = DOMChildrenOperations;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 205 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 212 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2015-present, Facebook, Inc.
@@ -20973,10 +20737,10 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMNamespaces = __webpack_require__(206);
+	var DOMNamespaces = __webpack_require__(213);
 
-	var createMicrosoftUnsafeLocalFunction = __webpack_require__(207);
-	var setTextContent = __webpack_require__(208);
+	var createMicrosoftUnsafeLocalFunction = __webpack_require__(214);
+	var setTextContent = __webpack_require__(215);
 
 	var ELEMENT_NODE_TYPE = 1;
 	var DOCUMENT_FRAGMENT_NODE_TYPE = 11;
@@ -21078,9 +20842,9 @@ var showChatTemplate =
 
 	module.exports = DOMLazyTree;
 
-/***/ },
-/* 206 */
-/***/ function(module, exports) {
+/***/ }),
+/* 213 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21103,9 +20867,9 @@ var showChatTemplate =
 
 	module.exports = DOMNamespaces;
 
-/***/ },
-/* 207 */
-/***/ function(module, exports) {
+/***/ }),
+/* 214 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21140,9 +20904,9 @@ var showChatTemplate =
 
 	module.exports = createMicrosoftUnsafeLocalFunction;
 
-/***/ },
-/* 208 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21158,8 +20922,8 @@ var showChatTemplate =
 	'use strict';
 
 	var ExecutionEnvironment = __webpack_require__(22);
-	var escapeTextContentForBrowser = __webpack_require__(209);
-	var setInnerHTML = __webpack_require__(210);
+	var escapeTextContentForBrowser = __webpack_require__(216);
+	var setInnerHTML = __webpack_require__(217);
 
 	/**
 	 * Set the textContent property of a node, ensuring that whitespace is preserved
@@ -21185,9 +20949,9 @@ var showChatTemplate =
 
 	module.exports = setTextContent;
 
-/***/ },
-/* 209 */
-/***/ function(module, exports) {
+/***/ }),
+/* 216 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21228,9 +20992,9 @@ var showChatTemplate =
 
 	module.exports = escapeTextContentForBrowser;
 
-/***/ },
-/* 210 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 217 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21250,7 +21014,7 @@ var showChatTemplate =
 	var WHITESPACE_TEST = /^[ \r\n\t\f]/;
 	var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
 
-	var createMicrosoftUnsafeLocalFunction = __webpack_require__(207);
+	var createMicrosoftUnsafeLocalFunction = __webpack_require__(214);
 
 	/**
 	 * Set the innerHTML property of a node, ensuring that whitespace is preserved
@@ -21315,9 +21079,9 @@ var showChatTemplate =
 
 	module.exports = setInnerHTML;
 
-/***/ },
-/* 211 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21332,12 +21096,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMLazyTree = __webpack_require__(205);
+	var DOMLazyTree = __webpack_require__(212);
 	var ExecutionEnvironment = __webpack_require__(22);
 
-	var createNodesFromMarkup = __webpack_require__(212);
+	var createNodesFromMarkup = __webpack_require__(219);
 	var emptyFunction = __webpack_require__(13);
-	var getMarkupWrap = __webpack_require__(214);
+	var getMarkupWrap = __webpack_require__(221);
 	var invariant = __webpack_require__(9);
 
 	var OPEN_TAG_NAME_EXP = /^(<[^ \/>]+)/;
@@ -21465,19 +21229,17 @@ var showChatTemplate =
 	module.exports = Danger;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 212 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 219 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -21486,8 +21248,8 @@ var showChatTemplate =
 
 	var ExecutionEnvironment = __webpack_require__(22);
 
-	var createArrayFromMixed = __webpack_require__(213);
-	var getMarkupWrap = __webpack_require__(214);
+	var createArrayFromMixed = __webpack_require__(220);
+	var getMarkupWrap = __webpack_require__(221);
 	var invariant = __webpack_require__(9);
 
 	/**
@@ -21554,19 +21316,17 @@ var showChatTemplate =
 	module.exports = createNodesFromMarkup;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 213 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -21686,19 +21446,17 @@ var showChatTemplate =
 	module.exports = createArrayFromMixed;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 214 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 */
 
@@ -21786,9 +21544,9 @@ var showChatTemplate =
 	module.exports = getMarkupWrap;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 215 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21823,9 +21581,9 @@ var showChatTemplate =
 
 	module.exports = ReactMultiChildUpdateTypes;
 
-/***/ },
-/* 216 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21840,8 +21598,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMChildrenOperations = __webpack_require__(204);
-	var ReactDOMComponentTree = __webpack_require__(167);
+	var DOMChildrenOperations = __webpack_require__(211);
+	var ReactDOMComponentTree = __webpack_require__(174);
 
 	/**
 	 * Operations used to process updates to DOM nodes.
@@ -21862,9 +21620,9 @@ var showChatTemplate =
 
 	module.exports = ReactDOMIDOperations;
 
-/***/ },
-/* 217 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -21883,35 +21641,35 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var AutoFocusUtils = __webpack_require__(218);
-	var CSSPropertyOperations = __webpack_require__(220);
-	var DOMLazyTree = __webpack_require__(205);
-	var DOMNamespaces = __webpack_require__(206);
-	var DOMProperty = __webpack_require__(168);
-	var DOMPropertyOperations = __webpack_require__(228);
-	var EventConstants = __webpack_require__(172);
-	var EventPluginHub = __webpack_require__(174);
-	var EventPluginRegistry = __webpack_require__(175);
-	var ReactBrowserEventEmitter = __webpack_require__(233);
-	var ReactComponentBrowserEnvironment = __webpack_require__(203);
-	var ReactDOMButton = __webpack_require__(236);
-	var ReactDOMComponentFlags = __webpack_require__(169);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactDOMInput = __webpack_require__(238);
-	var ReactDOMOption = __webpack_require__(240);
-	var ReactDOMSelect = __webpack_require__(241);
-	var ReactDOMTextarea = __webpack_require__(242);
+	var AutoFocusUtils = __webpack_require__(225);
+	var CSSPropertyOperations = __webpack_require__(227);
+	var DOMLazyTree = __webpack_require__(212);
+	var DOMNamespaces = __webpack_require__(213);
+	var DOMProperty = __webpack_require__(175);
+	var DOMPropertyOperations = __webpack_require__(235);
+	var EventConstants = __webpack_require__(179);
+	var EventPluginHub = __webpack_require__(181);
+	var EventPluginRegistry = __webpack_require__(182);
+	var ReactBrowserEventEmitter = __webpack_require__(240);
+	var ReactComponentBrowserEnvironment = __webpack_require__(210);
+	var ReactDOMButton = __webpack_require__(243);
+	var ReactDOMComponentFlags = __webpack_require__(176);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactDOMInput = __webpack_require__(245);
+	var ReactDOMOption = __webpack_require__(247);
+	var ReactDOMSelect = __webpack_require__(248);
+	var ReactDOMTextarea = __webpack_require__(249);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactMultiChild = __webpack_require__(243);
-	var ReactServerRenderingTransaction = __webpack_require__(254);
+	var ReactMultiChild = __webpack_require__(250);
+	var ReactServerRenderingTransaction = __webpack_require__(261);
 
 	var emptyFunction = __webpack_require__(13);
-	var escapeTextContentForBrowser = __webpack_require__(209);
+	var escapeTextContentForBrowser = __webpack_require__(216);
 	var invariant = __webpack_require__(9);
-	var isEventSupported = __webpack_require__(194);
+	var isEventSupported = __webpack_require__(201);
 	var keyOf = __webpack_require__(33);
-	var shallowEqual = __webpack_require__(255);
-	var validateDOMNesting = __webpack_require__(256);
+	var shallowEqual = __webpack_require__(262);
+	var validateDOMNesting = __webpack_require__(263);
 	var warning = __webpack_require__(12);
 
 	var Flags = ReactDOMComponentFlags;
@@ -22817,9 +22575,9 @@ var showChatTemplate =
 	module.exports = ReactDOMComponent;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 218 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -22834,9 +22592,9 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMComponentTree = __webpack_require__(167);
+	var ReactDOMComponentTree = __webpack_require__(174);
 
-	var focusNode = __webpack_require__(219);
+	var focusNode = __webpack_require__(226);
 
 	var AutoFocusUtils = {
 	  focusDOMComponent: function () {
@@ -22846,17 +22604,15 @@ var showChatTemplate =
 
 	module.exports = AutoFocusUtils;
 
-/***/ },
-/* 219 */
-/***/ function(module, exports) {
+/***/ }),
+/* 226 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 */
 
@@ -22877,9 +22633,9 @@ var showChatTemplate =
 
 	module.exports = focusNode;
 
-/***/ },
-/* 220 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 227 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -22894,14 +22650,14 @@ var showChatTemplate =
 
 	'use strict';
 
-	var CSSProperty = __webpack_require__(221);
+	var CSSProperty = __webpack_require__(228);
 	var ExecutionEnvironment = __webpack_require__(22);
 	var ReactInstrumentation = __webpack_require__(20);
 
-	var camelizeStyleName = __webpack_require__(222);
-	var dangerousStyleValue = __webpack_require__(224);
-	var hyphenateStyleName = __webpack_require__(225);
-	var memoizeStringOnly = __webpack_require__(227);
+	var camelizeStyleName = __webpack_require__(229);
+	var dangerousStyleValue = __webpack_require__(231);
+	var hyphenateStyleName = __webpack_require__(232);
+	var memoizeStringOnly = __webpack_require__(234);
 	var warning = __webpack_require__(12);
 
 	var processStyleName = memoizeStringOnly(function (styleName) {
@@ -23088,9 +22844,9 @@ var showChatTemplate =
 	module.exports = CSSPropertyOperations;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 221 */
-/***/ function(module, exports) {
+/***/ }),
+/* 228 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -23241,24 +22997,22 @@ var showChatTemplate =
 
 	module.exports = CSSProperty;
 
-/***/ },
-/* 222 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 229 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
 
 	'use strict';
 
-	var camelize = __webpack_require__(223);
+	var camelize = __webpack_require__(230);
 
 	var msPattern = /^-ms-/;
 
@@ -23285,19 +23039,17 @@ var showChatTemplate =
 
 	module.exports = camelizeStyleName;
 
-/***/ },
-/* 223 */
-/***/ function(module, exports) {
+/***/ }),
+/* 230 */
+/***/ (function(module, exports) {
 
 	"use strict";
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -23321,9 +23073,9 @@ var showChatTemplate =
 
 	module.exports = camelize;
 
-/***/ },
-/* 224 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -23338,7 +23090,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var CSSProperty = __webpack_require__(221);
+	var CSSProperty = __webpack_require__(228);
 	var warning = __webpack_require__(12);
 
 	var isUnitlessNumber = CSSProperty.isUnitlessNumber;
@@ -23404,24 +23156,22 @@ var showChatTemplate =
 	module.exports = dangerousStyleValue;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 225 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 232 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
 
 	'use strict';
 
-	var hyphenate = __webpack_require__(226);
+	var hyphenate = __webpack_require__(233);
 
 	var msPattern = /^ms-/;
 
@@ -23447,19 +23197,17 @@ var showChatTemplate =
 
 	module.exports = hyphenateStyleName;
 
-/***/ },
-/* 226 */
-/***/ function(module, exports) {
+/***/ }),
+/* 233 */
+/***/ (function(module, exports) {
 
 	'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -23484,17 +23232,15 @@ var showChatTemplate =
 
 	module.exports = hyphenate;
 
-/***/ },
-/* 227 */
-/***/ function(module, exports) {
+/***/ }),
+/* 234 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * 
 	 * @typechecks static-only
@@ -23518,9 +23264,9 @@ var showChatTemplate =
 
 	module.exports = memoizeStringOnly;
 
-/***/ },
-/* 228 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -23535,12 +23281,12 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(168);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactDOMInstrumentation = __webpack_require__(229);
+	var DOMProperty = __webpack_require__(175);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactDOMInstrumentation = __webpack_require__(236);
 	var ReactInstrumentation = __webpack_require__(20);
 
-	var quoteAttributeValueForBrowser = __webpack_require__(232);
+	var quoteAttributeValueForBrowser = __webpack_require__(239);
 	var warning = __webpack_require__(12);
 
 	var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -23746,9 +23492,9 @@ var showChatTemplate =
 	module.exports = DOMPropertyOperations;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -23763,13 +23509,13 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMDebugTool = __webpack_require__(230);
+	var ReactDOMDebugTool = __webpack_require__(237);
 
 	module.exports = { debugTool: ReactDOMDebugTool };
 
-/***/ },
-/* 230 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -23784,7 +23530,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMUnknownPropertyDevtool = __webpack_require__(231);
+	var ReactDOMUnknownPropertyDevtool = __webpack_require__(238);
 
 	var warning = __webpack_require__(12);
 
@@ -23834,9 +23580,9 @@ var showChatTemplate =
 	module.exports = ReactDOMDebugTool;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 231 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -23851,8 +23597,8 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(168);
-	var EventPluginRegistry = __webpack_require__(175);
+	var DOMProperty = __webpack_require__(175);
+	var EventPluginRegistry = __webpack_require__(182);
 
 	var warning = __webpack_require__(12);
 
@@ -23904,9 +23650,9 @@ var showChatTemplate =
 	module.exports = ReactDOMUnknownPropertyDevtool;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 232 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -23921,7 +23667,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var escapeTextContentForBrowser = __webpack_require__(209);
+	var escapeTextContentForBrowser = __webpack_require__(216);
 
 	/**
 	 * Escapes attribute value to prevent scripting attacks.
@@ -23935,9 +23681,9 @@ var showChatTemplate =
 
 	module.exports = quoteAttributeValueForBrowser;
 
-/***/ },
-/* 233 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -23954,13 +23700,13 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var EventConstants = __webpack_require__(172);
-	var EventPluginRegistry = __webpack_require__(175);
-	var ReactEventEmitterMixin = __webpack_require__(234);
-	var ViewportMetrics = __webpack_require__(200);
+	var EventConstants = __webpack_require__(179);
+	var EventPluginRegistry = __webpack_require__(182);
+	var ReactEventEmitterMixin = __webpack_require__(241);
+	var ViewportMetrics = __webpack_require__(207);
 
-	var getVendorPrefixedEventName = __webpack_require__(235);
-	var isEventSupported = __webpack_require__(194);
+	var getVendorPrefixedEventName = __webpack_require__(242);
+	var isEventSupported = __webpack_require__(201);
 
 	/**
 	 * Summary of `ReactBrowserEventEmitter` event handling:
@@ -24257,9 +24003,9 @@ var showChatTemplate =
 
 	module.exports = ReactBrowserEventEmitter;
 
-/***/ },
-/* 234 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -24274,7 +24020,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventPluginHub = __webpack_require__(174);
+	var EventPluginHub = __webpack_require__(181);
 
 	function runEventQueueInBatch(events) {
 	  EventPluginHub.enqueueEvents(events);
@@ -24295,9 +24041,9 @@ var showChatTemplate =
 
 	module.exports = ReactEventEmitterMixin;
 
-/***/ },
-/* 235 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -24401,9 +24147,9 @@ var showChatTemplate =
 
 	module.exports = getVendorPrefixedEventName;
 
-/***/ },
-/* 236 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -24418,7 +24164,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DisabledInputUtils = __webpack_require__(237);
+	var DisabledInputUtils = __webpack_require__(244);
 
 	/**
 	 * Implements a <button> native component that does not receive mouse events
@@ -24430,9 +24176,9 @@ var showChatTemplate =
 
 	module.exports = ReactDOMButton;
 
-/***/ },
-/* 237 */
-/***/ function(module, exports) {
+/***/ }),
+/* 244 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -24485,9 +24231,9 @@ var showChatTemplate =
 
 	module.exports = DisabledInputUtils;
 
-/***/ },
-/* 238 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 245 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -24504,11 +24250,11 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DisabledInputUtils = __webpack_require__(237);
-	var DOMPropertyOperations = __webpack_require__(228);
-	var LinkedValueUtils = __webpack_require__(239);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactUpdates = __webpack_require__(186);
+	var DisabledInputUtils = __webpack_require__(244);
+	var DOMPropertyOperations = __webpack_require__(235);
+	var LinkedValueUtils = __webpack_require__(246);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactUpdates = __webpack_require__(193);
 
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
@@ -24697,9 +24443,9 @@ var showChatTemplate =
 	module.exports = ReactDOMInput;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 239 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -24836,9 +24582,9 @@ var showChatTemplate =
 	module.exports = LinkedValueUtils;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 240 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -24856,8 +24602,8 @@ var showChatTemplate =
 	var _assign = __webpack_require__(6);
 
 	var ReactChildren = __webpack_require__(7);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactDOMSelect = __webpack_require__(241);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactDOMSelect = __webpack_require__(248);
 
 	var warning = __webpack_require__(12);
 
@@ -24951,9 +24697,9 @@ var showChatTemplate =
 	module.exports = ReactDOMOption;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -24970,10 +24716,10 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DisabledInputUtils = __webpack_require__(237);
-	var LinkedValueUtils = __webpack_require__(239);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactUpdates = __webpack_require__(186);
+	var DisabledInputUtils = __webpack_require__(244);
+	var LinkedValueUtils = __webpack_require__(246);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactUpdates = __webpack_require__(193);
 
 	var warning = __webpack_require__(12);
 
@@ -25170,9 +24916,9 @@ var showChatTemplate =
 	module.exports = ReactDOMSelect;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 242 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 249 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -25189,11 +24935,11 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DisabledInputUtils = __webpack_require__(237);
-	var DOMPropertyOperations = __webpack_require__(228);
-	var LinkedValueUtils = __webpack_require__(239);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactUpdates = __webpack_require__(186);
+	var DisabledInputUtils = __webpack_require__(244);
+	var DOMPropertyOperations = __webpack_require__(235);
+	var LinkedValueUtils = __webpack_require__(246);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactUpdates = __webpack_require__(193);
 
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
@@ -25318,9 +25064,9 @@ var showChatTemplate =
 	module.exports = ReactDOMTextarea;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 250 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -25335,16 +25081,16 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactComponentEnvironment = __webpack_require__(244);
+	var ReactComponentEnvironment = __webpack_require__(251);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactMultiChildUpdateTypes = __webpack_require__(215);
+	var ReactMultiChildUpdateTypes = __webpack_require__(222);
 
 	var ReactCurrentOwner = __webpack_require__(11);
-	var ReactReconciler = __webpack_require__(189);
-	var ReactChildReconciler = __webpack_require__(245);
+	var ReactReconciler = __webpack_require__(196);
+	var ReactChildReconciler = __webpack_require__(252);
 
 	var emptyFunction = __webpack_require__(13);
-	var flattenChildren = __webpack_require__(164);
+	var flattenChildren = __webpack_require__(171);
 	var invariant = __webpack_require__(9);
 
 	/**
@@ -25747,9 +25493,9 @@ var showChatTemplate =
 	module.exports = ReactMultiChild;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 244 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 251 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -25804,9 +25550,9 @@ var showChatTemplate =
 	module.exports = ReactComponentEnvironment;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 245 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -25821,11 +25567,11 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactReconciler = __webpack_require__(189);
+	var ReactReconciler = __webpack_require__(196);
 
-	var instantiateReactComponent = __webpack_require__(246);
+	var instantiateReactComponent = __webpack_require__(253);
 	var KeyEscapeUtils = __webpack_require__(17);
-	var shouldUpdateReactComponent = __webpack_require__(251);
+	var shouldUpdateReactComponent = __webpack_require__(258);
 	var traverseAllChildren = __webpack_require__(15);
 	var warning = __webpack_require__(12);
 
@@ -25935,9 +25681,9 @@ var showChatTemplate =
 	module.exports = ReactChildReconciler;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 246 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -25954,9 +25700,9 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var ReactCompositeComponent = __webpack_require__(247);
-	var ReactEmptyComponent = __webpack_require__(252);
-	var ReactNativeComponent = __webpack_require__(253);
+	var ReactCompositeComponent = __webpack_require__(254);
+	var ReactEmptyComponent = __webpack_require__(259);
+	var ReactNativeComponent = __webpack_require__(260);
 	var ReactInstrumentation = __webpack_require__(20);
 
 	var invariant = __webpack_require__(9);
@@ -26085,9 +25831,9 @@ var showChatTemplate =
 	module.exports = instantiateReactComponent;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 247 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -26104,21 +25850,21 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var ReactComponentEnvironment = __webpack_require__(244);
+	var ReactComponentEnvironment = __webpack_require__(251);
 	var ReactCurrentOwner = __webpack_require__(11);
 	var ReactElement = __webpack_require__(10);
-	var ReactErrorUtils = __webpack_require__(177);
-	var ReactInstanceMap = __webpack_require__(248);
+	var ReactErrorUtils = __webpack_require__(184);
+	var ReactInstanceMap = __webpack_require__(255);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactNodeTypes = __webpack_require__(249);
+	var ReactNodeTypes = __webpack_require__(256);
 	var ReactPropTypeLocations = __webpack_require__(30);
 	var ReactPropTypeLocationNames = __webpack_require__(32);
-	var ReactReconciler = __webpack_require__(189);
-	var ReactUpdateQueue = __webpack_require__(250);
+	var ReactReconciler = __webpack_require__(196);
+	var ReactUpdateQueue = __webpack_require__(257);
 
 	var emptyObject = __webpack_require__(28);
 	var invariant = __webpack_require__(9);
-	var shouldUpdateReactComponent = __webpack_require__(251);
+	var shouldUpdateReactComponent = __webpack_require__(258);
 	var warning = __webpack_require__(12);
 
 	function getDeclarationErrorAddendum(component) {
@@ -27014,9 +26760,9 @@ var showChatTemplate =
 	module.exports = ReactCompositeComponent;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 248 */
-/***/ function(module, exports) {
+/***/ }),
+/* 255 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -27067,9 +26813,9 @@ var showChatTemplate =
 
 	module.exports = ReactInstanceMap;
 
-/***/ },
-/* 249 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -27110,9 +26856,9 @@ var showChatTemplate =
 	module.exports = ReactNodeTypes;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 250 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 257 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2015-present, Facebook, Inc.
@@ -27128,8 +26874,8 @@ var showChatTemplate =
 	'use strict';
 
 	var ReactCurrentOwner = __webpack_require__(11);
-	var ReactInstanceMap = __webpack_require__(248);
-	var ReactUpdates = __webpack_require__(186);
+	var ReactInstanceMap = __webpack_require__(255);
+	var ReactUpdates = __webpack_require__(193);
 
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
@@ -27331,9 +27077,9 @@ var showChatTemplate =
 	module.exports = ReactUpdateQueue;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 251 */
-/***/ function(module, exports) {
+/***/ }),
+/* 258 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -27378,9 +27124,9 @@ var showChatTemplate =
 
 	module.exports = shouldUpdateReactComponent;
 
-/***/ },
-/* 252 */
-/***/ function(module, exports) {
+/***/ }),
+/* 259 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -27413,9 +27159,9 @@ var showChatTemplate =
 
 	module.exports = ReactEmptyComponent;
 
-/***/ },
-/* 253 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -27514,9 +27260,9 @@ var showChatTemplate =
 	module.exports = ReactNativeComponent;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 254 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 261 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -27534,7 +27280,7 @@ var showChatTemplate =
 	var _assign = __webpack_require__(6);
 
 	var PooledClass = __webpack_require__(8);
-	var Transaction = __webpack_require__(192);
+	var Transaction = __webpack_require__(199);
 
 	/**
 	 * Executed within the scope of the `Transaction` instance. Consider these as
@@ -27592,17 +27338,15 @@ var showChatTemplate =
 
 	module.exports = ReactServerRenderingTransaction;
 
-/***/ },
-/* 255 */
-/***/ function(module, exports) {
+/***/ }),
+/* 262 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 * 
@@ -27664,9 +27408,9 @@ var showChatTemplate =
 
 	module.exports = shallowEqual;
 
-/***/ },
-/* 256 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 263 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2015-present, Facebook, Inc.
@@ -28039,9 +27783,9 @@ var showChatTemplate =
 	module.exports = validateDOMNesting;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 257 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2014-present, Facebook, Inc.
@@ -28058,8 +27802,8 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DOMLazyTree = __webpack_require__(205);
-	var ReactDOMComponentTree = __webpack_require__(167);
+	var DOMLazyTree = __webpack_require__(212);
+	var ReactDOMComponentTree = __webpack_require__(174);
 
 	var ReactDOMEmptyComponent = function (instantiate) {
 	  // ReactCompositeComponent uses this:
@@ -28104,9 +27848,9 @@ var showChatTemplate =
 
 	module.exports = ReactDOMEmptyComponent;
 
-/***/ },
-/* 258 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2015-present, Facebook, Inc.
@@ -28244,9 +27988,9 @@ var showChatTemplate =
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 259 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 266 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -28263,14 +28007,14 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var DOMChildrenOperations = __webpack_require__(204);
-	var DOMLazyTree = __webpack_require__(205);
-	var ReactDOMComponentTree = __webpack_require__(167);
+	var DOMChildrenOperations = __webpack_require__(211);
+	var DOMLazyTree = __webpack_require__(212);
+	var ReactDOMComponentTree = __webpack_require__(174);
 	var ReactInstrumentation = __webpack_require__(20);
 
-	var escapeTextContentForBrowser = __webpack_require__(209);
+	var escapeTextContentForBrowser = __webpack_require__(216);
 	var invariant = __webpack_require__(9);
-	var validateDOMNesting = __webpack_require__(256);
+	var validateDOMNesting = __webpack_require__(263);
 
 	/**
 	 * Text nodes violate a couple assumptions that React makes about components:
@@ -28420,9 +28164,9 @@ var showChatTemplate =
 	module.exports = ReactDOMTextComponent;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 260 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 267 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -28439,8 +28183,8 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var ReactUpdates = __webpack_require__(186);
-	var Transaction = __webpack_require__(192);
+	var ReactUpdates = __webpack_require__(193);
+	var Transaction = __webpack_require__(199);
 
 	var emptyFunction = __webpack_require__(13);
 
@@ -28493,9 +28237,9 @@ var showChatTemplate =
 
 	module.exports = ReactDefaultBatchingStrategy;
 
-/***/ },
-/* 261 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 268 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -28512,14 +28256,14 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var EventListener = __webpack_require__(262);
+	var EventListener = __webpack_require__(269);
 	var ExecutionEnvironment = __webpack_require__(22);
 	var PooledClass = __webpack_require__(8);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactUpdates = __webpack_require__(186);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactUpdates = __webpack_require__(193);
 
-	var getEventTarget = __webpack_require__(193);
-	var getUnboundedScrollPosition = __webpack_require__(263);
+	var getEventTarget = __webpack_require__(200);
+	var getUnboundedScrollPosition = __webpack_require__(270);
 
 	/**
 	 * Find the deepest React component completely containing the root of the
@@ -28655,26 +28399,17 @@ var showChatTemplate =
 
 	module.exports = ReactEventListener;
 
-/***/ },
-/* 262 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
 	 *
-	 * Licensed under the Apache License, Version 2.0 (the "License");
-	 * you may not use this file except in compliance with the License.
-	 * You may obtain a copy of the License at
-	 *
-	 * http://www.apache.org/licenses/LICENSE-2.0
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -28744,17 +28479,15 @@ var showChatTemplate =
 	module.exports = EventListener;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 263 */
-/***/ function(module, exports) {
+/***/ }),
+/* 270 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -28773,10 +28506,10 @@ var showChatTemplate =
 	 */
 
 	function getUnboundedScrollPosition(scrollable) {
-	  if (scrollable === window) {
+	  if (scrollable.Window && scrollable instanceof scrollable.Window) {
 	    return {
-	      x: window.pageXOffset || document.documentElement.scrollLeft,
-	      y: window.pageYOffset || document.documentElement.scrollTop
+	      x: scrollable.pageXOffset || scrollable.document.documentElement.scrollLeft,
+	      y: scrollable.pageYOffset || scrollable.document.documentElement.scrollTop
 	    };
 	  }
 	  return {
@@ -28787,9 +28520,9 @@ var showChatTemplate =
 
 	module.exports = getUnboundedScrollPosition;
 
-/***/ },
-/* 264 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 271 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -28804,15 +28537,15 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(168);
-	var EventPluginHub = __webpack_require__(174);
-	var EventPluginUtils = __webpack_require__(176);
-	var ReactComponentEnvironment = __webpack_require__(244);
+	var DOMProperty = __webpack_require__(175);
+	var EventPluginHub = __webpack_require__(181);
+	var EventPluginUtils = __webpack_require__(183);
+	var ReactComponentEnvironment = __webpack_require__(251);
 	var ReactClass = __webpack_require__(29);
-	var ReactEmptyComponent = __webpack_require__(252);
-	var ReactBrowserEventEmitter = __webpack_require__(233);
-	var ReactNativeComponent = __webpack_require__(253);
-	var ReactUpdates = __webpack_require__(186);
+	var ReactEmptyComponent = __webpack_require__(259);
+	var ReactBrowserEventEmitter = __webpack_require__(240);
+	var ReactNativeComponent = __webpack_require__(260);
+	var ReactUpdates = __webpack_require__(193);
 
 	var ReactInjection = {
 	  Component: ReactComponentEnvironment.injection,
@@ -28828,9 +28561,9 @@ var showChatTemplate =
 
 	module.exports = ReactInjection;
 
-/***/ },
-/* 265 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 272 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -28847,11 +28580,11 @@ var showChatTemplate =
 
 	var _assign = __webpack_require__(6);
 
-	var CallbackQueue = __webpack_require__(187);
+	var CallbackQueue = __webpack_require__(194);
 	var PooledClass = __webpack_require__(8);
-	var ReactBrowserEventEmitter = __webpack_require__(233);
-	var ReactInputSelection = __webpack_require__(266);
-	var Transaction = __webpack_require__(192);
+	var ReactBrowserEventEmitter = __webpack_require__(240);
+	var ReactInputSelection = __webpack_require__(273);
+	var Transaction = __webpack_require__(199);
 
 	/**
 	 * Ensures that, when possible, the selection range (currently selected text
@@ -28995,9 +28728,9 @@ var showChatTemplate =
 
 	module.exports = ReactReconcileTransaction;
 
-/***/ },
-/* 266 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 273 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -29012,11 +28745,11 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactDOMSelection = __webpack_require__(267);
+	var ReactDOMSelection = __webpack_require__(274);
 
-	var containsNode = __webpack_require__(269);
-	var focusNode = __webpack_require__(219);
-	var getActiveElement = __webpack_require__(272);
+	var containsNode = __webpack_require__(276);
+	var focusNode = __webpack_require__(226);
+	var getActiveElement = __webpack_require__(279);
 
 	function isInDocument(node) {
 	  return containsNode(document.documentElement, node);
@@ -29124,9 +28857,9 @@ var showChatTemplate =
 
 	module.exports = ReactInputSelection;
 
-/***/ },
-/* 267 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 274 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -29143,8 +28876,8 @@ var showChatTemplate =
 
 	var ExecutionEnvironment = __webpack_require__(22);
 
-	var getNodeForCharacterOffset = __webpack_require__(268);
-	var getTextContentAccessor = __webpack_require__(181);
+	var getNodeForCharacterOffset = __webpack_require__(275);
+	var getTextContentAccessor = __webpack_require__(188);
 
 	/**
 	 * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -29341,9 +29074,9 @@ var showChatTemplate =
 
 	module.exports = ReactDOMSelection;
 
-/***/ },
-/* 268 */
-/***/ function(module, exports) {
+/***/ }),
+/* 275 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -29420,24 +29153,22 @@ var showChatTemplate =
 
 	module.exports = getNodeForCharacterOffset;
 
-/***/ },
-/* 269 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * 
 	 */
 
-	var isTextNode = __webpack_require__(270);
+	var isTextNode = __webpack_require__(277);
 
 	/*eslint-disable no-bitwise */
 
@@ -29464,24 +29195,22 @@ var showChatTemplate =
 
 	module.exports = containsNode;
 
-/***/ },
-/* 270 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
 
-	var isNode = __webpack_require__(271);
+	var isNode = __webpack_require__(278);
 
 	/**
 	 * @param {*} object The object to check.
@@ -29493,19 +29222,17 @@ var showChatTemplate =
 
 	module.exports = isTextNode;
 
-/***/ },
-/* 271 */
-/***/ function(module, exports) {
+/***/ }),
+/* 278 */
+/***/ (function(module, exports) {
 
 	'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -29515,24 +29242,24 @@ var showChatTemplate =
 	 * @return {boolean} Whether or not the object is a DOM node.
 	 */
 	function isNode(object) {
-	  return !!(object && (typeof Node === 'function' ? object instanceof Node : typeof object === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string'));
+	  var doc = object ? object.ownerDocument || object : document;
+	  var defaultView = doc.defaultView || window;
+	  return !!(object && (typeof defaultView.Node === 'function' ? object instanceof defaultView.Node : typeof object === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string'));
 	}
 
 	module.exports = isNode;
 
-/***/ },
-/* 272 */
-/***/ function(module, exports) {
+/***/ }),
+/* 279 */
+/***/ (function(module, exports) {
 
 	'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -29545,23 +29272,27 @@ var showChatTemplate =
 	 *
 	 * The activeElement will be null only if the document or document body is not
 	 * yet defined.
+	 *
+	 * @param {?DOMDocument} doc Defaults to current document.
+	 * @return {?DOMElement}
 	 */
-	function getActiveElement() /*?DOMElement*/{
-	  if (typeof document === 'undefined') {
+	function getActiveElement(doc) /*?DOMElement*/{
+	  doc = doc || (typeof document !== 'undefined' ? document : undefined);
+	  if (typeof doc === 'undefined') {
 	    return null;
 	  }
 	  try {
-	    return document.activeElement || document.body;
+	    return doc.activeElement || doc.body;
 	  } catch (e) {
-	    return document.body;
+	    return doc.body;
 	  }
 	}
 
 	module.exports = getActiveElement;
 
-/***/ },
-/* 273 */
-/***/ function(module, exports) {
+/***/ }),
+/* 280 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -29864,9 +29595,9 @@ var showChatTemplate =
 
 	module.exports = SVGDOMPropertyConfig;
 
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -29881,17 +29612,17 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(172);
-	var EventPropagators = __webpack_require__(173);
+	var EventConstants = __webpack_require__(179);
+	var EventPropagators = __webpack_require__(180);
 	var ExecutionEnvironment = __webpack_require__(22);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactInputSelection = __webpack_require__(266);
-	var SyntheticEvent = __webpack_require__(183);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactInputSelection = __webpack_require__(273);
+	var SyntheticEvent = __webpack_require__(190);
 
-	var getActiveElement = __webpack_require__(272);
-	var isTextInputElement = __webpack_require__(195);
+	var getActiveElement = __webpack_require__(279);
+	var isTextInputElement = __webpack_require__(202);
 	var keyOf = __webpack_require__(33);
-	var shallowEqual = __webpack_require__(255);
+	var shallowEqual = __webpack_require__(262);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -30065,9 +29796,9 @@ var showChatTemplate =
 
 	module.exports = SelectEventPlugin;
 
-/***/ },
-/* 275 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -30082,24 +29813,24 @@ var showChatTemplate =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(172);
-	var EventListener = __webpack_require__(262);
-	var EventPropagators = __webpack_require__(173);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var SyntheticAnimationEvent = __webpack_require__(276);
-	var SyntheticClipboardEvent = __webpack_require__(277);
-	var SyntheticEvent = __webpack_require__(183);
-	var SyntheticFocusEvent = __webpack_require__(278);
-	var SyntheticKeyboardEvent = __webpack_require__(279);
-	var SyntheticMouseEvent = __webpack_require__(198);
-	var SyntheticDragEvent = __webpack_require__(282);
-	var SyntheticTouchEvent = __webpack_require__(283);
-	var SyntheticTransitionEvent = __webpack_require__(284);
-	var SyntheticUIEvent = __webpack_require__(199);
-	var SyntheticWheelEvent = __webpack_require__(285);
+	var EventConstants = __webpack_require__(179);
+	var EventListener = __webpack_require__(269);
+	var EventPropagators = __webpack_require__(180);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var SyntheticAnimationEvent = __webpack_require__(283);
+	var SyntheticClipboardEvent = __webpack_require__(284);
+	var SyntheticEvent = __webpack_require__(190);
+	var SyntheticFocusEvent = __webpack_require__(285);
+	var SyntheticKeyboardEvent = __webpack_require__(286);
+	var SyntheticMouseEvent = __webpack_require__(205);
+	var SyntheticDragEvent = __webpack_require__(289);
+	var SyntheticTouchEvent = __webpack_require__(290);
+	var SyntheticTransitionEvent = __webpack_require__(291);
+	var SyntheticUIEvent = __webpack_require__(206);
+	var SyntheticWheelEvent = __webpack_require__(292);
 
 	var emptyFunction = __webpack_require__(13);
-	var getEventCharCode = __webpack_require__(280);
+	var getEventCharCode = __webpack_require__(287);
 	var invariant = __webpack_require__(9);
 	var keyOf = __webpack_require__(33);
 
@@ -30698,9 +30429,9 @@ var showChatTemplate =
 	module.exports = SimpleEventPlugin;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 276 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -30715,7 +30446,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(183);
+	var SyntheticEvent = __webpack_require__(190);
 
 	/**
 	 * @interface Event
@@ -30742,9 +30473,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticAnimationEvent;
 
-/***/ },
-/* 277 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 284 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -30759,7 +30490,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(183);
+	var SyntheticEvent = __webpack_require__(190);
 
 	/**
 	 * @interface Event
@@ -30785,9 +30516,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticClipboardEvent;
 
-/***/ },
-/* 278 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -30802,7 +30533,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(199);
+	var SyntheticUIEvent = __webpack_require__(206);
 
 	/**
 	 * @interface FocusEvent
@@ -30826,9 +30557,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticFocusEvent;
 
-/***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -30843,11 +30574,11 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(199);
+	var SyntheticUIEvent = __webpack_require__(206);
 
-	var getEventCharCode = __webpack_require__(280);
-	var getEventKey = __webpack_require__(281);
-	var getEventModifierState = __webpack_require__(201);
+	var getEventCharCode = __webpack_require__(287);
+	var getEventKey = __webpack_require__(288);
+	var getEventModifierState = __webpack_require__(208);
 
 	/**
 	 * @interface KeyboardEvent
@@ -30915,9 +30646,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticKeyboardEvent;
 
-/***/ },
-/* 280 */
-/***/ function(module, exports) {
+/***/ }),
+/* 287 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -30970,9 +30701,9 @@ var showChatTemplate =
 
 	module.exports = getEventCharCode;
 
-/***/ },
-/* 281 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -30987,7 +30718,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var getEventCharCode = __webpack_require__(280);
+	var getEventCharCode = __webpack_require__(287);
 
 	/**
 	 * Normalization of deprecated HTML5 `key` values
@@ -31077,9 +30808,9 @@ var showChatTemplate =
 
 	module.exports = getEventKey;
 
-/***/ },
-/* 282 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 289 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31094,7 +30825,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticMouseEvent = __webpack_require__(198);
+	var SyntheticMouseEvent = __webpack_require__(205);
 
 	/**
 	 * @interface DragEvent
@@ -31118,9 +30849,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticDragEvent;
 
-/***/ },
-/* 283 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31135,9 +30866,9 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(199);
+	var SyntheticUIEvent = __webpack_require__(206);
 
-	var getEventModifierState = __webpack_require__(201);
+	var getEventModifierState = __webpack_require__(208);
 
 	/**
 	 * @interface TouchEvent
@@ -31168,9 +30899,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticTouchEvent;
 
-/***/ },
-/* 284 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 291 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31185,7 +30916,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(183);
+	var SyntheticEvent = __webpack_require__(190);
 
 	/**
 	 * @interface Event
@@ -31212,9 +30943,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticTransitionEvent;
 
-/***/ },
-/* 285 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 292 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31229,7 +30960,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var SyntheticMouseEvent = __webpack_require__(198);
+	var SyntheticMouseEvent = __webpack_require__(205);
 
 	/**
 	 * @interface WheelEvent
@@ -31271,9 +31002,9 @@ var showChatTemplate =
 
 	module.exports = SyntheticWheelEvent;
 
-/***/ },
-/* 286 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 293 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31288,26 +31019,26 @@ var showChatTemplate =
 
 	'use strict';
 
-	var DOMLazyTree = __webpack_require__(205);
-	var DOMProperty = __webpack_require__(168);
-	var ReactBrowserEventEmitter = __webpack_require__(233);
+	var DOMLazyTree = __webpack_require__(212);
+	var DOMProperty = __webpack_require__(175);
+	var ReactBrowserEventEmitter = __webpack_require__(240);
 	var ReactCurrentOwner = __webpack_require__(11);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactDOMContainerInfo = __webpack_require__(287);
-	var ReactDOMFeatureFlags = __webpack_require__(288);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactDOMContainerInfo = __webpack_require__(294);
+	var ReactDOMFeatureFlags = __webpack_require__(295);
 	var ReactElement = __webpack_require__(10);
-	var ReactFeatureFlags = __webpack_require__(188);
+	var ReactFeatureFlags = __webpack_require__(195);
 	var ReactInstrumentation = __webpack_require__(20);
-	var ReactMarkupChecksum = __webpack_require__(289);
-	var ReactReconciler = __webpack_require__(189);
-	var ReactUpdateQueue = __webpack_require__(250);
-	var ReactUpdates = __webpack_require__(186);
+	var ReactMarkupChecksum = __webpack_require__(296);
+	var ReactReconciler = __webpack_require__(196);
+	var ReactUpdateQueue = __webpack_require__(257);
+	var ReactUpdates = __webpack_require__(193);
 
 	var emptyObject = __webpack_require__(28);
-	var instantiateReactComponent = __webpack_require__(246);
+	var instantiateReactComponent = __webpack_require__(253);
 	var invariant = __webpack_require__(9);
-	var setInnerHTML = __webpack_require__(210);
-	var shouldUpdateReactComponent = __webpack_require__(251);
+	var setInnerHTML = __webpack_require__(217);
+	var shouldUpdateReactComponent = __webpack_require__(258);
 	var warning = __webpack_require__(12);
 
 	var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
@@ -31770,9 +31501,9 @@ var showChatTemplate =
 	module.exports = ReactMount;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 287 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 294 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31787,7 +31518,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var validateDOMNesting = __webpack_require__(256);
+	var validateDOMNesting = __webpack_require__(263);
 
 	var DOC_NODE_TYPE = 9;
 
@@ -31809,9 +31540,9 @@ var showChatTemplate =
 	module.exports = ReactDOMContainerInfo;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 288 */
-/***/ function(module, exports) {
+/***/ }),
+/* 295 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31832,9 +31563,9 @@ var showChatTemplate =
 
 	module.exports = ReactDOMFeatureFlags;
 
-/***/ },
-/* 289 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31849,7 +31580,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var adler32 = __webpack_require__(290);
+	var adler32 = __webpack_require__(297);
 
 	var TAG_END = /\/?>/;
 	var COMMENT_START = /^<\!\-\-/;
@@ -31887,9 +31618,9 @@ var showChatTemplate =
 
 	module.exports = ReactMarkupChecksum;
 
-/***/ },
-/* 290 */
-/***/ function(module, exports) {
+/***/ }),
+/* 297 */
+/***/ (function(module, exports) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31935,9 +31666,9 @@ var showChatTemplate =
 
 	module.exports = adler32;
 
-/***/ },
-/* 291 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -31953,10 +31684,10 @@ var showChatTemplate =
 	'use strict';
 
 	var ReactCurrentOwner = __webpack_require__(11);
-	var ReactDOMComponentTree = __webpack_require__(167);
-	var ReactInstanceMap = __webpack_require__(248);
+	var ReactDOMComponentTree = __webpack_require__(174);
+	var ReactInstanceMap = __webpack_require__(255);
 
-	var getNativeComponentFromComposite = __webpack_require__(292);
+	var getNativeComponentFromComposite = __webpack_require__(299);
 	var invariant = __webpack_require__(9);
 	var warning = __webpack_require__(12);
 
@@ -31999,9 +31730,9 @@ var showChatTemplate =
 	module.exports = findDOMNode;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 292 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -32016,7 +31747,7 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactNodeTypes = __webpack_require__(249);
+	var ReactNodeTypes = __webpack_require__(256);
 
 	function getNativeComponentFromComposite(inst) {
 	  var type;
@@ -32034,9 +31765,9 @@ var showChatTemplate =
 
 	module.exports = getNativeComponentFromComposite;
 
-/***/ },
-/* 293 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 300 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -32051,23 +31782,21 @@ var showChatTemplate =
 
 	'use strict';
 
-	var ReactMount = __webpack_require__(286);
+	var ReactMount = __webpack_require__(293);
 
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
-/***/ },
-/* 294 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 *
 	 * @typechecks
 	 */
@@ -32182,9 +31911,9 @@ var showChatTemplate =
 	module.exports = CSSCore;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
-/***/ },
-/* 295 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 302 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -32201,7 +31930,7 @@ var showChatTemplate =
 
 	var ExecutionEnvironment = __webpack_require__(22);
 
-	var getVendorPrefixedEventName = __webpack_require__(235);
+	var getVendorPrefixedEventName = __webpack_require__(242);
 
 	var endEvents = [];
 
@@ -32260,9 +31989,9 @@ var showChatTemplate =
 
 	module.exports = ReactTransitionEvents;
 
-/***/ },
-/* 296 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -32319,9 +32048,9 @@ var showChatTemplate =
 
 	exports.default = Typing;
 
-/***/ },
-/* 297 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 304 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -32375,14 +32104,14 @@ var showChatTemplate =
 
 	exports.default = ImageLoader;
 
-/***/ },
-/* 298 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 305 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(166);
+	module.exports = __webpack_require__(173);
 
 
-/***/ }
+/***/ })
 /******/ ]);
