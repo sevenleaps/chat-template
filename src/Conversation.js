@@ -81,7 +81,7 @@ class Conversation extends React.Component {
     clearTimeout(this.timeoutId);
   }
 
-  showMessage = () => {
+  showMessage() {
     const messages = this.state.messages;
     const messagesToBeDisplayed = this.state.messagesToBeDisplayed;
     const reset = this.state.reset;
@@ -120,8 +120,8 @@ class Conversation extends React.Component {
       });
       this.timeoutId = setTimeout(this.showMessage, this.state.startingDelay);
     }
-  };
-  paneDidMount = (node) => {
+  }
+  paneDidMount(node) {
     if (node && this.state.isScrollable) {
       node.addEventListener('wheel', (event) => {
         const mouseMoveY = event.deltaY;
@@ -162,7 +162,7 @@ class Conversation extends React.Component {
         }
       });
     }
-  };
+  }
 
   render() {
     const { isTyping, inbound } = this.state;

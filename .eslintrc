@@ -7,7 +7,7 @@
     "react/jsx-no-bind": 0,
     "react/jsx-uses-react": 1,
     "react/prefer-stateless-function": 0,
-    react/jsx-no-undef: 2,
+    "react/jsx-no-undef": 2,
     "max-len": [2, 180],
   },
   "parser": "babel-eslint",
